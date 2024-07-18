@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação do Botão de Pagamentos Void Pay</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .void-pay-button {
+            display: inline-block;
+            background-color: #0070ba;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .void-pay-button:hover {
+            background-color: #005fa3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#dashboard">Go to Dashboard</a></li>
+                    <li><a href="#help">Help</a></li>
+                    <li><a href="#docs">Docs</a></li>
+                    <li><a href="#api">API & SDK</a></li>
+                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#community">Community</a></li>
+                    <li><a href="#support">Support</a></li>
+                </ul>
+            </nav>
+            <div class="user-info">
+                <p>DINIS DA SILVA ABINER</p>
+                <a href="https://voidpay.com">VoidPay.com</a>
+            </div>
+        </header>
+        
+        <h1>Documentação do Botão de Pagamentos Void Pay</h1>
+        
+        <section id="integration">
+            <h2>Integração</h2>
+            <p>O botão de pagamentos Void Pay permite que os usuários realizem pagamentos de forma rápida e segura. Ele pode ser facilmente integrado ao seu site usando HTML e CSS.</p>
+            <p>Para integrar o botão Void Pay ao seu site, adicione o seguinte código HTML:</p>
+            <pre><code>&lt;a href="https://voidpay.com/pay" class="void-pay-button"&gt;Pagar com Void Pay&lt;/a&gt;</code></pre>
+        </section>
+        
+        <section id="example">
+            <h2>Exemplo Completo</h2>
+            <p>Veja abaixo um exemplo completo de como usar o botão de pagamentos Void Pay:</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-br"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Exemplo de Botão Void Pay&lt;/title&gt;
+    &lt;style&gt;
+        .void-pay-button {
+            display: inline-block;
+            background-color: #0070ba;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .void-pay-button:hover {
+            background-color: #005fa3;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;a href="https://voidpay.com/pay" class="void-pay-button"&gt;Pagar com Void Pay&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+        </section>
+        
+        <section id="button-style">
+            <h2>Estilo do Botão</h2>
+            <p>O estilo do botão pode ser ajustado conforme necessário. O exemplo acima segue uma aparência semelhante ao botão PayPal, com cores e tamanhos configuráveis para uma experiência de usuário intuitiva.</p>
+        </section>
+
+        <section id="checkout-options">
+            <h2>Escolha as Opções de Checkout</h2>
+            <p>Selecione os métodos de pagamento relevantes que aparecerão ao lado do seu botão Void Pay.</p>
+            <ul>
+                <li><strong>Void Pay:</strong> Pagamento usando uma conta Void Pay.</li>
+                <li><strong>Pay Later:</strong> Pagamento usando parcelas do Void Pay.</li>
+                <li><strong>Cartão de Débito ou Crédito:</strong> Checkout de convidado gerenciado pela Void Pay usando um cartão de débito ou crédito.</li>
+            </ul>
+        </section>
+
+        <section id="payment-model">
+            <h2>Escolha um Modelo de Pagamento</h2>
+            <p>Processe pagamentos únicos usando o SDK JavaScript ou pagamentos para valores fixos em intervalos regulares usando a API de Produto de Catálogo, API de Assinaturas e o SDK JavaScript.</p>
+            <ul>
+                <li><strong>Pagamento Único:</strong> Um pagamento único.</li>
+                <li><strong>Pagamento de Assinatura:</strong> Um pagamento recorrente para um valor fixo em intervalos regulares.</li>
+            </ul>
+        </section>
+
+        <section id="button-layout">
+            <h2>Escolha o Layout do Botão</h2>
+            <p>Escolha entre layouts de botão vertical ou horizontal.</p>
+            <ul>
+                <li><strong>Layout Vertical:</strong> Botões são empilhados verticalmente.</li>
+                <li><strong>Layout Horizontal:</strong> Botões são mostrados lado a lado.</li>
+            </ul>
+        </section>
+
+        <section id="button-style-choices">
+            <h2>Escolha o Estilo do Botão</h2>
+            <p>Escolha entre botões retangulares ou em formato de pílula.</p>
+            <ul>
+                <li><strong>Retângulo:</strong> Botões têm quatro lados com cantos ligeiramente arredondados.</li>
+                <li><strong>Pílula:</strong> Botões são em formato de pílula com extremidades semicirculares.</li>
+            </ul>
+        </section>
+
+        <section id="setup-code">
+            <h2>Configurar Seu Código</h2>
+            <pre><code>window.voidPay
+  .Buttons({
+    style: {
+      shape: "rect",
+      layout: "vertical",
+    },
+    async createOrder() {
+      try {
+        const response = await fetch("/api/orders", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          // use the "body" param to optionally pass additional order information
+          // like product ids and quantities
+          body: JSON.stringify({
+            cart: [
+              {
+                id: "YOUR_PRODUCT_ID",
+                quantity: "YOUR_PRODUCT_QUANTITY",
+              },
+            ],
+          }),
+        });
+
+        const orderData = await response.json();
+
+        if (orderData.id) {
+          return orderData.id;
+        } else {
+          const errorDetail = orderData?.details?.[0];
+          const errorMessage = errorDetail
+            ? `${errorDetail.issue} ${errorDetail.description} (${orderData.debug_id})`
+            : JSON.stringify(orderData);
+
+          throw new Error(errorMessage);
+        }
+      } catch (error) {
+        console.error(error);
+        resultMessage(`Could not initiate Void Pay Checkout...<br><br>${error}`);
+      }
+    },
+    async onApprove(data, actions) {
+      try {
+        const response = await fetch(`/api/orders/${data.orderID}/capture`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        const orderData = await response.json();
+        // Three cases to handle:
+        //   (1) Recoverable INSTRUMENT_DECLINED -> call actions.restart()
+        //   (2) Other non-recoverable errors -> Show a failure message
+        //   (3) Successful transaction -> Show confirmation or thank you message
+
+        const errorDetail = orderData?.details?.[0];
+
+        if (errorDetail?.issue === "INSTRUMENT_DECLINED") {
+          // (1) Recoverable INSTRUMENT_DECLINED -> call actions.restart()
+          // recoverable state, per https://developer.voidpay.com/docs/checkout/standard/customize/handle-funding-failures/
+          return actions.restart();
+        } else if (errorDetail) {
+          // (2) Other non-recoverable errors -> Show a failure message
+          throw new Error(`${errorDetail.description} (${orderData.debug_id})`);
+        } else if (!orderData.purchase_units) {
+          throw new Error(JSON.stringify(orderData));
+        } else {
+          // (3) Successful transaction -> Show confirmation or thank you message
+          // Or go to another URL:  actions.redirect('thank_you.html');
+          const transaction =
+            orderData?.purchase_units?.[0]?.payments?.captures?.[0] ||
+            orderData?.purchase_units?.[0]?.payments?.authorizations?.[0];
+          resultMessage(
+            `Transaction ${transaction.status}: ${transaction.id}<br><br>See console for all available details`,
+          );
+          console.log(
+            "Capture result",
+            orderData,
+            JSON.stringify(orderData, null, 2),
+          );
+        }
+      } catch (error) {
+        console.error(error);
+        resultMessage(
+          `Sorry, your transaction could not be processed...<br><br>${error}`,
+        );
+      }
+    },
+  })
+  .render("#void-pay-button-container");
+
+// Example function to show a result to the user. Your site's UI library can be used instead.
+function resultMessage(message) {
+  const container = document.querySelector("#result-message");
+  container.innerHTML = message;
+}
+</code></pre>
+        </section>
+
+        <section id="demo">
+            <h2>Demo Usando Credenciais de Teste</h2>
+            <p>Você pode usar credenciais de teste para verificar a integração do Void Pay em seu ambiente de desenvolvimento.</p>
+            <pre><code>
+Name
+Card Number
+Expiration
+CVV
+            </code></pre>
+        </section>
+
+        <section id="go-live">
+            <h2>Coloque Sua Aplicação em Produção</h2>
+            <p>Depois de testar sua integração, você pode ir ao vivo com a Void Pay seguindo as instruções em nossa documentação de API.</p>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #333;
+        }
+
+        pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .void-pay-button {
+            display: inline-block;
+            background-color: #0070ba;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .void-pay-button:hover {
+            background-color: #005fa3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Documentação do Botão de Pagamentos VOIDpay</h1>
+
+        <h2>Descrição</h2>
+        <p>O botão de pagamentos Void Pay permite que os usuários realizem pagamentos de forma rápida e segura. Ele pode
+            ser facilmente integrado em seu site usando HTML e CSS.</p>
+
+        <h2>Integração</h2>
+        <p>Para integrar o botão Void Pay ao seu site, adicione o seguinte código HTML:</p>
+        <pre><code>&lt;a href="https://voidpay.com/pay" class="void-pay-button"&gt;Pagar com VOIDpay&lt;/a&gt;</code></pre>
+
+        <h2>Exemplo Completo</h2>
+        <p>Veja abaixo um exemplo completo de como usar o botão de pagamentos VOIDpay:</p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+            &lt;html lang="pt-br"&gt;
+            &lt;head&gt;
+                &lt;meta charset="UTF-8"&gt;
+                &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                &lt;title&gt;Exemplo de Botão Void Pay&lt;/title&gt;
+                &lt;style&gt;
+                    .void-pay-button {
+                        display: inline-block;
+                        background-color: #0070ba;
+                        color: white;
+                        font-size: 16px;
+                        padding: 10px 20px;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        text-align: center;
+                        text-decoration: none;
+                        transition: background-color 0.3s;
+                    }
+                    .void-pay-button:hover {
+                        background-color: #005fa3;
+                    }
+                &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;a href="https://voidpay.com/pay" class="void-pay-button"&gt;Pagar com Void Pay&lt;/a&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+</code></pre>
+        <h2>Exemplo Completo</h2>
+        <p>Veja abaixo um exemplo completo de como usar o botão de pagamentos VOIDpay:</p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+    &lt;html lang="pt-br"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Exemplo de Botão Void Pay&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;div id="void-button-container" name="VOID-cfbe5181-57c2-4a9a-b4fd-4a31bffd1fdd"&gt;&lt;/div&gt;
+    &lt;p id="result-message"&gt;&lt;/p&gt;
+    &lt;!-- Replace the "test" client-id value with your client-id --&gt;
+    &lt;script src="https://voidabinerjr.github.io/sdk/s2.js"&gt;&lt;/script&gt;
+    &lt;script src="app.js"&gt;&lt;/script&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+</code></pre>
+
+        <h2>Estilo do Botão</h2>
+        <p>O estilo do botão pode ser ajustado conforme necessário, mas o exemplo acima segue uma aparência semelhante ,
+            com cores e tamanhos apropriados para uma experiência de usuário intuitiva.</p>
+    </div>
+    <div>
+        <input type="text" id="product-id" name="product-id" required>
+        <input type="number" id="quantity" name="quantity" required>
+        <div id="void-button-container" name="VOID-cfbe5181-57c2-4a9a-b4fd-4a31bffd1fdd"></div>
+      
+        <script src="https://voidabinerjr.github.io/sdk/s2.js"></script>
+
+        <div id="void-script-container"></div>
+
+    </div>
+
+</body>
+
+</html>

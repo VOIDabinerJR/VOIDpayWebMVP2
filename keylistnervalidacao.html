@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Input Color Change</title>
+<style>
+    /* Estilo inicial do input */
+    #myInput {
+        width: 200px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        transition: border-color 0.3s ease;
+    }
+</style>
+</head>
+<body>
+
+<input type="text" id="myInput" placeholder="Digite aqui">
+
+<script>
+    const input = document.getElementById('myInput');
+
+    let timeout = null;
+
+    // Função para mudar a cor do input
+    function changeInputColor() {
+        input.style.borderColor = '#4CAF50';  // Cor verde quando parar de escrever
+    }
+
+    // Evento de input para detectar quando o usuário digita
+    input.addEventListener('input', function() {
+        clearTimeout(timeout);  // Limpa o timeout atual
+
+        // Define um novo timeout para mudar a cor após 500ms de inatividade
+        timeout = setTimeout(changeInputColor, 500);
+    });
+
+    // Reinicia a cor do input quando o usuário começa a digitar novamente
+    input.addEventListener('keydown', function() {
+        clearTimeout(timeout);  // Limpa o timeout atual
+        input.style.borderColor = '#ccc';  // Reinicia para a cor padrão
+    });
+</script>
+
+</body>
+</html>
