@@ -52,9 +52,10 @@ exports.register = async (req, res) => {
 };
 exports.login = async (req, res) => {
     const { email, password } = req.body;
+    console.log("aaa")
 
     try {
-        const response = await fetch('http://localhost:3000/login', {
+        const response = await fetch('http://localhost:3000/auth/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
