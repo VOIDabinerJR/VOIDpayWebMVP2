@@ -12,37 +12,41 @@ const { requireAuth } = require('../middleware/authMiddleware');
 
 // Rota para login
 router.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname,'../', 'login.html'));
+    res.sendFile(path.join(__dirname, '../', 'login.html'));
 });
 
 
 router.get('/register', (req, res) => {
-    res.sendFile(path.join(__dirname,'../', 'register.html'));
+    res.sendFile(path.join(__dirname, '../', 'register.html'));
 });
 router.get('/singup', (req, res) => {
-    res.sendFile(path.join(__dirname,'../', 'register.html'));
+    res.sendFile(path.join(__dirname, '../', 'register.html'));
 });
 
 
 // Rota para dashboard
 router.get('/dashboard', requireAuth, (req, res) => {
-    res.sendFile(path.join(__dirname,'../', 'index.html'));
+    const data = req.query
+    console.log(data)
+    
+    res.render('index', {token: 'aaa'})
+    // res.sendFile(path.join(__dirname,'../', 'index.html'));
 });
 
 router.get('/integracaoSimples', requireAuth, (req, res) => {
-    res.sendFile(path.join(__dirname,'../', 'integracaoSimples.html'));
+    res.sendFile(path.join(__dirname, '../', 'integracaoSimples.html'));
 });
 
 router.get('/integracao', requireAuth, (req, res) => {
-    res.sendFile(path.join(__dirname,'../', 'integracao.html'));
+    res.sendFile(path.join(__dirname, '../', 'integracao.html'));
 });
 
 router.get('/app', requireAuth, (req, res) => {
-    res.sendFile(path.join(__dirname,'../', 'appCredencials.html'));
+    res.sendFile(path.join(__dirname, '../', 'appCredencials.html'));
 });
 
 router.get('/', requireAuth, (req, res) => {
-    res.sendFile(path.join(__dirname,'../', 'index.html'));
+    res.sendFile(path.join(__dirname, '../', 'index.html'));
 });
 
 

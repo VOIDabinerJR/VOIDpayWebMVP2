@@ -9,10 +9,12 @@ const pagesRoutes = require('./routes/pages');
 const { checkUser } = require("./middleware/authMiddleware");
 
 
-const app = express();
+const app = express(); 
 
 // apos corrigir os directorios (public) branch 2
 //midleware
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 const publicDirectory = path.join(__dirname)
 app.use(express.static(publicDirectory))
 app.use(coockieParser());

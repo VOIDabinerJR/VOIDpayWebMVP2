@@ -62,15 +62,16 @@ exports.login = async (req, res) => {
         });
 
         const data = await response.json();
+        console.log(data.data.token)
 
         if (response.status === 200) {
             const maxAge = 3 * 24 * 60 * 60 * 1000; // Exemplo de tempo de expiração do cookie
 
             // Define o token JWT como um cookie no navegador do usuário
-            res.cookie('jwt', data.token, { httpOnly: true, maxAge });
+            res.cookie('jwt', data.data.token, { httpOnly: true, maxAge });
 
             // Redireciona para a página de dashboard após login bem-sucedido
-            return res.redirect('/dashboard');
+            return res.redirect(`/dashboard?data=${data.data.userData}`);
         } else { 
             // Em caso de falha no login, retorna o status e mensagem de erro recebidos do servidor
             return res.status(response.status).send(data);
