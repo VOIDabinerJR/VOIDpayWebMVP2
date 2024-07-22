@@ -32,6 +32,15 @@ router.get('/dashboard', requireAuth, (req, res) => {
 router.get('/integracaoSimples', requireAuth, (req, res) => {
     res.sendFile(path.join(__dirname,'../', 'integracaoSimples.html'));
 });
+
+router.get('/integracao', requireAuth, (req, res) => {
+    res.sendFile(path.join(__dirname,'../', 'integracao.html'));
+});
+
+router.get('/app', requireAuth, (req, res) => {
+    res.sendFile(path.join(__dirname,'../', 'appCredencials.html'));
+});
+
 router.get('/', requireAuth, (req, res) => {
     res.sendFile(path.join(__dirname,'../', 'index.html'));
 });
