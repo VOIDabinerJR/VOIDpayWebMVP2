@@ -20,14 +20,14 @@ const handleErrors = (err) => {
 
 
 
-exports.register = async (req, res) => {
+exports.register = async (req, res) => {  
     const { firstName, lastName, email, password, repeatPassword } = req.body;
-
+const username =firstName
     try {
-        const response = await fetch('http://localhost:3000/register', {
+        const response = await fetch('http://localhost:3000/auth/register', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ firstName, lastName, email, password, repeatPassword })
+            headers: { 'Content-Type': 'application/json' }, 
+            body: JSON.stringify({ firstName, username ,lastName, email, password, repeatPassword })
         });
 
         const data = await response.json();
@@ -62,16 +62,16 @@ exports.login = async (req, res) => {
         });
 
         const data = await response.json();
-        console.log(data.data.token)
+        console.log(data)
 
         if (response.status === 200) {
             const maxAge = 3 * 24 * 60 * 60 * 1000; // Exemplo de tempo de expiração do cookie
 
             // Define o token JWT como um cookie no navegador do usuário
-            res.cookie('jwt', data.data.token, { httpOnly: true, maxAge });
+            res.cookie('jwt', data.token, { httpOnly: true, maxAge });
 
             // Redireciona para a página de dashboard após login bem-sucedido
-            return res.redirect(`/dashboard?data=${data.data.userData}`);
+            return res.redirect(`/dashboard`);
         } else { 
             // Em caso de falha no login, retorna o status e mensagem de erro recebidos do servidor
             return res.status(response.status).send(data);
@@ -81,6 +81,87 @@ exports.login = async (req, res) => {
         return res.status(500).send('Erro interno do servidor');
     }
 };
+
+
+exports.recoveraccount = async (req, res) => {
+    const { email } = req.body;
+    console.log("aaa")
+
+    try {
+        const response = await fetch('http://localhost:3000/auth/recoveraccount', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email})
+        });
+
+        const data = await response.json();
+        console.log(data)
+
+        if (response.status === 200) {
+            this.criateButton
+
+            // Redireciona para a página de dashboard após login bem-sucedido
+            return res.render('forgot-password',{email :email })
+        } else { 
+            // Em caso de falha no login, retorna o status e mensagem de erro recebidos do servidor
+            return res.status(response.status).send(data);
+        }
+    } catch (error) {
+        console.error('Erro durante o login:', error);
+        return res.status(500).send('Erro interno do servidor');
+    }
+};
+
+
+exports.resetpassword = async (req, res) => {
+    const { email, password } = req.body;
+    console.log("aaa")
+
+    try {
+        const response = await fetch('http://localhost:3000/auth/resetpassword', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+        console.log(data)
+
+        if (response.status === 200) {
+            const maxAge = 3 * 24 * 60 * 60 * 1000; // Exemplo de tempo de expiração do cookie
+
+            // Define o token JWT como um cookie no navegador do usuário
+            res.cookie('jwt', data.token, { httpOnly: true, maxAge });
+
+            // Redireciona para a página de dashboard após login bem-sucedido
+            return res.redirect(`/dashboard`);
+        } else { 
+            // Em caso de falha no login, retorna o status e mensagem de erro recebidos do servidor
+            return res.status(response.status).send(data);
+        }
+    } catch (error) {
+        console.error('Erro durante o login:', error);
+        return res.status(500).send('Erro interno do servidor');
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 exports.singup_post = async (req, res) => {

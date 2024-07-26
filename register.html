@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Register</title>
+    <title>Criar Conta VOIDpay</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -19,77 +19,236 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+        .login-page {
+            width: 360px;
+            height: 700px;
+            padding: 8% 0 0;
+            margin: auto;
+        }
+
+        .form {
+            margin-top: 25px;
+            border-radius: 4px;
+            position: relative;
+            z-index: 1;
+            background: #FFFFFF;
+            max-width: 360px;
+            margin: 0 auto 100px;
+            padding: 45px;
+            text-align: center;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        }
+
+        .form input {
+
+            border-radius: 4px;
+            font-family: "Roboto", sans-serif;
+            outline: 0;
+            background: #f2f2f2;
+            width: 100%;
+            border: 0;
+            margin: 0 0 25px;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .form button {
+            font-family: "Roboto", sans-serif;
+            text-transform: uppercase;
+            outline: 0;
+            background: #121c2d;
+            width: 100%;
+            border: 0;
+            padding: 15px;
+            color: #FFFFFF;
+            font-size: 14px;
+            -webkit-transition: all 0.3 ease;
+            transition: all 0.3 ease;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .form button:hover,
+        .form button:active,
+        .form button:focus {
+            background: white;
+            color: #000;
+            border: solid black 0.5px;
+            border-radius: 4px;
+        }
+
+        .form .message {
+            margin: 15px 0 0;
+            color: #b3b3b3;
+            font-size: 12px;
+        }
+
+        .form .message a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .form .register-form {
+            display: none;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .container:before,
+        .container:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .container .info {
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .container .info h1 {
+            margin: 0 0 15px;
+            padding: 0;
+            font-size: 36px;
+            font-weight: 300;
+            color: #1a1a1a;
+        }
+
+        .container .info span {
+            color: #4d4d4d;
+            font-size: 12px;
+        }
+
+        .container .info span a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .container .info span .fa {
+            color: #EF3B3A;
+        }
+
+        body {
+            background: #76b852;
+            /* fallback for old browsers */
+            background: rgb(141, 194, 111);
+            background: linear-gradient(90deg, rgba(141, 194, 111, 1) 0%, rgba(118, 184, 82, 1) 50%);
+            font-family: "Roboto", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .foot {
+            position: fixed;
+            left: 32%;
+
+            width: 36%;
+
+            /* Altere a cor de fundo aqui */
+            color: white;
+            /* Altere a cor do texto aqui */
+            text-align: center;
+            padding: 10px 0;
+
+        }
+
+        .foot a {
+            color: black;
+        }
+
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+
+            /* Altere a cor de fundo aqui */
+            color: white;
+            /* Altere a cor do texto aqui */
+            text-align: center;
+            padding: 100px 0;
+        }
+    </style>
 
 </head>
 
 <body class="bg-gradient-primary">
 
-    <div class="container">
+    <div class="login-page">
+        <div class="form">
+            <form class="register-form">
+                <input type="text" placeholder="name" />
+                <input type="password" placeholder="password" />
+                <input type="text" placeholder="email address" />
+                <button>create</button>
+                <p class="message">Already registered? <a href="#">Sign In</a></p>
+            </form>
+            <form action="" class=" login-form user" method="POST">
+                <div class="text-center">
+                    <img src="https://raw.githubusercontent.com/VOIDabinerJR/sdk/main/void.jpg" alt="">
+                    <h1 class="h4 text-gray-900 mb-4">Criar conta grátis</h1>
 
-        <div class="card o-hidden border-0 shadow-lg my-5">
-            <div class="card-body p-0">
-                <!-- Nested Row within Card Body -->
-                <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
-                    <div class="col-lg-7">
-                        <div class="p-5">
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
-                            </div>
-                            <form action="" class="user" method="POST">
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" name="firstName" id="exampleFirstName" placeholder="First Name">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" name="lastName" id="exampleLastName" placeholder="Last Name">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" name="email" id="exampleInputEmail" placeholder="Email Address">
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user" name="password" id="exampleInputPassword" placeholder="Password">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user" name="repeatPassword" id="exampleRepeatPassword" placeholder="Repeat Password">
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-user btn-block">
-                                    Register Account
-                                </button>
-                                <hr>
-                                <a href="index.html" class="btn btn-google btn-user btn-block">
-                                    <i class="fab fa-google fa-fw"></i> Register with Google
-                                </a>
-                                <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                    <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
-                                </a>
-                            </form>
-                            
-                            
-                            <hr>
-                            <div class="text-center">
-                                <a class="small" href="forgot-password.html">Forgot Password?</a>
-                            </div>
-                            <div class="text-center">
-                                <a class="small" href="login.html">Already have an account? Login!</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+                <input type="text" name="firstName" id="FirstName" placeholder="First Name">
+                <input type="text" name="lastName" id="LastName" placeholder="Last Name">
+                <input type="email" name="email" id="exampleInputEmail" placeholder="Email Address">
+                <input type="password" name="password" id="exampleInputPassword" placeholder="Password">
+                <input type="password" name="repeatPassword" id="exampleRepeatPassword" placeholder="Repeat Password">
+                <button type="submit" class="submit">
+                    Cadastar
+                </button>
+                <p class="small">Ao criar uma conta, você concorda com os <a class="small "
+                        href="forgot-password.html">termos de uso</a> e <a class="small"
+                        href="forgot-password.html">Política de Privacidade</a> da VOIDpay.</p>
+
+            </form>
+            
+
+            <div class="foot">
+                <a class="small" href="login.html">Already have an account? Login!</a>
             </div>
         </div>
-
+        <script>$('.message a').click(function () {
+                $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
+            });</script>
     </div>
-    {{#if message}}
-    <h4 class="alert alert=danger mt-4">{{message}}</h4>
-    {{/if}}
+    <footer>
 
-   <!-- scripts-->
+        © VOIDpay
+        ·
+        Privacy & terms
+    </footer>
 
-  
+
+
+
+    <!-- scripts-->
+
+    <script>
+        function starts() {
+            const numStars = 30;
+            const container = document.body;
+
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.animationDuration = (Math.random() * 2 + 2) + 's'; // Duração aleatória
+                container.appendChild(star);
+            }
+        }
+        starts()
+    </script>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>

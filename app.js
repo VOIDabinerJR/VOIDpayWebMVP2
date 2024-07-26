@@ -2,7 +2,7 @@ const express = require("express");
 const mysql = require("mysql2");
 const dotenv = require("dotenv");
 const path = require('path');
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser'); 
 const coockieParser = require('cookie-parser')
 const authRoutes = require('./routes/auth');
 const pagesRoutes = require('./routes/pages');
@@ -10,6 +10,9 @@ const { checkUser } = require("./middleware/authMiddleware");
 
 
 const app = express(); 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/Mainpage/index.html'));
+});
 
 // apos corrigir os directorios (public) branch 2
 //midleware
@@ -25,10 +28,10 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
 
-//routes
 app.get('*', checkUser)
 app.use(authRoutes);
 app.use(pagesRoutes);
+
 
 
 

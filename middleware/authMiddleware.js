@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 //require('dotenv').config({ path: 'C:\\Users\\DELL\\Desktop\\server\\.env' });
-const JWT_SECRET='void secret'
+const JWT_SECRET='oi'
 const requireAuth = (req, res, next) => {
 
     const token = req.cookies.jwt;
@@ -23,7 +23,7 @@ const checkUser = async (req, res, next) => {
 
     if (token) {
         try {
-            const response = await fetch('http://localhost:3000/checktoken', {
+            const response = await fetch('http://localhost:3000/user/checktoken', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ token })
@@ -32,7 +32,7 @@ const checkUser = async (req, res, next) => {
             const data = await response.json();
 
             if (response.ok) {
-                const userResponse = await fetch('http://localhost:3000/checkuser', {
+                const userResponse = await fetch('http://localhost:3000/user/checkuser', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ id: data.id })

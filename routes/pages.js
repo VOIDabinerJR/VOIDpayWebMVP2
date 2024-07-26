@@ -5,12 +5,12 @@ const authController = require('../controllers/pagesController');
 const router = express.Router();
 const { requireAuth } = require('../middleware/authMiddleware');
 
+router.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../', 'login.html'));
+});
 
 
-//router.get('/singup', pagesController.singup_get );
-////router.get('/login', pagesController.login_get );
 
-// Rota para login
 router.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, '../', 'login.html'));
 });
@@ -22,7 +22,13 @@ router.get('/register', (req, res) => {
 router.get('/singup', (req, res) => {
     res.sendFile(path.join(__dirname, '../', 'register.html'));
 });
-
+router.get('/recoveraccount', (req, res) => {
+    res.sendFile(path.join(__dirname, '../', 'forgot-password.html'));
+});
+router.get('/resetpassword', (req, res) => {
+    res.sendFile(path.join(__dirname, '../', 'reset-password.html'));
+});
+ 
 
 // Rota para dashboard
 router.get('/dashboard', requireAuth, (req, res) => {
@@ -44,11 +50,6 @@ router.get('/integracao', requireAuth, (req, res) => {
 router.get('/app', requireAuth, (req, res) => {
     res.sendFile(path.join(__dirname, '../', 'appCredencials.html'));
 });
-
-router.get('/', requireAuth, (req, res) => {
-    res.sendFile(path.join(__dirname, '../', 'index.html'));
-});
-
 
 
 
