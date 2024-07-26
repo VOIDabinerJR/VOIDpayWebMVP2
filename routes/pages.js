@@ -5,8 +5,8 @@ const authController = require('../controllers/pagesController');
 const router = express.Router();
 const { requireAuth } = require('../middleware/authMiddleware');
 
-router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../', 'login.html'));
+router.get('/a', (req, res) => {
+    res.sendFile(path.join(__dirname, '../','public/Mainpage/index.html'));
 });
 
 
