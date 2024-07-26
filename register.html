@@ -29,6 +29,10 @@
             margin: auto;
         }
 
+        .logo {
+            width: 100px;
+        }
+
         .form {
             margin-top: 25px;
             border-radius: 4px;
@@ -47,9 +51,9 @@
             border-radius: 4px;
             font-family: "Roboto", sans-serif;
             outline: 0;
-            background: #f2f2f2;
+            background: #ffffff;
             width: 100%;
-            border: 0;
+            border: 0.1px solid rgb(216, 215, 215);
             margin: 0 0 25px;
             padding: 15px;
             box-sizing: border-box;
@@ -138,10 +142,8 @@
         }
 
         body {
-            background: #76b852;
-            /* fallback for old browsers */
-            background: rgb(141, 194, 111);
-            background: linear-gradient(90deg, rgba(141, 194, 111, 1) 0%, rgba(118, 184, 82, 1) 50%);
+            background: #000000;
+
             font-family: "Roboto", sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -177,44 +179,62 @@
             text-align: center;
             padding: 100px 0;
         }
+
+       
+        .star {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+            animation: twinkle 1.5s infinite, move 5s infinite linear;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+
+        @keyframes move {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
     </style>
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="">
+
 
     <div class="login-page">
+        <img class="logo" src="https://voidabinerjr.github.io/VOIDpayWebMVP2/img/voidwhitelogo.png" alt="">
         <div class="form">
-            <form class="register-form">
-                <input type="text" placeholder="name" />
-                <input type="password" placeholder="password" />
-                <input type="text" placeholder="email address" />
-                <button>create</button>
-                <p class="message">Already registered? <a href="#">Sign In</a></p>
-            </form>
+
             <form action="" class=" login-form user" method="POST">
                 <div class="text-center">
-                    <img src="https://raw.githubusercontent.com/VOIDabinerJR/sdk/main/void.jpg" alt="">
-                    <h1 class="h4 text-gray-900 mb-4">Criar conta grátis</h1>
+
+                    <h1 class="h4 text-gray-900 mb-4"><strong>Criar conta grátis</strong></h1>
 
                 </div>
-                <input type="text" name="firstName" id="FirstName" placeholder="First Name">
-                <input type="text" name="lastName" id="LastName" placeholder="Last Name">
-                <input type="email" name="email" id="exampleInputEmail" placeholder="Email Address">
-                <input type="password" name="password" id="exampleInputPassword" placeholder="Password">
-                <input type="password" name="repeatPassword" id="exampleRepeatPassword" placeholder="Repeat Password">
+                <input type="text" name="firstName" id="FirstName" placeholder="Nome">
+                <input type="text" name="lastName" id="LastName" placeholder="Sobrenome">
+                <input type="email" name="email" id="inputEmail" placeholder="Email">
+                <input type="password" name="password" id="inputPassword" placeholder="Password">
+                <input type="password" name="repeatPassword" id="repeatPassword" placeholder="Repita Password">
                 <button type="submit" class="submit">
                     Cadastar
                 </button>
-                <p class="small">Ao criar uma conta, você concorda com os <a class="small "
-                        href="forgot-password.html">termos de uso</a> e <a class="small"
-                        href="forgot-password.html">Política de Privacidade</a> da VOIDpay.</p>
+                <p class="small">Ao criar uma conta, você concorda com os <a class="small " href="/legal">termos de
+                        uso</a> e <a class="small" href="/privacy">Política de Privacidade</a> da VOIDpay.</p>
 
             </form>
-            
+
 
             <div class="foot">
-                <a class="small" href="login.html">Already have an account? Login!</a>
+                <a class="small" href="login">Ja tem conta? Login!</a>
             </div>
         </div>
         <script>$('.message a').click(function () {

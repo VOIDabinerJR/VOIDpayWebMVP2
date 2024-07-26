@@ -28,6 +28,12 @@ router.get('/recoveraccount', (req, res) => {
 router.get('/resetpassword', (req, res) => {
     res.sendFile(path.join(__dirname, '../', 'reset-password.html'));
 });
+router.get('/privacy', (req, res) => {
+    res.sendFile(path.join(__dirname, '../', 'privacy.html'));
+});
+router.get('/legal', (req, res) => {
+    res.sendFile(path.join(__dirname, '../', 'legal.html'));
+});
  
 
 // Rota para dashboard

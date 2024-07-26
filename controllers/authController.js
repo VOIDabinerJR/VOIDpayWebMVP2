@@ -85,7 +85,7 @@ exports.login = async (req, res) => {
 
 exports.recoveraccount = async (req, res) => {
     const { email } = req.body;
-    console.log("aaa")
+   
 
     try {
         const response = await fetch('http://localhost:3000/auth/recoveraccount', {
@@ -98,13 +98,12 @@ exports.recoveraccount = async (req, res) => {
         console.log(data)
 
         if (response.status === 200) {
-            this.criateButton
-
-            // Redireciona para a página de dashboard após login bem-sucedido
+           
+          
             return res.render('forgot-password',{email :email })
         } else { 
-            // Em caso de falha no login, retorna o status e mensagem de erro recebidos do servidor
-            return res.status(response.status).send(data);
+          
+            return res.render('forgot-password',{email :'Email não cadastrado' })
         }
     } catch (error) {
         console.error('Erro durante o login:', error);
@@ -115,7 +114,7 @@ exports.recoveraccount = async (req, res) => {
 
 exports.resetpassword = async (req, res) => {
     const { email, password } = req.body;
-    console.log("aaa")
+ 
 
     try {
         const response = await fetch('http://localhost:3000/auth/resetpassword', {
