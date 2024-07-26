@@ -86,6 +86,8 @@ exports.login = async (req, res) => {
 exports.recoveraccount = async (req, res) => {
     const { email } = req.body;
    
+    console.log('aa')
+
 
     try {
         const response = await fetch('http://localhost:3000/auth/recoveraccount', {
@@ -93,9 +95,11 @@ exports.recoveraccount = async (req, res) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email})
         });
+        
 
-        const data = await response.json();
-        console.log(data)
+        const data = await response.json();  
+        console.log(data.sucess)
+      
 
         if (response.status === 200) {
            
@@ -103,7 +107,7 @@ exports.recoveraccount = async (req, res) => {
             return res.render('forgot-password',{email :email })
         } else { 
           
-            return res.render('forgot-password',{email :'Email não cadastrado' })
+            return res.render('forgot-password',{email :'Email não cadastrado', message:' Enviamos um link de recuperação para o e-mail.' })
         }
     } catch (error) {
         console.error('Erro durante o login:', error);
@@ -113,14 +117,15 @@ exports.recoveraccount = async (req, res) => {
 
 
 exports.resetpassword = async (req, res) => {
-    const { email, password } = req.body;
+    const token = req.query.token
+    const { repeatPassword, password } = req.body;
  
 
     try {
         const response = await fetch('http://localhost:3000/auth/resetpassword', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, password })
+            body: JSON.stringify({  password,repeatPassword,token })
         });
 
         const data = await response.json();
@@ -132,8 +137,7 @@ exports.resetpassword = async (req, res) => {
             // Define o token JWT como um cookie no navegador do usuário
             res.cookie('jwt', data.token, { httpOnly: true, maxAge });
 
-            // Redireciona para a página de dashboard após login bem-sucedido
-            return res.redirect(`/dashboard`);
+            return res.render('forgot-password',{email :"Sucesso" ,message:"Senha Alterada com sucesso"})
         } else { 
             // Em caso de falha no login, retorna o status e mensagem de erro recebidos do servidor
             return res.status(response.status).send(data);

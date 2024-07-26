@@ -1,11 +1,16 @@
 const express = require('express');
 const path = require('path');
-
 const authController = require('../controllers/pagesController');
 const router = express.Router();
 const { requireAuth } = require('../middleware/authMiddleware');
+const { loadUserData } = require('../middleware/dataLoadMiddleware');
 
-router.get('/a', (req, res) => {
+
+
+
+
+
+router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../','public/Mainpage/index.html'));
 });
 
@@ -15,13 +20,10 @@ router.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, '../', 'login.html'));
 });
 
-
 router.get('/register', (req, res) => {
     res.sendFile(path.join(__dirname, '../', 'register.html'));
 });
-router.get('/singup', (req, res) => {
-    res.sendFile(path.join(__dirname, '../', 'register.html'));
-});
+
 router.get('/recoveraccount', (req, res) => {
     res.sendFile(path.join(__dirname, '../', 'forgot-password.html'));
 });
@@ -36,24 +38,26 @@ router.get('/legal', (req, res) => {
 });
  
 
-// Rota para dashboard
-router.get('/dashboard', requireAuth, (req, res) => {
-    const data = req.query
-    console.log(data)
+
+
+
+
+router.get('/dashboard', requireAuth, loadUserData,(req, res) => {
+    const data = req.data
     
-    res.render('index', {token: 'aaa'})
-    // res.sendFile(path.join(__dirname,'../', 'index.html'));
+    res.render('index', {token: data.firstname})
+   
 });
 
-router.get('/integracaoSimples', requireAuth, (req, res) => {
+router.get('/integracaoSimples', requireAuth,loadUserData, (req, res) => {
     res.sendFile(path.join(__dirname, '../', 'integracaoSimples.html'));
 });
 
-router.get('/integracao', requireAuth, (req, res) => {
+router.get('/integracao', requireAuth, loadUserData,(req, res) => {
     res.sendFile(path.join(__dirname, '../', 'integracao.html'));
 });
 
-router.get('/app', requireAuth, (req, res) => {
+router.get('/app', requireAuth, loadUserData,(req, res) => {
     res.sendFile(path.join(__dirname, '../', 'appCredencials.html'));
 });
 
