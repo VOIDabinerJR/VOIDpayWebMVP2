@@ -15,7 +15,8 @@ router.post('/register', authController.register);
 //router.post('/login', authController.login_post );
 router.post('/login', authController.login );
 
-router.post('/logout', authController.logout_get );
+router.get('/logout', authController.logout_get );
+
 router.post('/recoveraccount',authController.recoveraccount);
 router.post('/resetpassword',authController.resetpassword);
  
