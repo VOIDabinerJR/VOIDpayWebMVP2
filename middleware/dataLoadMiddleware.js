@@ -11,7 +11,7 @@ const loadUserData = async (req, res, next) => {
 
 
         try {
-            const response = await fetch('http://localhost:3000/auth/loaddata', {
+            const response = await fetch('https://voidpayservermvp2.onrender.com/auth/loaddata', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ token })

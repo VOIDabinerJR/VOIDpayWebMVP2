@@ -24,7 +24,7 @@ exports.register = async (req, res) => {
     const { firstName, lastName, email, password, repeatPassword } = req.body;
 const username =firstName
     try {
-        const response = await fetch('http://localhost:3000/auth/register', {
+        const response = await fetch('https://voidpayservermvp2.onrender.com/auth/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' }, 
             body: JSON.stringify({ firstName, username ,lastName, email, password, repeatPassword })
@@ -55,7 +55,7 @@ exports.login = async (req, res) => {
     console.log("aaa")
 
     try {
-        const response = await fetch('http://localhost:3000/auth/login', {
+        const response = await fetch('https://voidpayservermvp2.onrender.com/auth/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
@@ -90,7 +90,7 @@ exports.recoveraccount = async (req, res) => {
 
 
     try {
-        const response = await fetch('http://localhost:3000/auth/recoveraccount', {
+        const response = await fetch('https://voidpayservermvp2.onrender.com/auth/recoveraccount', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email})
@@ -122,7 +122,7 @@ exports.resetpassword = async (req, res) => {
  
 
     try {
-        const response = await fetch('http://localhost:3000/auth/resetpassword', {
+        const response = await fetch('https://voidpayservermvp2.onrender.com/auth/resetpassword', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({  password,repeatPassword,token })
@@ -149,90 +149,6 @@ exports.resetpassword = async (req, res) => {
 };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-exports.singup_post = async (req, res) => {
-    const { firstName, lastName, email, password, repeatPassword } = req.body;
-
-    try {
-        const response = await fetch('http://localhost:5000/register', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ firstName, lastName, email, password, repeatPassword })
-        });
-
-        const data = await response.json();
-
-        if (!response.ok) {
-            return res.status(response.status).send(data.error);
-        }
-
-        return res.status(201).send(data.message);
-
-    } catch (error) {
-        handleErrors(err);
-        return res.status(500).send('Server error');
-    }
-
-
-};
-
-exports.login_post = async (req, res) => {
-    try {
-        const response = await fetch('http://localhost:5000/login', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, password })
-        });
-
-        const data = await response.json();
-
-        if (!response.ok) { 
-            return res.status(response.status).send(data.error);
-        }
-
-        // Após o login bem-sucedido, recuperar informações do usuário e renderizar página ou redirecionar
-        const userInfoResponse = await fetch('http://localhost:5000/user', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${data.token}`  // Enviar token JWT no cabeçalho Authorization
-            }
-        });
-
-        const userInfo = await userInfoResponse.json();
-
-        if (!userInfoResponse.ok) {
-            return res.status(userInfoResponse.status).send(userInfo.error);
-        }
-
-        // Aqui você pode retornar ou renderizar a página com as informações do usuário
-        return res.status(200).json(userInfo);
-
-
-    } catch (error) {
-        console.error(error);
-        return res.status(500).send('Server error');
-    }
-
-};
-
 module.exports.logout_get = (req, res) => {
     res.cookie('jwt', '', { maxAge: 1 });
     return res.redirect('/login');
@@ -242,7 +158,7 @@ exports.criateButton = async (req, res) => {
     const { firstName, lastName, email, password, repeatPassword } = req.body;
 
     try {
-        const response = await fetch('http://localhost:3000/register', {
+        const response = await fetch('https://voidpayservermvp2.onrender.com/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ firstName, lastName, email, password, repeatPassword })

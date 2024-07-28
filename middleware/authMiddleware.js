@@ -23,7 +23,7 @@ const checkUser = async (req, res, next) => {
 
     if (token) {
         try {
-            const response = await fetch('http://localhost:3000/user/checktoken', {
+            const response = await fetch('https://voidpayservermvp2.onrender.com/user/checktoken', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ token })
