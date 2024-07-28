@@ -87,3 +87,34 @@ exports.createButton = async (req, res) => {
     }
 };
 
+
+exports.activateButton = async (req, res) => {
+  
+    const { tokeny } = req.body;
+    
+    
+     
+   
+    try {
+        const response = await fetch(`${process.env.URL}/button/activateButton`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({  tokeny })
+        });
+
+        const data = await response.json();
+        console.log(data)
+
+        if (response.status === 200) {
+            
+            return res.status(200).redirect('/integracao');
+        } else { 
+           
+            return res.status(response.status).send(data);
+        }
+    } catch (error) {
+        console.error('Erro durante requisicao:', error);
+        return res.status(500).send('Erro interno do servidor');
+    }
+};
+

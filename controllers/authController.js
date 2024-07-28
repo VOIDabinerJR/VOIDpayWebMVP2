@@ -24,7 +24,7 @@ exports.register = async (req, res) => {
     const { firstName, lastName, email, password, repeatPassword } = req.body;
 const username =firstName
     try {
-        const response = await fetch('https://voidpayservermvp2.onrender.com/auth/register', {
+        const response = await fetch(`${process.env.URL}/auth/register`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' }, 
             body: JSON.stringify({ firstName, username ,lastName, email, password, repeatPassword })
@@ -55,7 +55,7 @@ exports.login = async (req, res) => {
     console.log("aaa")
 
     try {
-        const response = await fetch('https://voidpayservermvp2.onrender.com/auth/login', {
+        const response = await fetch(`${process.env.URL}/auth/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
@@ -90,7 +90,7 @@ exports.recoveraccount = async (req, res) => {
 
 
     try {
-        const response = await fetch('https://voidpayservermvp2.onrender.com/auth/recoveraccount', {
+        const response = await fetch(`${process.env.URL}/auth/recoveraccount`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email})
@@ -122,7 +122,7 @@ exports.resetpassword = async (req, res) => {
  
 
     try {
-        const response = await fetch('https://voidpayservermvp2.onrender.com/auth/resetpassword', {
+        const response = await fetch(`${process.env.URL}/auth/resetpassword`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({  password,repeatPassword,token })
@@ -153,35 +153,4 @@ module.exports.logout_get = (req, res) => {
     console.log("Aaa")
     res.cookie('jwt', '', { maxAge: 1 });
     return res.redirect('/login');
-};
-
-exports.criateButton = async (req, res) => {
-    const { firstName, lastName, email, password, repeatPassword } = req.body;
-
-    try {
-        const response = await fetch('https://voidpayservermvp2.onrender.com/register', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ firstName, lastName, email, password, repeatPassword })
-        });
-
-        const data = await response.json();
-        console.log(data);
-
-        if (response.status === 201) {
-            const maxAge = 3 * 24 * 60 * 60 * 1000; // Exemplo de tempo de expiração do cookie
-
-            // Define o cookie JWT no cliente
-            res.cookie('jwt', data.token, { httpOnly: true, maxAge });
-
-            // Redireciona para o dashboard
-            return res.redirect('/dashboard');
-        } else {
-            // Trata qualquer erro retornando o status e mensagem recebidos do servidor
-            return res.status(response.status).send(data);
-        }
-    } catch (error) {
-        console.error('Erro durante o registro:', error);
-        return res.status(500).send('Erro interno do servidor');
-    }
 };

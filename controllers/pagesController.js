@@ -10,7 +10,7 @@ exports.profile = async (req, res) => {
     const token = req.cookies.jwt;
      
     try {
-        const response = await fetch('https://voidpayservermvp2.onrender.com/pages/profile', {
+        const response = await fetch(`${process.env.URL}/pages/profile`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' }, 
             body: JSON.stringify({ token, firstName, lastName, username, email, password, repeatPassword,dateOfBirth,address, postalCode, documentId, documentIdImg,phone,alternativeEmail,businessName, legalDocument,website, form } )

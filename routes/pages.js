@@ -84,7 +84,7 @@ router.get('/integracao', requireAuth, loadUserData,(req, res) => {
 });
 
 router.get('/app', requireAuth, loadUserData,(req, res) => {
-    res.sendFile(path.join(__dirname, '../', 'appCredencials.html'));
+    res.sendFile(path.join(__dirname, '../', 'appCredencials.html')); 
 });
 
  

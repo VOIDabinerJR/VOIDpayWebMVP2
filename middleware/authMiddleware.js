@@ -23,7 +23,7 @@ const checkUser = async (req, res, next) => {
 
     if (token) {
         try {
-            const response = await fetch('https://voidpayservermvp2.onrender.com/user/checktoken', {
+            const response = await fetch(`${process.env.URL}/user/checktoken`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ token })
@@ -32,7 +32,7 @@ const checkUser = async (req, res, next) => {
             const data = await response.json();
 
             if (response.ok) {
-                const userResponse = await fetch('https://voidpayservermvp2.onrender.com/user/checkuser', {
+                const userResponse = await fetch(`${process.env.URL}/user/checkuser`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ id: data.id })

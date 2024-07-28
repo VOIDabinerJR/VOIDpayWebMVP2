@@ -532,6 +532,7 @@
                         <h1 class="h3 mb-0 text-gray-800">Integração Simples</h1>
 
                         <button class="create-app" id="createAppBtn">Novo Botão</button>
+                        <button class="create-app" id="createAppBtn2">Ativar</button>
                     </div>
 
                     <div class="container">
@@ -752,64 +753,93 @@
                     </div>
                 </div>
             </div>
-            <!-- Modal -->
-            <div id="createAppModal" class="modal">
-                <div class="modal-content">
-                    <span class="close" id="closeModalBtn">&times;</span>
-                    <form method="post">
-                        <h2>Criar Botao</h2>
-                        <div>
-                            <label for="appName">Nome</label>
-                            <input type="text" id="nome" name="name" required>
-                        </div>
-                        
-                        <div>
-                            <label for="destination">Redirecionar apos Pagamento para:</label>
-                            <input type="text" id="destination" name="destination" required>
-                        </div>
-                        <div>
-                            <label for="secret">Client Secret:</label>
-                            <input type="password" id="secret" name="secret" required>
-                        </div>
+       
 
 
-                        <p>Atenção, Nao feche esse pagina em Execução</p>
-                        <button type="submit">Create</button>
-                    </form>
+    <!-- Modal 1 -->
+    <div id="createAppModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModalBtn">&times;</span>
+            <form method="post" action="/integracao/create">
+                <h2>Criar Botao</h2>
+                <div>
+                    <label for="appName">Nome</label>
+                    <input type="text" id="nome" name="name" required>
                 </div>
-            </div>
+                <div>
+                    <label for="destination">Redirecionar apos Pagamento para:</label>
+                    <input type="text" id="destination" name="destination" required>
+                </div>
+                <div>
+                    <label for="secret">Client Secret:</label>
+                    <input type="password" id="secret" name="secret" required>
+                </div>
+                <p>Atenção, Nao feche esse pagina em Execução</p>
+                <button type="submit">Create</button>
+            </form>
+        </div>
+    </div>
 
-            <script>
-                // Obter o modal
-                var modal = document.getElementById("createAppModal");
+    <!-- Modal 2 -->
+    <div id="createAppModal2" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModalBtn2">&times;</span>
+            <form id="form1" method="POST" action="integracao/activate">
+                <h2>Ativar</h2>
+                <div>
+                    <label for="appName">Autorização</label>
+                    <input type="text" id="tokeny" name="tokeny" required>
+                </div>
+                <p><%= button.message %></p>
+                <button type="submit">Submeter</button>
+            </form>
+        </div>
+    </div>
 
-                // Obter o botão que abre o modal
-                var btn = document.getElementById("createAppBtn");
+    <script>
+        // Modal 1
+        var modal1 = document.getElementById("createAppModal");
+        var btn1 = document.getElementById("createAppBtn");
+        var span1 = document.getElementById("closeModalBtn");
 
-                // Obter o elemento <span> que fecha o modal
-                var span = document.getElementById("closeModalBtn");
+        if (btn1) {
+            btn1.onclick = function () {
+                modal1.style.display = "block";
+            }
+        }
 
-                // Quando o usuário clica no botão, abre o modal
-                if (btn) {
-                    btn.onclick = function () {
-                        modal.style.display = "block";
-                    }
-                }
+        span1.onclick = function () {
+            modal1.style.display = "none";
+        }
 
-                // Quando o usuário clica no <span> (x), fecha o modal
-                span.onclick = function () {
-                    modal.style.display = "none";
-                }
+        window.onclick = function (event) {
+            if (event.target == modal1) {
+                modal1.style.display = "none";
+            }
+        }
 
-                // Quando o usuário clica fora do modal, fecha o modal
-                window.onclick = function (event) {
-                    if (event.target == modal) {
-                        modal.style.display = "none";
-                    }
-                }
-            </script>
+        // Modal 2
+        var modal2 = document.getElementById("createAppModal2");
+        var btn2 = document.getElementById("createAppBtn2");
+        var span2 = document.getElementById("closeModalBtn2");
 
+        if (btn2) {
+            btn2.onclick = function () {
+                modal2.style.display = "block";
+            }
+        }
 
+        span2.onclick = function () {
+            modal2.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal2) {
+                modal2.style.display = "none";
+            }
+        }
+    </script>
+       
 
             <!-- Dataloader-->
             <script src="dataloader.js"></script>
