@@ -55,9 +55,9 @@ exports.createApp = async (req, res) => {
 
 
 exports.createButton = async (req, res) => {
-    const clientid = req.cookies.void1;
+    const clientId = req.cookies.void1;
     const token = req.cookies.jwt;
-    console.log(clientid)
+   
     console.log(token)
     
     const { name, destination } = req.body;
@@ -68,19 +68,14 @@ exports.createButton = async (req, res) => {
         const response = await fetch(`${process.env.URL}/button/requestbutton`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, clientid, destination, token })
+            body: JSON.stringify({ name, clientId, destination, token })
         });
 
         const data = await response.json();
         console.log(data)
 
         if (response.status === 200) {
-            const maxAge = 3 * 24 * 60 * 60 * 1000; // Exemplo de tempo de expiração do cookie
-
-            // Define o token JWT como um cookie no navegador do usuário
-            res.cookie('void1', data.app.clientid, { httpOnly: true, maxAge });
-
-            // Redireciona para a página de dashboard após login bem-sucedido
+            
             return res.redirect('/integracao');
         } else { 
             // Em caso de falha no login, retorna o status e mensagem de erro recebidos do servidor
