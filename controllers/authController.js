@@ -71,7 +71,7 @@ exports.login = async (req, res) => {
             res.cookie('jwt', data.token, { httpOnly: true, maxAge });
 
             // Redireciona para a página de dashboard após login bem-sucedido
-            return res.redirect(`/dashboard`);
+            return res.redirect('/dashboard');
         } else { 
             // Em caso de falha no login, retorna o status e mensagem de erro recebidos do servidor
             return res.status(response.status).send(data);
@@ -150,6 +150,7 @@ exports.resetpassword = async (req, res) => {
 
 
 module.exports.logout_get = (req, res) => {
+    console.log("Aaa")
     res.cookie('jwt', '', { maxAge: 1 });
     return res.redirect('/login');
 };
