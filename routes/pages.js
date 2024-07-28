@@ -60,6 +60,17 @@ router.get('/dashboard', requireAuth, loadUserData,(req, res) => {
     const data = req.data
     
     res.render('index', {token: data.firstname})
+  //res.sendFile(path.join(__dirname, '../','/views','/index.html'));
+
+   
+});
+
+router.get('/notfound', requireAuth, loadUserData,(req, res) => {
+    const data = req.data
+    
+  
+  res.sendFile(path.join(__dirname, '../', '404.html'));
+
    
 });
 

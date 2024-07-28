@@ -33,7 +33,7 @@ const username =firstName
         const data = await response.json();
         console.log(data);
 
-        if (response.status === 201) {
+        if (response.status === 201) { 
             const maxAge = 3 * 24 * 60 * 60 * 1000; // Exemplo de tempo de expiração do cookie
 
             // Define o cookie JWT no cliente
