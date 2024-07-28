@@ -59,8 +59,8 @@ router.post('/profile', pagesController.profile );
 router.get('/dashboard', requireAuth, loadUserData,(req, res) => {
     const data = req.data
     
-    res.render('index', {token: data.firstname})
-  //res.sendFile(path.join(__dirname, '../','/views','/index.html'));
+   // res.render('index', {token: data.firstname})
+  res.sendFile(path.join(__dirname, '../','/index.html'));
 
    
 });
