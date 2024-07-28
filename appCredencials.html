@@ -418,23 +418,23 @@
                     <div id="createAppModal" class="modal">
                         <div class="modal-content">
                             <span class="close" id="closeModalBtn">&times;</span>
-                            <form>
-                                <h2>Create App</h2>
+                            <form method="POST">
+                                <h2>Criar nova App</h2>
                                 <div>
-                                    <label for="appName">App Name</label>
-                                    <input type="text" id="appName" name="appName" required>
+                                    <label for="appName">Nome da App</label>
+                                    <input type="text" id="name" name="name" required>
                                 </div>
                                 <div>
                                     <p>Type:</p>
-                                    <input type="radio" id="test" name="type" value="test" checked>
-                                    <label for="test">Test</label><br>
-                                    <input type="radio" id="producao" name="type" value="producao">
-                                    <label for="producao">Producao</label>
+                                    <input type="radio"  id="test" name="type" value="test" checked>
+                                    <label for="test">Teste</label><br>
+                                    <input type="radio" id="producao" name="type" value="production">
+                                    <label for="producao">Produção</label>
                                 </div>
                                 <div>
-                                    <label for="account">Account:</label>
+                                    <label for="account">Conta:</label>
                                     <select id="account" name="account">
-                                        <option value="JohnDoe@voidpay.online">JohnDoe@voidpay.online (MZ)</option>
+                                        <option value="<%=user.email%>"><%=user.email%> (MZ)</option>
                                     </select>
                                 </div>
                                 <p>Users are redirected to this URL after live transactions. Allow up to three hours for

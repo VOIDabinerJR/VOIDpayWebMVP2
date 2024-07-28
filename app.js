@@ -4,9 +4,12 @@ const dotenv = require("dotenv");
 const path = require('path');
 const bodyParser = require('body-parser'); 
 const coockieParser = require('cookie-parser')
+const { checkUser } = require("./middleware/authMiddleware");
+
+
 const authRoutes = require('./routes/auth');
 const pagesRoutes = require('./routes/pages');
-const { checkUser } = require("./middleware/authMiddleware");
+const userRoutes = require('./routes/user');
 
 
 const app = express(); 
@@ -31,7 +34,7 @@ app.use(bodyParser.json());
 app.get('*', checkUser)
 app.use(authRoutes);
 app.use(pagesRoutes);
-
+app.use(userRoutes);
 
 
 
