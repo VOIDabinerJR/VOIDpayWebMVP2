@@ -1,7 +1,7 @@
 /********** Template CSS **********/
 :root {
-    --primary: #121c2d;
-    --secondary: #121c2d;
+    --primary: #000000;
+    --secondary: #000000;
     --light: #F0F6FF;
     --dark: #262B47;
 }
@@ -67,6 +67,7 @@ h6,
 /*** Button ***/
 .btn {
     transition: .5s;
+   
 }
 
 .btn.btn-primary-gradient,
@@ -76,6 +77,7 @@ h6,
     border: 1px;
     color: #FFFFFF;
     z-index: 1;
+    
 }
 
 .btn.btn-primary-gradient::after,
@@ -93,12 +95,16 @@ h6,
 
 .btn.btn-primary-gradient,
 .btn.btn-secondary-gradient::after {
-    background: linear-gradient(to bottom right,#007bff,#007bff);
+    background: linear-gradient(to bottom right,#ffffff,#ffffff);
+    color: #000;
+    border:0.2px solid #000;
+    
 }
 
 .btn.btn-secondary-gradient,
 .btn.btn-primary-gradient::after {
     background: linear-gradient(to bottom right, var(--secondary), var(--primary));
+    
 }
 
 .btn.btn-primary-gradient:hover::after,
@@ -550,7 +556,7 @@ h6,
     border-radius: 5px;
 }
 .logos {
-   
+  
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -573,6 +579,14 @@ h6,
 }
 
 
+.fimg img {
+    width: 80px;
+}
+
+.fimg .img1 {
+    width: 120px;
+}
+
 
 
 /* container fotos */
@@ -581,7 +595,6 @@ h6,
 .custom-container {
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-   
     width: 600px;
     
     overflow: hidden;
