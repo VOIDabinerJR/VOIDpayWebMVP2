@@ -502,18 +502,14 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <tr>
-                                            <td><a href="#">Default Application</a></td>
-                                            <td>AekYI6g0bEnrVWoi10kQiO...</td>
-                                            <td>•••••••••••••••••••••••</td>
-                                            <td>29/09/2023, 12:25</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#">Platform Partner App - 5318802915561832934</a></td>
-                                            <td>AcNspiti-o8pCF29sIKvQT...</td>
-                                            <td>•••••••••••••••••••••••</td>
-                                            <td>19/06/2024, 14:50</td>
-                                        </tr>
+                                        <% apps.forEach(app => { %>
+                                            <tr>
+                                                <td><a href="#"><%= app.name %></a></td>
+                                                <td><%= app.clientId %></td>
+                                                <td><%= app.secret %></td>
+                                                <td><%= app.createdDate %></td>
+                                            </tr>
+                                        <% }) %>
 
                                     </tbody>
                                 </table>

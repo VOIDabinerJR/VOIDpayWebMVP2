@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>VOIDpay | Integração Simples</title>
+    <title>SB Admin 2 - Dashboard</title>
 
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -144,8 +144,6 @@
         }
 
         form input[type="text"],
-
-        form input[ type="password"],
         form select {
             width: 100%;
             padding: 8px;
@@ -157,7 +155,7 @@
         }
 
         form button {
-            background-color: #121c2d;
+            background-color: #007bff;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -167,132 +165,7 @@
         }
 
         form button:hover {
-            background-color: #121c2d;
-        }
-
-        .container {
-            max-width: 1200px;
-            width: 100%;
-            background: #fff;
-            color: black;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 20px;
-        }
-
-        .header {
-            background-color: #121c2d;
-            padding: 20px;
-            text-align: center;
-            font-size: 24px;
-            color: white;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-
-        .header a {
-            color: #fff;
-            text-decoration: underline;
-        }
-
-        .header .sandbox-mode {
-            color: #7a3dff;
-            font-size: 14px;
-        }
-
-        .header-options {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .header-options select,
-        .header-options .credentials {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-right: 10px;
-        }
-
-        .header-options .credentials {
-            background-color: #f5f5f5;
-            cursor: pointer;
-        }
-
-        h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        p {
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-
-        a {
-            color: #0070ba;
-            text-decoration: none;
-        }
-
-        .button-container {
-            display: flex;
-            justify-content: space-between;
-            margin: 20px 0;
-        }
-
-        .button-container a {
-            padding: 10px 20px;
-            border: 1px solid #121c2d;
-            border-radius: 5px;
-            text-align: center;
-            color: #121c2d;
-            text-decoration: none;
-        }
-
-        .button-container a:hover {
-            background-color: #121c2d;
-            color: #fff;
-        }
-
-        .section {
-            margin-bottom: 20px;
-        }
-
-        .content {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .text-section {
-            flex: 1;
-        }
-
-        .code-block {
-            background: #2d2d2d;
-            color: #f8f8f2;
-            padding: 20px;
-            border-radius: 5px;
-            overflow-x: auto;
-            margin-left: 20px;
-            max-width: 45%;
-        }
-
-        .code-block pre {
-            margin: 0;
-            color: white;
-        }
-
-        .preview {
-            background: #000;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            border-radius: 5px;
-            margin: 20px 0;
-            max-width: 45%;
-            margin-left: 55%;
-
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -305,7 +178,6 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-           
             <script>
                 fetch('navbar.html')
                     .then(response => response.text())
@@ -313,9 +185,7 @@
                         document.getElementById('accordionSidebar').innerHTML = data;
                     });
             </script>
-
         </ul>
-       
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -529,137 +399,82 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Integração Simples</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Apps e Credenciais</h1>
 
-                        <button class="create-app" id="createAppBtn">Novo Botão</button>
-                        <button class="create-app" id="createAppBtn2">Ativar</button>
+                        <button class="create-app" id="createAppBtn">Novo App</button>
                     </div>
-
                     <div class="container">
                         <div class="header">
                             API Credentials
-                            <div>Viewing sandbox API credentials. <a href="#">View live credentials</a>.</div>
+                            <div>
+                                Viewing sandbox API credentials. <a href="#">View live credentials</a>.
+                            </div>
                             <div class="sandbox-mode">You're in sandbox mode.</div>
-                        </div>
-
-                        <div class="header-options">
-                            <div>
-                                <label for="frontend">Frontend:</label>
-                                <select id="frontend">
-                                    <option value="html">HTML</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="backend">Backend:</label>
-                                <select id="backend">
-                                    <option value="nodejs">Node.js</option>
-                                </select>
-                            </div>
-                            <div class="credentials-container">
-                                <span>Credentials</span>
-                                <div class="credentials">
-                                    <span>App: </span>
-                                    <select>
-                                        <option value="default">Default Application</option>
-                                    </select>
-                                </div>
-                                <div class="credentials">
-                                    <span>Client ID: </span>
-                                    <span>AeKYl69ObEnrVWoi10kQi...</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h1>Integrate VOIDpay Checkout</h1>
-                        <p>Before beginning your integration, you need to <a href="#">set up your development
-                                environment</a>. You can refer to this <a href="#">flow diagram</a>, and <a
-                                href="#">watch a video</a> demonstrating how to integrate VOIDpay standard Checkout.</p>
-                        <p>Start your integration by grabbing the sample code from VOIDpay GitHub repo, or visiting the
-                            VOIDpay GitHub Codespace. <a href="#">Read the Codespaces guide</a> for more information.
-                            You
-                            can also use Postman to explore and test VOIDpay APIs. <a href="#">Read the Postman
-                                Guide</a>
-                            for more information.</p>
-                        <div class="button-container">
-
-                            <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Baixar sample</a>
-                            <a href="#"><i class="fa fa-play" aria-hidden="true"></i> Ver Tutorial </a>
-                            <a href="#"> <i class="fa fa-envelope" aria-hidden="true"></i> Pedir Ajuda</a>
-                        </div>
-                        <div class="section">
-                            <h2>1. Integrate front end</h2>
-                            <p>Set up your front end to integrate standard checkout payments.</p>
-                            <h3>Front-end process</h3>
-                            <ul>
-                                <li>Your app shows the VOIDpay checkout buttons.</li>
-                                <li>Your app calls server endpoints to create the order and capture payment.</li>
-                            </ul>
-                            <div class="content">
-                                <div class="text-section">
-                                    <h3>Front-end code</h3>
-                                    <p>This example uses a <a href="#">checkout.html</a> file to show how to set up the
-                                        front end to integrate standard payments.</p>
-                                </div>
-                                <div class="code-block">
-                                    <pre><code>
-        &lt;!DOCTYPE html&gt;
-        &lt;html lang="pt-br"&gt;
-        &lt;head&gt;
-            &lt;meta charset="UTF-8"&gt;
-            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-            &lt;title&gt;Exemplo de Botão Void Pay&lt;/title&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-        &lt;div id="void-button-container" name="VOID-cfbe5181-57c2-4a9a-b4fd-4a31bffd1fdd"&gt;&lt;/div&gt;
-        &lt;p id="result-message"&gt;&lt;/p&gt;
-        &lt;!-- Replace the "test" client-id value with your client-id --&gt;
-        &lt;script src="https://voidabinerjr.github.io/sdk/s2.js"&gt;&lt;/script&gt;
-        &lt;script src="app.js"&gt;&lt;/script&gt;
-        &lt;/body&gt;
-        &lt;/html&gt;
-                                    </code></pre>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="preview">
-                            Preview
                         </div>
 
                     </div>
 
-
-
-                    <div class="container">
-                        <div>
-                            <input type="text" id="tokenInput" placeholder="Enter Token"
-                                value="public-key-dhsmaksok123i" />
-                        </div>
-                        <div>
-                            <button onclick="runFunction()">Run Function</button>
+                    <!-- Modal -->
+                    <div id="createAppModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close" id="closeModalBtn">&times;</span>
+                            <form method="POST">
+                                <h2>Criar nova App</h2>
+                                <div>
+                                    <label for="appName">Nome da App</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div>
+                                    <p>Type:</p>
+                                    <input type="radio"  id="test" name="type" value="test" checked>
+                                    <label for="test">Teste</label><br>
+                                    <input type="radio" id="producao" name="type" value="production">
+                                    <label for="producao">Produção</label>
+                                </div>
+                                <div>
+                                    <label for="account">Conta:</label>
+                                    <select id="account" name="account">
+                                        <option value="<%=user.email%>"><%=user.email%> (MZ)</option>
+                                    </select>
+                                </div>
+                                <p>Users are redirected to this URL after live transactions. Allow up to three hours for
+                                    the change to take effect.</p>
+                                <p>By clicking the button below, you agree to <a href="#">VOIDpay</a>
+                                    (US accounts only).</p>
+                                <button type="submit">Create</button>
+                            </form>
                         </div>
                     </div>
 
                     <script>
-                        function runFunction() {
-                            const token = document.getElementById('tokenInput').value;
-                            // Add your function code here
-                            alert(`Token: ${token}`);
+                        // Obter o modal
+                        var modal = document.getElementById("createAppModal");
+
+                        // Obter o botão que abre o modal
+                        var btn = document.getElementById("createAppBtn");
+
+                        // Obter o elemento <span> que fecha o modal
+                        var span = document.getElementById("closeModalBtn");
+
+                        // Quando o usuário clica no botão, abre o modal
+                        if (btn) {
+                            btn.onclick = function () {
+                                modal.style.display = "block";
+                            }
+                        }
+
+                        // Quando o usuário clica no <span> (x), fecha o modal
+                        span.onclick = function () {
+                            modal.style.display = "none";
+                        }
+
+                        // Quando o usuário clica fora do modal, fecha o modal
+                        window.onclick = function (event) {
+                            if (event.target == modal) {
+                                modal.style.display = "none";
+                            }
                         }
                     </script>
-
-
-
-                    <div>
-                        <input type="text" id="product-id" name="product-id" required>
-                        <input type="number" id="quantity" name="quantity" required>
-                        <div id="void-button-container" name="VOID-cfbe5181-57c2-4a9a-b4fd-4a31bffd1fdd"></div>
-
-                        <script src="https://voidabinerjr.github.io/sdk/s2.js"></script>
-
-                        <div id="void-script-container"></div>
-
-                    </div>
-
 
 
                     <!-- DataTales Example -->
@@ -672,27 +487,27 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Button name</th>
+                                            <th>App name</th>
                                             <th>Client ID</th>
-                                            <th>Button ID</th>
+                                            <th>Secret</th>
                                             <th>Created date</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Button name</th>
+                                            <th>App name</th>
                                             <th>Client ID</th>
-                                            <th>Button ID</th>
+                                            <th>Secret</th>
                                             <th>Created date</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <% button.forEach(app => { %>
+                                        <% app.forEach(app => { %>
                                             <tr>
-                                                <td><a href="#"><%= button.name %></a></td>
-                                                <td><%= button.buttonTokken %></td>
-                                                <td><%= button.destination %></td>
-                                                <td><%= button.createdAt %></td>
+                                                <td><a href="#"><%= app.name %></a></td>
+                                                <td><%= app.clientId %></td>
+                                                <td><%= app.clientSecret %></td>
+                                                <td><%= app.createdAt %></td>
                                             </tr>
                                         <% }) %>
 
@@ -749,93 +564,8 @@
                     </div>
                 </div>
             </div>
-       
 
 
-    <!-- Modal 1 -->
-    <div id="createAppModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeModalBtn">&times;</span>
-            <form method="post" action="/integracao/create">
-                <h2>Criar Botao</h2>
-                <div>
-                    <label for="appName">Nome</label>
-                    <input type="text" id="nome" name="name" required>
-                </div>
-                <div>
-                    <label for="destination">Redirecionar apos Pagamento para:</label>
-                    <input type="text" id="destination" name="destination" required>
-                </div>
-                <div>
-                    <label for="secret">Client Secret:</label>
-                    <input type="password" id="secret" name="secret" required>
-                </div>
-                <p>Atenção, Nao feche esse pagina em Execução</p>
-                <button type="submit">Create</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Modal 2 -->
-    <div id="createAppModal2" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeModalBtn2">&times;</span>
-            <form id="form1" method="POST" action="integracao/activate">
-                <h2>Ativar</h2>
-                <div>
-                    <label for="appName">Autorização</label>
-                    <input type="text" id="tokeny" name="tokeny" required>
-                </div>
-                <p><%= button.message %></p>
-                <button type="submit">Submeter</button>
-            </form>
-        </div>
-    </div>
-
-    <script>
-        // Modal 1
-        var modal1 = document.getElementById("createAppModal");
-        var btn1 = document.getElementById("createAppBtn");
-        var span1 = document.getElementById("closeModalBtn");
-
-        if (btn1) {
-            btn1.onclick = function () {
-                modal1.style.display = "block";
-            }
-        }
-
-        span1.onclick = function () {
-            modal1.style.display = "none";
-        }
-
-        window.onclick = function (event) {
-            if (event.target == modal1) {
-                modal1.style.display = "none";
-            }
-        }
-
-        // Modal 2
-        var modal2 = document.getElementById("createAppModal2");
-        var btn2 = document.getElementById("createAppBtn2");
-        var span2 = document.getElementById("closeModalBtn2");
-
-        if (btn2) {
-            btn2.onclick = function () {
-                modal2.style.display = "block";
-            }
-        }
-
-        span2.onclick = function () {
-            modal2.style.display = "none";
-        }
-
-        window.onclick = function (event) {
-            if (event.target == modal2) {
-                modal2.style.display = "none";
-            }
-        }
-    </script>
-       
 
             <!-- Dataloader-->
             <script src="dataloader.js"></script>
@@ -902,18 +632,7 @@
                 });
             </script>
 
-            <script>
-                function toggleSubMenu(event, submenuId) {
-                    event.preventDefault(); // Impede o link de seguir para href="#"
 
-                    var submenu = document.getElementById(submenuId);
-                    if (submenu.style.display === "block") {
-                        submenu.style.display = "none";
-                    } else {
-                        submenu.style.display = "block";
-                    }
-                }
-            </script>
 </body>
 
 </html>

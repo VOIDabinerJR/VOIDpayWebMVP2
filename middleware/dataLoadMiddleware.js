@@ -16,11 +16,11 @@ const loadUserData = async (req, res, next) => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ token })
             });
-
+ 
             const data = await response.json();
             console.log(data)
 
-            if (response.status === 200) {
+            if (response.status === 200) { 
                 req.data =data
                 next()
                

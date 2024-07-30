@@ -76,17 +76,22 @@ router.get('/notfound', requireAuth, loadUserData,(req, res) => {
 
 
 router.get('/integracaoSimples', requireAuth,loadUserData, (req, res) => {
-    res.sendFile(path.join(__dirname, '../', 'integracaoSimples.html'));
+
+    res.render('integracaoSimples', {token: data.firstname})
+    //res.sendFile(path.join(__dirname, '../', 'integracaoSimples.html'));
 });
 
 router.get('/integracao', requireAuth, loadUserData,(req, res) => {
-    res.sendFile(path.join(__dirname, '../', 'integracao.html'));
+    const data = req.data
+    console.log(data.data)
+    res.render('integracao', {button: data.button})
+   // res.sendFile(path.join(__dirname, '../', 'integracao.html'));
 });
 
 router.get('/app', requireAuth, loadUserData,(req, res) => {
     res.sendFile(path.join(__dirname, '../', 'appCredencials.html')); 
 });
-
+ 
  
 
 module.exports = router;
