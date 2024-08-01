@@ -11,17 +11,17 @@ const loadUserData = async (req, res, next) => {
 
 
         try {
-            const response = await fetch('https://voidpayservermvp2.onrender.com/auth/loaddata', {
+            const response = await fetch(`${process.env.URL}/auth/loaddata`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ token })
             });
  
             const data = await response.json();
-            console.log(data)
+            console.log(data.user)
 
             if (response.status === 200) { 
-                req.data =data
+                req.data =data.user
                 next()
                
             } else {

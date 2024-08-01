@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>VOIDpay - Dashboard</title>
+    <title>VOIDpay - Wallet</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -104,7 +104,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter"><%=notification.notificationCount%> +</span>
+                                <span class="badge badge-danger badge-counter">3+</span>
                             </a>
                             <!-- Dropdown - Alerts -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -112,14 +112,39 @@
                                 <h6 class="dropdown-header">
                                     Alerts Center
                                 </h6>
-                                <% message.forEach(message => { %>
-                                    <a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="font-weight-bold">
-                                            <div class="text-truncate"><%= message.text %></div>
-                                            <div class="small text-gray-500"><%= message.sender %> · <%= message.time %></div>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
                                         </div>
-                                    </a>
-                                <% }); %>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 12, 2019</div>
+                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-success">
+                                            <i class="fas fa-donate text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 7, 2019</div>
+                                        $290.29 has been deposited into your account!
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-warning">
+                                            <i class="fas fa-exclamation-triangle text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 2, 2019</div>
+                                        Spending Alert: We've noticed unusually high spending for your account.
+                                    </div>
+                                </a>
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                             </div>
                         </li>
@@ -130,7 +155,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-envelope fa-fw"></i>
                                 <!-- Counter - Messages -->
-                                <span class="badge badge-danger badge-counter"><%=notification.notificationCount%> </span>
+                                <span class="badge badge-danger badge-counter">7</span>
                             </a>
                             <!-- Dropdown - Messages -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -138,18 +163,53 @@
                                 <h6 class="dropdown-header">
                                     Message Center
                                 </h6>
-
-
-                                <% message.forEach(message => { %>
-                                    <a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="font-weight-bold">
-                                            <div class="text-truncate"><%= message.text %></div>
-                                            <div class="small text-gray-500"><%= message.sender %> · <%= message.time %></div>
-                                        </div>
-                                    </a>
-                                <% }); %>
-                               
-                                 </div>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div class="font-weight-bold">
+                                        <div class="text-truncate">Hi there! I am wondering if you can help me with a
+                                            problem I've been having.</div>
+                                        <div class="small text-gray-500">Emily Fowler · 58m</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">I have the photos that you ordered last month, how
+                                            would you like them sent to you?</div>
+                                        <div class="small text-gray-500">Jae Chun · 1d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="...">
+                                        <div class="status-indicator bg-warning"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Last month's report looks great, I am very happy with
+                                            the progress so far, keep up the good work!</div>
+                                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                                            alt="...">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone
+                                            told me that people say this to all dogs, even if they aren't good...</div>
+                                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                            </div>
                         </li>
 
                         <div class="topbar-divider d-none d-sm-block"></div>
@@ -161,20 +221,27 @@
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
                                     <%=usuarios[0].name %>
                                 </span>
-                                <img class="img-profile rounded-circle" src="../img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="/profile">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Perfil
+                                    Profile
                                 </a>
-                                
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Sair
+                                    Logout
                                 </a>
                             </div>
                         </li>
@@ -189,26 +256,12 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Olá, <%=usuarios[0].firstName%> ! 
+                        <h1 class="h3 mb-0 text-gray-800">Dashboard
                         </h1>
                         <a onclick="window.print()" href="#"
                             class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Relatorio</a>
                     </div>
-<!-- Collapsable Card Example -->
-<div class="card shadow mb-4">
-    <!-- Card Header - Accordion -->
-    <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse"
-        role="button" aria-expanded="true" aria-controls="collapseCardExample">
-        <h6 class="m-0 font-weight-bold text-primary">Ação Necessária: Conclusão do Cadastro</h6>
-    </a>
-    <!-- Card Content - Collapse -->
-    <div class="collapse show" id="collapseCardExample">
-        <div class="card-body">
-            Para garantir a sua segurança, é necessário que você <a href="/profile"><strong>conclua o seu cadastro</strong></a>. Por favor, finalize o processo de registro para que possamos proteger suas informações e oferecer uma experiência mais segura e personalizada.
-        </div>
-    </div>
-</div>
 
                     <!-- Content Row -->
                     <div class="row">
@@ -222,8 +275,7 @@
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Ganhos (Monthly)</div>
                                             <div id="ffc" class="ganhosmensais h5 mb-0 font-weight-bold text-gray-800">
-                                                MZN  <%=wallet[0].balance%>
-                                            </div>
+                                                $ <%=wallet[0].balance%></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -241,9 +293,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Ganhos (Annual)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"> MZN 
-                                                <%=wallet[0].balance%>
-                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">  $ <%=wallet[0].balance%></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -259,21 +309,18 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Taxa de
-                                                Checkout
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Taxa de Checkout
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div id="percentagem"
-                                                        class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                                        <%=wallet[0].balance%> %
-                                                    </div>
+                                                        class="h5 mb-0 mr-3 font-weight-bold text-gray-800">   <%=wallet[0].balance%> %</div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="progress progress-sm mr-2">
                                                         <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width:  <%=wallet[0].balance%> %" aria-valuenow="50"
-                                                            aria-valuemin="0" aria-valuemax="100"></div>
+                                                            style="width:  <%=wallet[0].balance%> %" aria-valuenow="50" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -293,10 +340,8 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Pagamentos Pendentes</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <%=wallet[0].balance%>
-                                            </div>
+                                               Pagamentos Pendentes</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><%=wallet[0].balance%></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -385,7 +430,7 @@
                         </div>
                     </div>
 
-
+                    
 
 
                     <!-- DataTales Example -->
@@ -398,7 +443,7 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th> </th>
+                                            <th>ID</th>
                                             <th>Products</th>
                                             <th>Description</th>
                                             <th>Customer Name</th>
@@ -409,11 +454,31 @@
                                             <th>Currency</th>
                                             <th>Exchange Rate</th>
                                             <th>Button Token</th>
+                                            <th>User ID</th>
+                                            <th>Wallet ID</th>
                                             <th>Created At</th>
                                             <th>Updated At</th>
                                         </tr>
                                     </thead>
-                                  
+                                    <tfoot>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Products</th>
+                                            <th>Description</th>
+                                            <th>Customer Name</th>
+                                            <th>Customer Email</th>
+                                            <th>Payment Method</th>
+                                            <th>Order Status</th>
+                                            <th>Total Amount</th>
+                                            <th>Currency</th>
+                                            <th>Exchange Rate</th>
+                                            <th>Button Token</th>
+                                            <th>User ID</th>
+                                            <th>Wallet ID</th>
+                                            <th>Created At</th>
+                                            <th>Updated At</th>
+                                        </tr>
+                                    </tfoot>
                                     <tbody>
                                         <% orders.forEach(function(order) { %>
                                             <tr>
@@ -451,6 +516,12 @@
                                                     <%= order.buttonToken %>
                                                 </td>
                                                 <td>
+                                                    <%= order.userId %>
+                                                </td>
+                                                <td>
+                                                    <%= order.walletId %>
+                                                </td>
+                                                <td>
                                                     <%= order.createdAt %>
                                                 </td>
                                                 <td>
@@ -463,180 +534,163 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Content Row -->
-                    <div class="row">
+<!-- Content Row -->
+<div class="row">
 
-                        <!-- Content Column -->
-                        <div class="col-lg-6 mb-4">
+    <!-- Content Column -->
+    <div class="col-lg-6 mb-4">
 
-                            <!-- Project Card Example -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Conversões</h6>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="small font-weight-bold">Server Migration <span
-                                            class="float-right">20%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 20%"
-                                            aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Sales Tracking <span
-                                            class="float-right">40%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 40%"
-                                            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Customer Database <span
-                                            class="float-right">60%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar" role="progressbar" style="width: 60%"
-                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Payout Details <span
-                                            class="float-right">80%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: 80%"
-                                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Account Setup <span
-                                            class="float-right">Complete!</span></h4>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 100%"
-                                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
+        <!-- Project Card Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Conversões</h6>
+            </div>
+            <div class="card-body">
+                <h4 class="small font-weight-bold">Server Migration <span
+                        class="float-right">20%</span></h4>
+                <div class="progress mb-4">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 20%"
+                        aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <h4 class="small font-weight-bold">Sales Tracking <span
+                        class="float-right">40%</span></h4>
+                <div class="progress mb-4">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 40%"
+                        aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <h4 class="small font-weight-bold">Customer Database <span
+                        class="float-right">60%</span></h4>
+                <div class="progress mb-4">
+                    <div class="progress-bar" role="progressbar" style="width: 60%"
+                        aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <h4 class="small font-weight-bold">Payout Details <span
+                        class="float-right">80%</span></h4>
+                <div class="progress mb-4">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 80%"
+                        aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <h4 class="small font-weight-bold">Account Setup <span
+                        class="float-right">Complete!</span></h4>
+                <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%"
+                        aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+        </div>
 
-                            <!-- Color System -->
-                            <div class="row">
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-primary text-white shadow">
-                                        <div class="card-body">
-                                            Primary
-                                            <div class="text-white-50 small">#4e73df</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-success text-white shadow">
-                                        <div class="card-body">
-                                            Success
-                                            <div class="text-white-50 small">#1cc88a</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-info text-white shadow">
-                                        <div class="card-body">
-                                            Info
-                                            <div class="text-white-50 small">#36b9cc</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-warning text-white shadow">
-                                        <div class="card-body">
-                                            Warning
-                                            <div class="text-white-50 small">#f6c23e</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-danger text-white shadow">
-                                        <div class="card-body">
-                                            Danger
-                                            <div class="text-white-50 small">#e74a3b</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-secondary text-white shadow">
-                                        <div class="card-body">
-                                            Secondary
-                                            <div class="text-white-50 small">#858796</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-light text-black shadow">
-                                        <div class="card-body">
-                                            Light
-                                            <div class="text-black-50 small">#f8f9fc</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-dark text-white shadow">
-                                        <div class="card-body">
-                                            Dark
-                                            <div class="text-white-50 small">#5a5c69</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-lg-6 mb-4">
-
-                            <!-- Illustrations -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Informações Uteis</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                            src="img/undraw_posting_photo.svg" alt="...">
-                                    </div>
-                                    <p>Add some quality, svg illustrations to your project courtesy of <a
-                                            target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a
-                                        constantly updated collection of beautiful svg images that you can use
-                                        completely free and without attribution!</p>
-                                    <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on
-                                        unDraw &rarr;</a>
-                                </div>
-                            </div>
-
-                            <!-- Approach -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
-                                </div>
-                                <div class="card-body">
-                                    <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce
-                                        CSS bloat and poor page performance. Custom CSS classes are used to create
-                                        custom components and custom utility classes.</p>
-                                    <p class="mb-0">Before working with this theme, you should become familiar with the
-                                        Bootstrap framework, especially the utility classes.</p>
-                                </div>
-                            </div>
-
-                        </div>
+        <!-- Color System -->
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card bg-primary text-white shadow">
+                    <div class="card-body">
+                        Primary
+                        <div class="text-white-50 small">#4e73df</div>
                     </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="card bg-success text-white shadow">
+                    <div class="card-body">
+                        Success
+                        <div class="text-white-50 small">#1cc88a</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="card bg-info text-white shadow">
+                    <div class="card-body">
+                        Info
+                        <div class="text-white-50 small">#36b9cc</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="card bg-warning text-white shadow">
+                    <div class="card-body">
+                        Warning
+                        <div class="text-white-50 small">#f6c23e</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="card bg-danger text-white shadow">
+                    <div class="card-body">
+                        Danger
+                        <div class="text-white-50 small">#e74a3b</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="card bg-secondary text-white shadow">
+                    <div class="card-body">
+                        Secondary
+                        <div class="text-white-50 small">#858796</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="card bg-light text-black shadow">
+                    <div class="card-body">
+                        Light
+                        <div class="text-black-50 small">#f8f9fc</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="card bg-dark text-white shadow">
+                    <div class="card-body">
+                        Dark
+                        <div class="text-white-50 small">#5a5c69</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-lg-6 mb-4">
+
+        <!-- Illustrations -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Informações Uteis</h6>
+            </div>
+            <div class="card-body">
+                <div class="text-center">
+                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                        src="img/undraw_posting_photo.svg" alt="...">
+                </div>
+                <p>Add some quality, svg illustrations to your project courtesy of <a
+                        target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a
+                    constantly updated collection of beautiful svg images that you can use
+                    completely free and without attribution!</p>
+                <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on
+                    unDraw &rarr;</a>
+            </div>
+        </div>
+
+        <!-- Approach -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
+            </div>
+            <div class="card-body">
+                <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce
+                    CSS bloat and poor page performance. Custom CSS classes are used to create
+                    custom components and custom utility classes.</p>
+                <p class="mb-0">Before working with this theme, you should become familiar with the
+                    Bootstrap framework, especially the utility classes.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 
                 </div>
 
                 <!-- /.container-fluid -->
-                 
-                            <!-- Bar Chart -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="chart-bar">
-                                        <canvas id="myBarChart"></canvas>
-                                    </div>
-                                    <hr>
-                                    Styling for the bar chart can be found in the
-                                    <code>/js/demo/chart-bar-demo.js</code> file.
-                                </div>
-                            </div>
-
-                        
 
 
             </div>
@@ -647,7 +701,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; VOIDpay 2024</span>
+                        <span>Copyright &copy; Your Website 2021</span>
                     </div>
                 </div>
             </footer>
@@ -663,8 +717,6 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-    <div id="areaChart-data" data-values="[95, 0, 5,0,0,0,0,0,0,0,0,0]"></div>
-    <div id="pieChart-data" data-values="[0, 0, 100]"></div>
 
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -689,11 +741,9 @@
 
 
 
-   
-    
-    <script>
-
-  </script>
+    <!-- Dataloader-->
+    <script src="dataloader.js"></script>
+    <script src="dataloader2.js"></script>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -706,12 +756,11 @@
     <script src="js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="../vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
-    <script src="js/demo/chart-bar-demo.js"></script>
 
     <script src="dashboad.js"></script>
 

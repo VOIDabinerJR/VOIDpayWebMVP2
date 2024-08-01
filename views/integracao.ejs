@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="utf-8">
@@ -275,7 +274,7 @@
             border-radius: 5px;
             overflow-x: auto;
             margin-left: 20px;
-            max-width: 45%;
+            max-width: 50%;
         }
 
         .code-block pre {
@@ -290,8 +289,19 @@
             text-align: center;
             border-radius: 5px;
             margin: 20px 0;
+           
+
+        }
+        .previewg {
+          
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin: 20px 0;
             max-width: 45%;
             margin-left: 55%;
+        
 
         }
     </style>
@@ -307,7 +317,7 @@
 
            
             <script>
-                fetch('navbar.html')
+                fetch('navbar.ejs')
                     .then(response => response.text())
                     .then(data => {
                         document.getElementById('accordionSidebar').innerHTML = data;
@@ -493,7 +503,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= usuarios[0].username %></span>
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -555,31 +565,13 @@
                                     <option value="nodejs">Node.js</option>
                                 </select>
                             </div>
-                            <div class="credentials-container">
-                                <span>Credentials</span>
-                                <div class="credentials">
-                                    <span>App: </span>
-                                    <select>
-                                        <option value="default">Default Application</option>
-                                    </select>
-                                </div>
-                                <div class="credentials">
-                                    <span>Client ID: </span>
-                                    <span>AeKYl69ObEnrVWoi10kQi...</span>
-                                </div>
-                            </div>
+                            
                         </div>
 
-                        <h1>Integrate VOIDpay Checkout</h1>
-                        <p>Before beginning your integration, you need to <a href="#">set up your development
-                                environment</a>. You can refer to this <a href="#">flow diagram</a>, and <a
-                                href="#">watch a video</a> demonstrating how to integrate VOIDpay standard Checkout.</p>
-                        <p>Start your integration by grabbing the sample code from VOIDpay GitHub repo, or visiting the
-                            VOIDpay GitHub Codespace. <a href="#">Read the Codespaces guide</a> for more information.
-                            You
-                            can also use Postman to explore and test VOIDpay APIs. <a href="#">Read the Postman
-                                Guide</a>
-                            for more information.</p>
+                        <h1>Integrar o Checkout VOIDpay</h1>
+                        <p>Antes de iniciar sua integração, você precisa certificar-se de <a href="/profile">terminar de configurar perfil</a>. Você pode se referir a este <a href="flow">diagrama de fluxo</a> e <a href="/tutorials">assistir a um vídeo</a> que demonstra como integrar o Checkout padrão VOIDpay.</p>
+                        <p>Comece sua integração pegando o código de exemplo no repositório VOIDpay GitHub ou visitando o VOIDpay GitHub Codespace. <a href="#">Leia o guia de Codespaces</a> para mais informações.</p>
+                    
                         <div class="button-container">
 
                             <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Baixar sample</a>
@@ -587,121 +579,72 @@
                             <a href="#"> <i class="fa fa-envelope" aria-hidden="true"></i> Pedir Ajuda</a>
                         </div>
                         <div class="section">
-                            <h2>1. Integrate front end</h2>
-                            <p>Set up your front end to integrate standard checkout payments.</p>
-                            <h3>Front-end process</h3>
-                            <ul>
-                                <li>Your app shows the VOIDpay checkout buttons.</li>
-                                <li>Your app calls server endpoints to create the order and capture payment.</li>
-                            </ul>
+                           
                             <div class="content">
+                                
                                 <div class="text-section">
-                                    <h3>Front-end code</h3>
-                                    <p>This example uses a <a href="#">checkout.html</a> file to show how to set up the
-                                        front end to integrate standard payments.</p>
+                                    <h2>1. Integrar o front-end</h2>
+                                    <p>Configure seu front-end para integrar pagamentos de checkout padrão.</p>
+                                    <h3>Processo de front-end</h3>
+                                    <ul>
+                                        <li>Seu aplicativo mostra os botões de checkout VOIDpay.</li>
+                                        <li>Seu aplicativo chama os endpoints do servidor para criar o pedido e capturar o pagamento.</li>
+                                    </ul>
+                                    <h3>Código de front-end</h3>
+                                    <p>Este exemplo usa uma pagina <a href="https://voidpayservermvp2.onrender.com/sdk/test">checkout.</a> para mostrar como configurar o front-end para integrar pagamentos padrão.</p>
+                                    
                                 </div>
                                 <div class="code-block">
                                     <pre><code>
-        &lt;!DOCTYPE html&gt;
-        &lt;html lang="pt-br"&gt;
-        &lt;head&gt;
-            &lt;meta charset="UTF-8"&gt;
-            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-            &lt;title&gt;Exemplo de Botão Void Pay&lt;/title&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-        &lt;div id="void-button-container" name="VOID-cfbe5181-57c2-4a9a-b4fd-4a31bffd1fdd"&gt;&lt;/div&gt;
-        &lt;p id="result-message"&gt;&lt;/p&gt;
-        &lt;!-- Replace the "test" client-id value with your client-id --&gt;
-        &lt;script src="https://voidabinerjr.github.io/sdk/s2.js"&gt;&lt;/script&gt;
-        &lt;script src="app.js"&gt;&lt;/script&gt;
-        &lt;/body&gt;
-        &lt;/html&gt;
-                                    </code></pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-br"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width"&gt;
+    &lt;title&gt;Exemplo de Botão Void Pay&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="void-button-container"
+    name="VOID-cfbe5181-57c2-4a9a-b4fd-4a31bffd1fdd"&gt;&lt;/div&gt;
+&lt;p id="result-message"&gt;&lt;/p&gt;
+&lt;!-- Replace the client-id value with your client-id --&gt;
+&lt;script 
+    src="https://voidabinerjr.github.io/sdk/s2.js"&gt;&lt;/script&gt;
+&lt;script src="app.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt; </code></pre>
                                 </div>
                             </div>
                         </div>
-                        <div class="preview">
-                            Preview
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="container">
-                        <div>
-                            <input type="text" id="tokenInput" placeholder="Enter Token"
-                                value="public-key-dhsmaksok123i" />
-                        </div>
-                        <div>
-                            <button onclick="runFunction()">Run Function</button>
-                        </div>
-                    </div>
-
-                    <script>
-                        function runFunction() {
-                            const token = document.getElementById('tokenInput').value;
-                            // Add your function code here
-                            alert(`Token: ${token}`);
-                        }
-                    </script>
-
-
-
-                    <div>
-                        <input type="text" id="product-id" name="product-id" required>
-                        <input type="number" id="quantity" name="quantity" required>
-                        <div id="void-button-container" name="VOID-cfbe5181-57c2-4a9a-b4fd-4a31bffd1fdd"></div>
-
-                        <script src="https://voidabinerjr.github.io/sdk/s2.js"></script>
-
-                        <div id="void-script-container"></div>
-
-                    </div>
-
-
-
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">APPS</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Button name</th>
-                                            <th>Client ID</th>
-                                            <th>Button ID</th>
-                                            <th>Created date</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Button name</th>
-                                            <th>Client ID</th>
-                                            <th>Button ID</th>
-                                            <th>Created date</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <% button.forEach(app => { %>
-                                            <tr>
-                                                <td><a href="#"><%= button.name %></a></td>
-                                                <td><%= button.buttonTokken %></td>
-                                                <td><%= button.destination %></td>
-                                                <td><%= button.createdAt %></td>
-                                            </tr>
-                                        <% }) %>
-
-                                    </tbody>
-                                </table>
+                        <div class="previewg" style="background: #121c2d;">
+                            <div class="preview">
+                                Preview
+                            </div>
+                            <div class="preview" style="background: #ffffff;">
+                                <input type="text" id="product-id" name="product-id" required>
+                                <input type="number" id="quantity" name="quantity" required>
+                                <div id="void-button-container" name="VOID-cfbe5181-57c2-4a9a-b4fd-4a31bffd1fdd"></div>
+        
+                                <script src="https://voidabinerjr.github.io/sdk/s2.js"></script>
+        
+                                <div id="void-script-container"></div>
+        
                             </div>
                         </div>
+    
+
                     </div>
 
+
+
+                   
+
+
+
+                   
+
+
+             
 
 
                     <!-- End of Main Content -->

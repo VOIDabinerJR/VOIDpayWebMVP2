@@ -179,7 +179,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <script>
-                fetch('navbar.html')
+                fetch('navbar.ejs')
                     .then(response => response.text())
                     .then(data => {
                         document.getElementById('accordionSidebar').innerHTML = data;
@@ -363,7 +363,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=usuarios[0].username%></span>
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -434,12 +434,12 @@
                                 <div>
                                     <label for="account">Conta:</label>
                                     <select id="account" name="account">
-                                        <option value="<%=user.email%>"><%=user.email%> (MZ)</option>
+                                        <option value="<%=usuarios[0].email%>"><%=usuarios[0].email%> (MZ)</option>
                                     </select>
                                 </div>
                                 <p>Users are redirected to this URL after live transactions. Allow up to three hours for
                                     the change to take effect.</p>
-                                <p>By clicking the button below, you agree to <a href="#">VOIDpay</a>
+                                <p>By clicking the button below, you agree to <a href="/privacy">VOIDpay</a>
                                     (US accounts only).</p>
                                 <button type="submit">Create</button>
                             </form>
