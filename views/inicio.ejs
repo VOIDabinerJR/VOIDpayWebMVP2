@@ -161,8 +161,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
-                                            alt="...">
+                                        <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div class="font-weight-bold">
@@ -173,8 +172,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
-                                            alt="...">
+                                        <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
                                     <div>
@@ -185,8 +183,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
-                                            alt="...">
+                                        <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
                                     <div>
@@ -218,8 +215,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -250,69 +246,111 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div style="max-width: 35%;" class="container-fluid">
+                <div class="container-fluid">
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Olá, <%usuarios%> ! Vamos Começar</h1>
-                    
+
                     <div class="card mb-4 py-3 border-bottom-warning">
                         <div class="card-body">
-                            Para qualquer dúvida, você pode assistir ao nosso tutorial <a href="#">clicando aqui</a> ou falar conosco <a href="#">clicando aqui</a>.
+                            Para qualquer dúvida, você pode assistir ao nosso tutorial <a href="#">clicando aqui</a> ou
+                            falar conosco <a href="#">clicando aqui</a>.
                         </div>
                     </div>
-                    <div class="card mb-4 py-3 border-bottom-primary">
+                  
+
+
+                    <div class="etapas" style=" padding: 10%; width: 100%;">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Progresso
+                            </div>
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <div id="percentagem"
+                                        class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                      %
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="progress progress-sm mr-2">
+                                        <div class="progress-bar bg-info" role="progressbar"
+                                            style="width:  10%" aria-valuenow="50"
+                                            aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="display: flex; justify-content: space-between;">
+                            <div class="card mb-4 py-3 border-bottom-secondary"
+                                style="width: 30%; align-items: center; text-align: center;  padding: 20px;">
+                                <p>Cadastrar <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i></p>
+                                <div class="card-body"  style="display: flex; flex-direction: column; align-items: center;">
+                                    Primeiro, conclua seu cadastro.
+                                </div>
+                                <a href="/profile" class="btn btn-primary btn-icon-split" style="width: 70%;">
+                                    <span class="text">Cadastrar</span>
+                                </a>
+                            </div>
+
+                            <div class="card mb-4 py-3 border-bottom-secondary"
+                               
+                            style="width: 30%; align-items: center; text-align: center;  padding: 20px;">
+                                <p>Criar App <i class="fas fa-mouse-pointer fa-sm fa-fw mr-2 text-gray-400" style="margin-left: 5px;"></i></p>
+                                <div class="card-body"  style="display: flex; flex-direction: column; align-items: center;">
+                                    Crie um aplicativo para gerir botões.
+                                </div>
+                                <a href="/app" class="btn btn-primary btn-icon-split" style="width: 70%;">
+                                    <span class="text">Criar</span>
+                                </a>
+                            </div>
+                            <div class="card mb-4 py-3 border-bottom-info" 
+                            style="width: 30%; align-items: center; text-align: center;  padding: 20px;">
+                                <p>Criar botão <i class="fas fa-mouse-pointer fa-sm fa-fw mr-2 text-gray-400" style="margin-left: 5px;"></i></p>
+                                <div class="card-body" style="display: flex; flex-direction: column; align-items: center;" >
+                                    Crie um aplicativo para gerir botões.
+                                </div>
+                                <a href="/app" class="btn btn-primary btn-icon-split" style="width: 70%;">
+                                    <span class="text">Criar</span>
+                                </a>
+                            </div>
+                            
+
+
+
+                        </div>
+                        <div class="row" style="display: flex; justify-content: space-between;">
+                            <div class="card mb-4 py-3 border-bottom-info" style="width: 23%; margin: 10px; text-align: center; padding: 20px;">
+                                <div class="card-body" style="display: flex; flex-direction: column; align-items: center;">
+                                    <i class="fas fa-code card-icon" style="font-size: 2em; margin-bottom: 10px;"></i>
+                                    Integre na sua loja/landing page HTML+CSS+JS <a href="#" style="display: block; margin-top: 10px; color: #17a2b8;">clicando aqui</a>.
+                                </div>
+                            </div>
                        
-                        <div class="card-body">
-                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                            <p>aaa</p>
-                            Primeiro, conclua seu cadastro <a href="#">clicando aqui</a>.
-                            <a href="#" class="btn btn-primary btn-icon-split">
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-flag"></i>
-                                </span>
-                                <span class="text">Split Button Primary</span>
-                            </a>
+
+                            <div class="card mb-4 py-3 border-bottom-info" style="width: 23%; margin: 10px; text-align: center; padding: 20px;">
+                                <div class="card-body" style="display: flex; flex-direction: column; align-items: center;">
+                                    <i class="fab fa-node-js card-icon" style="font-size: 2em; margin-bottom: 10px;"></i>
+                                    Integre na sua loja/landing page Node.js <a href="#" style="display: block; margin-top: 10px; color: #17a2b8;">clicando aqui</a>.
+                                </div>
+                            </div>
+                            <div class="card mb-4 py-3 border-bottom-info" style="width: 23%; margin: 10px; text-align: center; padding: 20px;">
+                                <div class="card-body" style="display: flex; flex-direction: column; align-items: center;">
+                                    <i class="fab fa-php card-icon" style="font-size: 2em; margin-bottom: 10px;"></i>
+                                    Integre na sua loja/landing page PHP <a href="#" style="display: block; margin-top: 10px; color: #17a2b8;">clicando aqui</a>.
+                                </div>
+                            </div>
+
+                            <div class="card mb-4 py-3 border-bottom-info" style="width: 23%; margin: 10px; text-align: center; padding: 20px;">
+                                <div class="card-body" style="display: flex; flex-direction: column; align-items: center;">
+                                    <i class="fas fa-shopping-cart card-icon" style="font-size: 2em; margin-bottom: 10px;"></i>
+                                    Integração com WooCommerce, WordPress, Shopify, Wix <a href="#" style="display: block; margin-top: 10px; color: #17a2b8;">clicando aqui</a>.
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="card mb-4 py-3 border-bottom-secondary">
-                        <div class="card-body">
-                            Crie um aplicativo <a href="#">clicando aqui</a>.
-                        </div>
-                    </div>
-                    
-                    <div class="card mb-4 py-3 border-bottom-success">
-                        <div class="card-body">
-                            Crie um botão <a href="#">clicando aqui</a>.
-                        </div>
-                    </div>
-                    
-                    <div class="card mb-4 py-3 border-bottom-info">
-                        <div class="card-body">
-                            Integre na sua loja/landing page HTML+CSS+JS <a href="#">clicando aqui</a>.
-                        </div>
-                    </div>
-                    
-                    <div class="card mb-4 py-3 border-bottom-info">
-                        <div class="card-body">
-                            Integre na sua loja/landing page Node.js <a href="#">clicando aqui</a>.
-                        </div>
-                    </div>
-                    
-                    <div class="card mb-4 py-3 border-bottom-info">
-                        <div class="card-body">
-                            Integre na sua loja/landing page PHP <a href="#">clicando aqui</a>.
-                        </div>
-                    </div>
-                    
-                    <div class="card mb-4 py-3 border-bottom-info">
-                        <div class="card-body">
-                            Integração com WooCommerce, WordPress, Shopify, Wix <a href="#">clicando aqui</a>.
-                        </div>
-                    </div>
-                    
-                    
-                    
+
+
+
 
 
                 </div>

@@ -159,7 +159,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                                    <%=usuarios[0].name %>
+                                    <%=usuarios[0].firstname %>
                                 </span>
                                 <img class="img-profile rounded-circle" src="../img/undraw_profile.svg">
                             </a>
@@ -186,10 +186,10 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
+                    
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Olá, <%=usuarios[0].firstName%> ! 
+                        <h1 class="h3 mb-0 text-gray-800">Olá, <%=usuarios[0].firstname%> ! 
                         </h1>
                         <a onclick="window.print()" href="#"
                             class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
@@ -406,10 +406,6 @@
                                             <th>Payment Method</th>
                                             <th>Order Status</th>
                                             <th>Total Amount</th>
-                                            <th>Currency</th>
-                                            <th>Exchange Rate</th>
-                                            <th>Button Token</th>
-                                            <th>Created At</th>
                                             <th>Updated At</th>
                                         </tr>
                                     </thead>
@@ -440,18 +436,6 @@
                                                 </td>
                                                 <td>
                                                     <%= order.totalAmount %>
-                                                </td>
-                                                <td>
-                                                    <%= order.currency %>
-                                                </td>
-                                                <td>
-                                                    <%= order.exchangeRate %>
-                                                </td>
-                                                <td>
-                                                    <%= order.buttonToken %>
-                                                </td>
-                                                <td>
-                                                    <%= order.createdAt %>
                                                 </td>
                                                 <td>
                                                     <%= order.updatedAt %>
@@ -508,73 +492,7 @@
                                 </div>
                             </div>
 
-                            <!-- Color System -->
-                            <div class="row">
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-primary text-white shadow">
-                                        <div class="card-body">
-                                            Primary
-                                            <div class="text-white-50 small">#4e73df</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-success text-white shadow">
-                                        <div class="card-body">
-                                            Success
-                                            <div class="text-white-50 small">#1cc88a</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-info text-white shadow">
-                                        <div class="card-body">
-                                            Info
-                                            <div class="text-white-50 small">#36b9cc</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-warning text-white shadow">
-                                        <div class="card-body">
-                                            Warning
-                                            <div class="text-white-50 small">#f6c23e</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-danger text-white shadow">
-                                        <div class="card-body">
-                                            Danger
-                                            <div class="text-white-50 small">#e74a3b</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-secondary text-white shadow">
-                                        <div class="card-body">
-                                            Secondary
-                                            <div class="text-white-50 small">#858796</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-light text-black shadow">
-                                        <div class="card-body">
-                                            Light
-                                            <div class="text-black-50 small">#f8f9fc</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-dark text-white shadow">
-                                        <div class="card-body">
-                                            Dark
-                                            <div class="text-white-50 small">#5a5c69</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                           
 
                         </div>
 
@@ -587,8 +505,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="text-center">
-                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                            src="img/undraw_posting_photo.svg" alt="...">
+                                        <img src="" alt="">
                                     </div>
                                     <p>Add some quality, svg illustrations to your project courtesy of <a
                                             target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a
@@ -663,7 +580,7 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-    <div id="areaChart-data" data-values="[95, 0, 5,0,0,0,0,0,0,0,0,0]"></div>
+    <div id="areaChart-data" data-values="[0, 0, 0,0,0,0,0,0,0,0,0,0]"></div>
     <div id="pieChart-data" data-values="[0, 0, 100]"></div>
 
     <!-- Logout Modal-->

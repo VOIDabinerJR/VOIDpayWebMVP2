@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="utf-8">
@@ -289,11 +290,12 @@
             text-align: center;
             border-radius: 5px;
             margin: 20px 0;
-           
+
 
         }
+
         .previewg {
-          
+
             color: #fff;
             padding: 20px;
             text-align: center;
@@ -301,7 +303,7 @@
             margin: 20px 0;
             max-width: 45%;
             margin-left: 55%;
-        
+
 
         }
     </style>
@@ -315,7 +317,7 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-           
+
             <script>
                 fetch('navbar.ejs')
                     .then(response => response.text())
@@ -325,7 +327,7 @@
             </script>
 
         </ul>
-       
+
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -503,7 +505,9 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= usuarios[0].username %></span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                                    <%= usuarios[0].username %>
+                                </span>
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -541,44 +545,172 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Integração Simples</h1>
 
-                        <button class="create-app" id="createAppBtn">Novo Botão</button>
-                        <button class="create-app" id="createAppBtn2">Ativar</button>
-                    </div>
-
-                    <div class="container">
-                        <div class="header">
-                            API Credentials
-                            <div>Viewing sandbox API credentials. <a href="#">View live credentials</a>.</div>
-                            <div class="sandbox-mode">You're in sandbox mode.</div>
                         </div>
+
+                    <div class="container" style="margin-left: 10%;">
+                        <div class="header">
+                            Credenciais da API
+                            <div>Para efeitos de TESTE recomedamos que crie uma APP DE TESTE. </div>
+                            para estar no modo sandbox.
+                        </div>
+                        
 
                         <div class="header-options">
                             <div>
                                 <label for="frontend">Frontend:</label>
                                 <select id="frontend">
                                     <option value="html">HTML</option>
+                                    <option value="html">XML</option>
+
+                                    <option value="nodejs">WordPress</option>
+                                    <option value="nodejs">WooCommerce</option>
+                                    <option value="nodejs">Shopify</option>
+                                    <option value="nodejs">Wix</option>
                                 </select>
                             </div>
                             <div>
                                 <label for="backend">Backend:</label>
                                 <select id="backend">
-                                    <option value="nodejs">Node.js</option>
+                                    <option  value="nodejs"><a href="#integracaoNodejs">Node.js</a> </option>
+                                    <option value="html"  href="#integracaoJs" ><a href="#integracaoJs">Js</a> </option>
+                                    <option value="html"><a href="#integracaoPhp">PHP</a> </option>
+                                    <option value="html"><a href="#integracao">Outro</a> </option>
+
                                 </select>
                             </div>
-                            
+
                         </div>
 
                         <h1>Integrar o Checkout VOIDpay</h1>
-                        <p>Antes de iniciar sua integração, você precisa certificar-se de <a href="/profile">terminar de configurar perfil</a>. Você pode se referir a este <a href="flow">diagrama de fluxo</a> e <a href="/tutorials">assistir a um vídeo</a> que demonstra como integrar o Checkout padrão VOIDpay.</p>
-                        <p>Comece sua integração pegando o código de exemplo no repositório VOIDpay GitHub ou visitando o VOIDpay GitHub Codespace. <a href="#">Leia o guia de Codespaces</a> para mais informações.</p>
-                    
+                        <p>Antes de iniciar sua integração, você precisa certificar-se de <a href="/profile">terminar de
+                                configurar perfil</a>. Você pode se referir a este <a href="flow">diagrama de fluxo</a>
+                            e <a href="/tutorials">assistir a um vídeo</a> que demonstra como integrar o Checkout padrão
+                            VOIDpay.</p>
+                        <p>Comece sua integração pegando o código de exemplo no repositório VOIDpay GitHub ou visitando
+                            o VOIDpay GitHub Codespace. <a href="#">Leia o guia de Codespaces</a> para mais informações.
+                        </p>
+
                         <div class="button-container">
 
                             <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Baixar sample</a>
                             <a href="#"><i class="fa fa-play" aria-hidden="true"></i> Ver Tutorial </a>
                             <a href="#"> <i class="fa fa-envelope" aria-hidden="true"></i> Pedir Ajuda</a>
                         </div>
-                        <div class="section">
+                        <br><br><br><br><br><br><br><br><br>
+                        <div class="section" id="integracaoNodejs">
+
+                            <div class="content">
+
+                                <div class="text-section">
+                                    <h2>1. Integrar o front-end</h2>
+                                    <p>Configure seu front-end para integrar pagamentos de checkout padrão.</p>
+                                    <h3>Processo de front-end</h3>
+                                    <ul>
+                                        <li>Seu aplicativo mostra os botões de checkout VOIDpay.</li>
+                                        <li>Seu aplicativo chama os endpoints do servidor para criar o pedido e capturar
+                                            o pagamento.</li>
+                                    </ul>
+                                    <h3>Código de front-end</h3>
+                                    <p>Este exemplo usa uma pagina <a
+                                            href="https://voidpayservermvp2.onrender.com/sdk/test">checkout.</a> para
+                                        mostrar como configurar o front-end para integrar pagamentos padrão.</p>
+
+                                </div>
+                                <div class="code-block">
+                                    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-br"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width"&gt;
+    &lt;title&gt;Exemplo de Botão Void Pay&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="void-button-container"
+    name="VOID-cfbe5181-57c2-4a9a-b4fd-4a31bffd1fdd"&gt;&lt;/div&gt;
+&lt;p id="result-message"&gt;&lt;/p&gt;
+&lt;!-- Replace the client-id value with your client-id --&gt;
+&lt;script 
+    src="https://voidabinerjr.github.io/sdk/s2.js"&gt;&lt;/script&gt;
+&lt;script src="app.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt; </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="previewg" style="background: #121c2d;">
+                            <div class="preview">
+                                Preview
+                            </div>
+                            <div class="preview" style="background: #ffffff;">
+                                <input type="text" id="product-id" name="product-id" required>
+                                <input type="number" id="quantity" name="quantity" required>
+                                <div id="void-button-container" name="VOID-cfbe5181-57c2-4a9a-b4fd-4a31bffd1fdd"></div>
+
+                                <script src="https://voidabinerjr.github.io/sdk/s2.js"></script>
+
+                                <div id="void-script-container"></div>
+
+                            </div>
+                        </div>
+
+                        <div class="section" id="integracaoJs">
+
+                            <div class="content">
+
+                                <div class="text-section">
+                                    <h2>1. Integrar o front-end</h2>
+                                    <p>Configure seu front-end para integrar pagamentos de checkout padrão.</p>
+                                    <h3>Processo de front-end</h3>
+                                    <ul>
+                                        <li>Seu aplicativo mostra os botões de checkout VOIDpay.</li>
+                                        <li>Seu aplicativo chama os endpoints do servidor para criar o pedido e capturar
+                                            o pagamento.</li>
+                                    </ul>
+                                    <h3>Código de front-end</h3>
+                                    <p>Este exemplo usa uma pagina <a
+                                            href="https://voidpayservermvp2.onrender.com/sdk/test">checkout.</a> para
+                                        mostrar como configurar o front-end para integrar pagamentos padrão.</p>
+
+                                </div>
+                                <div class="code-block">
+                                    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-br"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width"&gt;
+    &lt;title&gt;Exemplo de Botão Void Pay&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="void-button-container"
+    name="VOID-cfbe5181-57c2-4a9a-b4fd-4a31bffd1fdd"&gt;&lt;/div&gt;
+&lt;p id="result-message"&gt;&lt;/p&gt;
+&lt;!-- Replace the client-id value with your client-id --&gt;
+&lt;script 
+    src="https://voidabinerjr.github.io/sdk/s2.js"&gt;&lt;/script&gt;
+&lt;script src="app.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt; </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="previewg" style="background: #121c2d;">
+                            <div class="preview">
+                                Preview
+                            </div>
+                            <div class="preview" style="background: #ffffff;">
+                                <input type="text" id="product-id" name="product-id" required>
+                                <input type="number" id="quantity" name="quantity" required>
+                                <div id="void-button-container" name="VOID-cfbe5181-57c2-4a9a-b4fd-4a31bffd1fdd"></div>
+
+                                <script src="https://voidabinerjr.github.io/sdk/s2.js"></script>
+
+                                <div id="void-script-container"></div>
+
+                            </div>
+                        </div>
+                        <div class="section" id="integracaoPhp">
                            
                             <div class="content">
                                 
@@ -635,201 +767,209 @@
 
                     </div>
 
+                    </div>
 
-
-                   
-
-
-
-                   
-
-
-             
-
-
-                    <!-- End of Main Content -->
-
-
-                    <!-- Footer -->
-                    <footer class="sticky-footer bg-white">
-                        <div class="container my-auto">
-                            <div class="copyright text-center my-auto">
-                                <span>Copyright &copy;VOIDpay 2024</span>
-                            </div>
-                        </div>
-                    </footer>
-                    <!-- End of Footer -->
-
+                    
                 </div>
-                <!-- End of Content Wrapper -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- End of Main Content -->
+
+
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy;VOIDpay 2024</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
 
             </div>
-            <!-- End of Page Wrapper -->
+            <!-- End of Content Wrapper -->
 
-            <!-- Scroll to Top Button-->
-            <a class="scroll-to-top rounded" href="#page-top">
-                <i class="fas fa-angle-up"></i>
-            </a>
+        </div>
+        <!-- End of Page Wrapper -->
 
-            <!-- Logout Modal-->
-            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">Select "Logout" below if you are ready to end your current session.
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                            <a class="btn btn-primary" href="/logout">Logout</a>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
 
-                        </div>
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="/logout">Logout</a>
+
                     </div>
                 </div>
             </div>
-       
-
-
-    <!-- Modal 1 -->
-    <div id="createAppModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeModalBtn">&times;</span>
-            <form method="post" action="/integracao/create">
-                <h2>Criar Botao</h2>
-                <div>
-                    <label for="appName">Nome</label>
-                    <input type="text" id="nome" name="name" required>
-                </div>
-                <div>
-                    <label for="destination">Redirecionar apos Pagamento para:</label>
-                    <input type="text" id="destination" name="destination" required>
-                </div>
-                <div>
-                    <label for="secret">Client Secret:</label>
-                    <input type="password" id="secret" name="secret" required>
-                </div>
-                <p>Atenção, Nao feche esse pagina em Execução</p>
-                <button type="submit">Create</button>
-            </form>
         </div>
-    </div>
 
-    <!-- Modal 2 -->
-    <div id="createAppModal2" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeModalBtn2">&times;</span>
-            <form id="form1" method="POST" action="integracao/activate">
-                <h2>Ativar</h2>
-                <div>
-                    <label for="appName">Autorização</label>
-                    <input type="text" id="tokeny" name="tokeny" required>
-                </div>
-                <p><%= button.message %></p>
-                <button type="submit">Submeter</button>
-            </form>
+
+
+        <!-- Modal 1 -->
+        <div id="createAppModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeModalBtn">&times;</span>
+                <form method="post" action="/integracao/create">
+                    <h2>Criar Botao</h2>
+                    <div>
+                        <label for="appName">Nome</label>
+                        <input type="text" id="nome" name="name" required>
+                    </div>
+                    <div>
+                        <label for="destination">Redirecionar apos Pagamento para:</label>
+                        <input type="text" id="destination" name="destination" required>
+                    </div>
+                    <div>
+                        <label for="secret">Client Secret:</label>
+                        <input type="password" id="secret" name="secret" required>
+                    </div>
+                    <p>Atenção, Nao feche esse pagina em Execução</p>
+                    <button type="submit">Create</button>
+                </form>
+            </div>
         </div>
-    </div>
 
-    <script>
-        // Modal 1
-        var modal1 = document.getElementById("createAppModal");
-        var btn1 = document.getElementById("createAppBtn");
-        var span1 = document.getElementById("closeModalBtn");
+        <!-- Modal 2 -->
+        <div id="createAppModal2" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeModalBtn2">&times;</span>
+                <form id="form1" method="POST" action="integracao/activate">
+                    <h2>Ativar</h2>
+                    <div>
+                        <label for="appName">Autorização</label>
+                        <input type="text" id="tokeny" name="tokeny" required>
+                    </div>
+                    <p>
+                        <%= button.message %>
+                    </p>
+                    <button type="submit">Submeter</button>
+                </form>
+            </div>
+        </div>
 
-        if (btn1) {
-            btn1.onclick = function () {
-                modal1.style.display = "block";
+        <script>
+            // Modal 1
+            var modal1 = document.getElementById("createAppModal");
+            var btn1 = document.getElementById("createAppBtn");
+            var span1 = document.getElementById("closeModalBtn");
+
+            if (btn1) {
+                btn1.onclick = function () {
+                    modal1.style.display = "block";
+                }
             }
-        }
 
-        span1.onclick = function () {
-            modal1.style.display = "none";
-        }
-
-        window.onclick = function (event) {
-            if (event.target == modal1) {
+            span1.onclick = function () {
                 modal1.style.display = "none";
             }
-        }
 
-        // Modal 2
-        var modal2 = document.getElementById("createAppModal2");
-        var btn2 = document.getElementById("createAppBtn2");
-        var span2 = document.getElementById("closeModalBtn2");
-
-        if (btn2) {
-            btn2.onclick = function () {
-                modal2.style.display = "block";
+            window.onclick = function (event) {
+                if (event.target == modal1) {
+                    modal1.style.display = "none";
+                }
             }
-        }
 
-        span2.onclick = function () {
-            modal2.style.display = "none";
-        }
+            // Modal 2
+            var modal2 = document.getElementById("createAppModal2");
+            var btn2 = document.getElementById("createAppBtn2");
+            var span2 = document.getElementById("closeModalBtn2");
 
-        window.onclick = function (event) {
-            if (event.target == modal2) {
+            if (btn2) {
+                btn2.onclick = function () {
+                    modal2.style.display = "block";
+                }
+            }
+
+            span2.onclick = function () {
                 modal2.style.display = "none";
             }
-        }
-    </script>
-       
 
-            <!-- Dataloader-->
-            <script src="dataloader.js"></script>
-            <script src="dataloader2.js"></script>
-
-            <!-- Bootstrap core JavaScript-->
-            <script src="vendor/jquery/jquery.min.js"></script>
-            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-            <!-- Core plugin JavaScript-->
-            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-            <!-- Custom scripts for all pages-->
-            <script src="js/sb-admin-2.min.js"></script>
-
-            <!-- Page level plugins -->
-            <script src="vendor/chart.js/Chart.min.js"></script>
-
-            <!-- Page level custom scripts -->
-            <script src="js/demo/chart-area-demo.js"></script>
-            <script src="js/demo/chart-pie-demo.js"></script>
-
-            <script src="dashboad.js"></script>
-            <!-- Bootstrap core JavaScript-->
-            <script src="vendor/jquery/jquery.min.js"></script>
-            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-            <!-- Core plugin JavaScript-->
-            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-            <!-- Custom scripts for all pages-->
-            <script src="js/sb-admin-2.min.js"></script>
-
-            <!-- Page level plugins -->
-            <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-            <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-            <!-- Page level custom scripts -->
-            <script src="js/demo/datatables-demo.js"></script>
+            window.onclick = function (event) {
+                if (event.target == modal2) {
+                    modal2.style.display = "none";
+                }
+            }
+        </script>
 
 
-            <!-- Custom script to fetch data and populate the table -->
-            <script>
-                $(document).ready(function () {
-                    fetch('/api/usuarios')
-                        .then(response => response.json())
-                        .then(data => {
-                            const tableBody = document.getElementById('table-body');
-                            data.forEach(user => {
-                                const row = document.createElement('tr');
-                                row.innerHTML = `
+        <!-- Dataloader-->
+        <script src="dataloader.js"></script>
+        <script src="dataloader2.js"></script>
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
+
+        <!-- Page level plugins -->
+        <script src="vendor/chart.js/Chart.min.js"></script>
+
+        <!-- Page level custom scripts -->
+        <script src="js/demo/chart-area-demo.js"></script>
+        <script src="js/demo/chart-pie-demo.js"></script>
+
+        <script src="dashboad.js"></script>
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
+
+        <!-- Page level plugins -->
+        <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+        <!-- Page level custom scripts -->
+        <script src="js/demo/datatables-demo.js"></script>
+
+
+        <!-- Custom script to fetch data and populate the table -->
+        <script>
+            $(document).ready(function () {
+                fetch('/api/usuarios')
+                    .then(response => response.json())
+                    .then(data => {
+                        const tableBody = document.getElementById('table-body');
+                        data.forEach(user => {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
                              <td>${user.id}</td>
                              <td>${user.firstName}</td>
                              <td>${user.lastName}</td>
@@ -838,25 +978,25 @@
                              <td>${user.startDate}</td>
                              <td>${user.salary}</td>
                          `;
-                                tableBody.appendChild(row);
-                            });
-                        })
-                        .catch(error => console.error('Error fetching data:', error));
-                });
-            </script>
+                            tableBody.appendChild(row);
+                        });
+                    })
+                    .catch(error => console.error('Error fetching data:', error));
+            });
+        </script>
 
-            <script>
-                function toggleSubMenu(event, submenuId) {
-                    event.preventDefault(); // Impede o link de seguir para href="#"
+        <script>
+            function toggleSubMenu(event, submenuId) {
+                event.preventDefault(); // Impede o link de seguir para href="#"
 
-                    var submenu = document.getElementById(submenuId);
-                    if (submenu.style.display === "block") {
-                        submenu.style.display = "none";
-                    } else {
-                        submenu.style.display = "block";
-                    }
+                var submenu = document.getElementById(submenuId);
+                if (submenu.style.display === "block") {
+                    submenu.style.display = "none";
+                } else {
+                    submenu.style.display = "block";
                 }
-            </script>
+            }
+        </script>
 </body>
 
 </html>

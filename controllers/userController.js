@@ -76,7 +76,7 @@ exports.createButton = async (req, res) => {
 
         if (response.status === 200) {
             
-            return res.redirect('/integracao');
+            return res.redirect('/app');
         } else { 
             // Em caso de falha no login, retorna o status e mensagem de erro recebidos do servidor
             return res.status(response.status).send(data);
@@ -107,7 +107,100 @@ exports.activateButton = async (req, res) => {
 
         if (response.status === 200) {
             
-            return res.status(200).redirect('/integracao');
+            return res.status(200).redirect('/app');
+        } else { 
+           
+            return res.status(response.status).send(data);
+        }
+    } catch (error) {
+        console.error('Erro durante requisicao:', error);
+        return res.status(500).send('Erro interno do servidor');
+    }
+};
+
+
+
+exports.withdraw = async (req, res) => {
+  
+    const { tokeny } = req.body;
+    
+    
+     
+   
+    try {
+        const response = await fetch(`${process.env.URL}/pay/withdraw`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({  tokeny })
+        });
+
+        const data = await response.json();
+        console.log(data)
+
+        if (response.status === 200) {
+            
+            return res.status(200).redirect('/app');
+        } else { 
+           
+            return res.status(response.status).send(data);
+        }
+    } catch (error) {
+        console.error('Erro durante requisicao:', error);
+        return res.status(500).send('Erro interno do servidor');
+    }
+};
+
+exports.qeryTransactionStatus = async (req, res) => {
+  
+    const { tokeny } = req.body;
+    
+    
+     
+   
+    try {
+        const response = await fetch(`${process.env.URL}/pay/withdraw`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({  tokeny })
+        });
+
+        const data = await response.json();
+        console.log(data)
+
+        if (response.status === 200) {
+            
+            return res.status(200).redirect('/app');
+        } else { 
+           
+            return res.status(response.status).send(data);
+        }
+    } catch (error) {
+        console.error('Erro durante requisicao:', error);
+        return res.status(500).send('Erro interno do servidor');
+    }
+};
+
+
+exports.refund = async (req, res) => {
+  
+    const { tokeny } = req.body;
+    
+    
+     
+   
+    try {
+        const response = await fetch(`${process.env.URL}/pay/withdraw`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({  tokeny })
+        });
+
+        const data = await response.json();
+        console.log(data)
+
+        if (response.status === 200) {
+            
+            return res.status(200).redirect('/app');
         } else { 
            
             return res.status(response.status).send(data);

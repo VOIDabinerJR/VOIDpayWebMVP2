@@ -79,7 +79,7 @@
         }
 
         .table td a {
-            color: #007bff;
+            color: #121c2d;
             text-decoration: none;
         }
 
@@ -155,7 +155,7 @@
         }
 
         form button {
-            background-color: #007bff;
+            background-color: #121c2d;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -165,7 +165,7 @@
         }
 
         form button:hover {
-            background-color: #0056b3;
+            background-color: #121c2d;
         }
     </style>
 </head>
@@ -363,7 +363,9 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=usuarios[0].username%></span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                                    <%=usuarios[0].username%>
+                                </span>
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -401,23 +403,21 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Apps e Credenciais</h1>
 
-                        <button class="create-app" id="createAppBtn">Novo App</button>
+                        <button class="create-app" id="createAppBtn1">Novo App</button>
                     </div>
                     <div class="container">
                         <div class="header">
-                            API Credentials
-                            <div>
-                                Viewing sandbox API credentials. <a href="#">View live credentials</a>.
-                            </div>
-                            <div class="sandbox-mode">You're in sandbox mode.</div>
+                            Credenciais da API
+                            <div>Para efeitos de TESTE recomedamos que crie uma APP DE TESTE. </div>
+                            para estar no modo sandbox.
                         </div>
 
                     </div>
 
                     <!-- Modal -->
-                    <div id="createAppModal" class="modal">
+                    <div id="createAppModal1" class="modal">
                         <div class="modal-content">
-                            <span class="close" id="closeModalBtn">&times;</span>
+                            <span class="close" id="closeModalBtn1">&times;</span>
                             <form method="POST">
                                 <h2>Criar nova App</h2>
                                 <div>
@@ -426,7 +426,7 @@
                                 </div>
                                 <div>
                                     <p>Type:</p>
-                                    <input type="radio"  id="test" name="type" value="test" checked>
+                                    <input type="radio" id="test" name="type" value="test" checked>
                                     <label for="test">Teste</label><br>
                                     <input type="radio" id="producao" name="type" value="production">
                                     <label for="producao">Produção</label>
@@ -434,7 +434,9 @@
                                 <div>
                                     <label for="account">Conta:</label>
                                     <select id="account" name="account">
-                                        <option value="<%=usuarios[0].email%>"><%=usuarios[0].email%> (MZ)</option>
+                                        <option value="<%=usuarios[0].email%>">
+                                            <%=usuarios[0].email%> (MZ)
+                                        </option>
                                     </select>
                                 </div>
                                 <p>Users are redirected to this URL after live transactions. Allow up to three hours for
@@ -445,36 +447,6 @@
                             </form>
                         </div>
                     </div>
-
-                    <script>
-                        // Obter o modal
-                        var modal = document.getElementById("createAppModal");
-
-                        // Obter o botão que abre o modal
-                        var btn = document.getElementById("createAppBtn");
-
-                        // Obter o elemento <span> que fecha o modal
-                        var span = document.getElementById("closeModalBtn");
-
-                        // Quando o usuário clica no botão, abre o modal
-                        if (btn) {
-                            btn.onclick = function () {
-                                modal.style.display = "block";
-                            }
-                        }
-
-                        // Quando o usuário clica no <span> (x), fecha o modal
-                        span.onclick = function () {
-                            modal.style.display = "none";
-                        }
-
-                        // Quando o usuário clica fora do modal, fecha o modal
-                        window.onclick = function (event) {
-                            if (event.target == modal) {
-                                modal.style.display = "none";
-                            }
-                        }
-                    </script>
 
 
                     <!-- DataTales Example -->
@@ -488,6 +460,7 @@
                                     <thead>
                                         <tr>
                                             <th>App name</th>
+                                            <th>Type</th>
                                             <th>Client ID</th>
                                             <th>Secret</th>
                                             <th>Created date</th>
@@ -496,30 +469,185 @@
                                     <tfoot>
                                         <tr>
                                             <th>App name</th>
+                                            <th>Type</th>
                                             <th>Client ID</th>
                                             <th>Secret</th>
                                             <th>Created date</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <% app.forEach(app => { %>
+                                        <% app.forEach(app=> { %>
                                             <tr>
-                                                <td><a href="#"><%= app.name %></a></td>
-                                                <td><%= app.clientId %></td>
-                                                <td><%= app.clientSecret %></td>
-                                                <td><%= app.createdAt %></td>
+                                                <td><a href="#">
+                                                        <%= app.name %>
+                                                    </a></td>
+                                                <td>
+                                                    <%= app.type %>
+                                                </td>
+                                                <td>
+                                                    <%= app.clientId %>
+                                                </td>
+                                                <td>
+                                                    <%= app.clientSecret %>
+                                                </td>
+                                                <td>
+                                                    <%= app.createdAt %>
+                                                </td>
                                             </tr>
-                                        <% }) %>
+                                            <% }) %>
 
                                     </tbody>
                                 </table>
+
+
+
+
                             </div>
+
                         </div>
+
+                    </div>
+
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Gestao de Botões</h1>
+
+                        <button class="create-app" id="createAppBtn3">Novo Botão</button>
+                        <button class="create-app" id="createAppBtn2">Ativar</button>
                     </div>
 
 
 
+
+                     <!-- DataTales Example -->
+                     <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Buttons</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    
+                                    <thead>
+                                        <tr>
+                                            <th>Button name</th>
+                                            <th>buttonToken</th>
+                                            <th>destination</th>
+                                            <th>appId</th>
+                                            <th>Created date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% button.forEach(button=> { %>
+                                            <tr>
+                                                <td><a href="#">
+                                                        <%= button.name %>
+                                                    </a></td>
+                                                   
+                                                    <td>
+                                                        <%= button. buttonToken %>
+                                                    </td>
+                                                    <td>
+                                                        <%= button.destination %>
+                                                    </td> <td>
+                                                        <%= button.appId
+                                                        %>
+                                                    </td>
+                                                <td>
+                                                    <%= button.createdAt %>
+                                                </td>
+                                            </tr>
+                                            <% }) %>
+
+                                    </tbody>
+                                </table>
+
+
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
                     <!-- End of Main Content -->
+
+                    <!-- Modal 1 -->
+                    <div id="createAppModal3" class="modal">
+                        <div class="modal-content">
+                            <span class="close" id="closeModalBtn3">&times;</span>
+                            <form method="post" action="/integracao/create">
+                                <h2>Criar Botão</h2>
+                                <div>
+                                    <label for="appName">Nome</label>
+                                    <input type="text" id="nome" name="name" required>
+                                </div>
+                                <div>
+                                    <label for="destination">Redirecionar apos Pagamento para:</label>
+                                    <input type="text" id="destination" name="destination" required>
+                                </div>
+                                <div>
+                                    <label for="secret">Client Secret:</label>
+                                    <input type="password" id="secret" name="secret" required>
+                                </div>
+                                <p>Atenção, Nao feche esse pagina em Execução</p>
+                                <p> Após Criar, Abra sua caixa de email para ativar botão criado</p>
+                                <button type="submit">Create</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Modal 2 -->
+                    <div id="createAppModal2" class="modal">
+                        <div class="modal-content">
+                            <span class="close" id="closeModalBtn2">&times;</span>
+                            <form id="form1" method="POST" action="integracao/activate">
+                                <h2>Ativar</h2>
+                                <div>
+                                    <label for="appName">Autorização</label>
+                                    <input type="text" id="tokeny" name="tokeny" required>
+                                </div>
+                                <p>
+                                    <%= button.message %>
+                                </p>
+                                <button type="submit">Submeter</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <script>
+                        function setupModal(modalId, btnId, spanId) {
+                            var modal = document.getElementById(modalId);
+                            var btn = document.getElementById(btnId);
+                            var span = document.getElementById(spanId);
+
+                            if (btn) {
+                                btn.onclick = function () {
+                                    modal.style.display = "block";
+                                }
+                            }
+
+                            if (span) {
+                                span.onclick = function () {
+                                    modal.style.display = "none";
+                                }
+                            }
+
+                            window.onclick = function (event) {
+                                if (event.target == modal) {
+                                    modal.style.display = "none";
+                                }
+                            }
+                        }
+
+                        // Initialize modals
+                        setupModal("createAppModal1", "createAppBtn1", "closeModalBtn1");
+                        setupModal("createAppModal2", "createAppBtn2", "closeModalBtn2");
+                        setupModal("createAppModal3", "createAppBtn3", "closeModalBtn3");
+                    </script>
+
 
 
                     <!-- Footer -->

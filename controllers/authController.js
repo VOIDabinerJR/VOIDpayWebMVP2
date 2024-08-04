@@ -104,10 +104,10 @@ exports.recoveraccount = async (req, res) => {
         if (response.status === 200) {
            
           
-            return res.render('forgot-password',{email :email })
+            return res.render('forgot-password',{email :email, message:' Enviamos um link de recuperação para o e-mail.' })
         } else { 
           
-            return res.render('forgot-password',{email :'Email não cadastrado', message:' Enviamos um link de recuperação para o e-mail.' })
+            return res.render('forgot-password',{email :'Email não cadastrado'})
         }
     } catch (error) {
         console.error('Erro durante o login:', error);
