@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>VOIDpay | Nao Encontrado</title>
+    <title>Configurações | VOIDpay</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -19,7 +19,82 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            margin-bottom: 20px;
+        }
+        .header a {
+            color: #6A1B9A;
+            text-decoration: none;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+        }
+        .sidebar {
+            width: 25%;
+        }
+        .main-content {
+            width: 70%;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+        .sidebar a {
+            color: #6A1B9A;
+            text-decoration: none;
+        }
+        .plan-card, .billing-info, .payments {
+            margin-bottom: 20px;
+        }
+        .plan-card {
+            padding: 20px;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+        }
+        .plan-card h2 {
+            color: #6A1B9A;
+            margin: 0;
+        }
+        .plan-card .status {
+            color: green;
+            font-weight: bold;
+        }
+        .billing-info, .payments {
+            padding: 20px;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+        }
+        .billing-info p, .payments p {
+            margin: 5px 0;
+        }
+        .update-link {
+            color: #6A1B9A;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -30,17 +105,15 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-          
-           
-                <script>
-                    fetch('navbar.ejs')
-                        .then(response => response.text())
-                        .then(data => {
-                            document.getElementById('accordionSidebar').innerHTML = data;
-                        });
-                </script>
-    
-            
+            <script>
+                fetch('navbar.ejs')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('accordionSidebar').innerHTML = data;
+                    });
+            </script>
+
+
 
         </ul>
         <!-- End of Sidebar -->
@@ -106,7 +179,9 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter"><%=notification.notificationCount%> +</span>
+                                <span class="badge badge-danger badge-counter">
+                                    <%=notification.notificationCount%> +
+                                </span>
                             </a>
                             <!-- Dropdown - Alerts -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -114,15 +189,20 @@
                                 <h6 class="dropdown-header">
                                     Alerts Center
                                 </h6>
-                                <% message.forEach(message => { %>
+                                <% message.forEach(message=> { %>
                                     <a class="dropdown-item d-flex align-items-center" href="#">
                                         <div class="font-weight-bold">
-                                            <div class="text-truncate"><%= message.text %></div>
-                                            <div class="small text-gray-500"><%= message.sender %> · <%= message.time %></div>
+                                            <div class="text-truncate">
+                                                <%= message.text %>
+                                            </div>
+                                            <div class="small text-gray-500">
+                                                <%= message.sender %> · <%= message.time %>
+                                            </div>
                                         </div>
                                     </a>
-                                <% }); %>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                                    <% }); %>
+                                        <a class="dropdown-item text-center small text-gray-500" href="#">Show All
+                                            Alerts</a>
                             </div>
                         </li>
 
@@ -132,7 +212,9 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-envelope fa-fw"></i>
                                 <!-- Counter - Messages -->
-                                <span class="badge badge-danger badge-counter"><%=notification.notificationCount%> </span>
+                                <span class="badge badge-danger badge-counter">
+                                    <%=notification.notificationCount%>
+                                </span>
                             </a>
                             <!-- Dropdown - Messages -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -142,16 +224,20 @@
                                 </h6>
 
 
-                                <% message.forEach(message => { %>
+                                <% message.forEach(message=> { %>
                                     <a class="dropdown-item d-flex align-items-center" href="#">
                                         <div class="font-weight-bold">
-                                            <div class="text-truncate"><%= message.text %></div>
-                                            <div class="small text-gray-500"><%= message.sender %> · <%= message.time %></div>
+                                            <div class="text-truncate">
+                                                <%= message.text %>
+                                            </div>
+                                            <div class="small text-gray-500">
+                                                <%= message.sender %> · <%= message.time %>
+                                            </div>
                                         </div>
                                     </a>
-                                <% }); %>
-                               
-                                 </div>
+                                    <% }); %>
+
+                            </div>
                         </li>
 
                         <div class="topbar-divider d-none d-sm-block"></div>
@@ -172,7 +258,7 @@
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Perfil
                                 </a>
-                                
+
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -189,15 +275,53 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- 404 Error Text -->
-                    <div class="text-center">
-                        <div class="error mx-auto" data-text="404">404</div>
-                        <p class="lead text-gray-800 mb-5">Page Not Found</p>
-                        <p class="text-gray-500 mb-0">It looks like you found a glitch in the matrix...</p>
-                        <a href="/dashboard">&larr; Back to Dashboard</a>
+                    <!-- Page Heading -->
+                    <div class="container">
+                        <div class="header">
+                            <a href="#"> Configurações</a>
+                        </div>
+                        <div class="title">Assinatura</div>
+                        <div class="content">
+                            <div class="sidebar">
+                                <h3>Minha assinatura</h3>
+                                <p>Acompanhe o status da sua assinatura, gerencie seu plano e informações de pagamento.</p>
+                                <h3>Dúvidas frequentes</h3>
+                                <ul>
+                                    <li><a href="/suporte">Como receber reembolso?</a></li>
+                                    <li><a href="/suporte">Quando uma venda que realizo gera uma comissão a pagar?</a></li>
+                                    <li><a href="/suporte">Quais são as regras de mudança de plano?</a></li>
+                                    <li><a href="/suporte">Quando realizei/realizarei um pagamento?</a></li>
+                                </ul>
+                            </div>
+                            <div class="main-content">
+                                <div class="plan-card">
+                                    <h2>Meu plano</h2>
+                                    <h1>signature[0].plan</h1>
+                                    <p>2,99% por pedido pago (cobrado por semana)</p>
+                                    <p>Próximo pagamento: signature[0].nextbill</p>
+                                    <p>VOCÊ USA YAMPI DESDE <strong>usuarios[0].createdAt</strong></p>
+                                    <p>STATUS DA ASSINATURA <span class="status">Ativa</span></p>
+                                </div>
+                                <div class="billing-info">
+                                    <h2>Dados de faturamento e cartão de crédito</h2>
+                                    <p><strong>usuarios[0].name</strong></p>
+                                    
+                                    <p>userDetails[0].number</p>
+                                    <p>userDetails[0].number</p>
+                                    <p>userDetails[0].city</p>
+                                    <p>CEP:userDetails[0].postalCode</p>
+                                    <p>Cartão: Visa, final 3596 (Expira em 04/2026)</p>
+                                    <a class="update-link" href="#">Atualizar cartão</a>
+                                    <br>
+                                    <a class="update-link" href="#">Atualizar dados de faturamento</a>
+                                </div>
+                                <div class="payments">
+                                    <h2>Meus pagamentos</h2>
+                                    <!-- Conteúdo dos pagamentos aqui -->
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-                </div>
                 <!-- /.container-fluid -->
 
             </div>

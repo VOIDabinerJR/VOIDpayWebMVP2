@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>VOIDpay | Nao Encontrado</title>
+    <title>Configurações | VOIDpay</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -27,20 +27,18 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+         <!-- Sidebar -->
+         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-          
-           
-                <script>
-                    fetch('navbar.ejs')
-                        .then(response => response.text())
-                        .then(data => {
-                            document.getElementById('accordionSidebar').innerHTML = data;
-                        });
-                </script>
-    
-            
+            <script>
+                fetch('navbar.ejs')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('accordionSidebar').innerHTML = data;
+                    });
+            </script>
+
+
 
         </ul>
         <!-- End of Sidebar -->
@@ -189,13 +187,8 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- 404 Error Text -->
-                    <div class="text-center">
-                        <div class="error mx-auto" data-text="404">404</div>
-                        <p class="lead text-gray-800 mb-5">Page Not Found</p>
-                        <p class="text-gray-500 mb-0">It looks like you found a glitch in the matrix...</p>
-                        <a href="/dashboard">&larr; Back to Dashboard</a>
-                    </div>
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
 
                 </div>
                 <!-- /.container-fluid -->
