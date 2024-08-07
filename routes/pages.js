@@ -195,7 +195,7 @@ router.get('/reembolsos', requireAuth, loadUserData, (req, res) => {
     const data = req.data
     console.log(data)
     res.render('refunds',  {  orders: data.orders,transactions:data.transactions, button: data.button, usuarios: data.usuarios, wallet:data.wallet, notification: notification, message: message  })//, {button: data.button,usuarios: data.usuarios})
-
+ 
 });
 router.get('/carteira', requireAuth, loadUserData, (req, res) => {
     const data = req.data

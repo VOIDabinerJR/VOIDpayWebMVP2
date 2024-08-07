@@ -17,14 +17,16 @@
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-       
+
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-     <!-- Custom styles for this page --> 
-     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-     <link rel="icon" href="https://raw.githubusercontent.com/VOIDabinerJR/VOIDpayWebMVP2/main/img/logo.ico" type="image/x-icon">
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/VOIDabinerJR/VOIDpayWebMVP2/main/img/logo.ico"
+        type="image/x-icon">
+        
 </head>
 
 <body id="page-top">
@@ -109,7 +111,9 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter"><%=notification.notificationCount%> +</span>
+                                <span class="badge badge-danger badge-counter">
+                                    <%=notification.notificationCount%> +
+                                </span>
                             </a>
                             <!-- Dropdown - Alerts -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -117,15 +121,20 @@
                                 <h6 class="dropdown-header">
                                     Notificações
                                 </h6>
-                                <% message.forEach(message => { %>
+                                <% message.forEach(message=> { %>
                                     <a class="dropdown-item d-flex align-items-center" href="#">
                                         <div class="font-weight-bold">
-                                            <div class="text-truncate"><%= message.text %></div>
-                                            <div class="small text-gray-500"><%= message.sender %> · <%= message.time %></div>
+                                            <div class="text-truncate">
+                                                <%= message.text %>
+                                            </div>
+                                            <div class="small text-gray-500">
+                                                <%= message.sender %> · <%= message.time %>
+                                            </div>
                                         </div>
                                     </a>
-                                <% }); %>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                                    <% }); %>
+                                        <a class="dropdown-item text-center small text-gray-500" href="#">Show All
+                                            Alerts</a>
                             </div>
                         </li>
 
@@ -135,7 +144,9 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-envelope fa-fw"></i>
                                 <!-- Counter - Messages -->
-                                <span class="badge badge-danger badge-counter"><%=notification.notificationCount%> </span>
+                                <span class="badge badge-danger badge-counter">
+                                    <%=notification.notificationCount%>
+                                </span>
                             </a>
                             <!-- Dropdown - Messages -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -145,16 +156,20 @@
                                 </h6>
 
 
-                                <% message.forEach(message => { %>
+                                <% message.forEach(message=> { %>
                                     <a class="dropdown-item d-flex align-items-center" href="#">
                                         <div class="font-weight-bold">
-                                            <div class="text-truncate"><%= message.text %></div>
-                                            <div class="small text-gray-500"><%= message.sender %> · <%= message.time %></div>
+                                            <div class="text-truncate">
+                                                <%= message.text %>
+                                            </div>
+                                            <div class="small text-gray-500">
+                                                <%= message.sender %> · <%= message.time %>
+                                            </div>
                                         </div>
                                     </a>
-                                <% }); %>
-                               
-                                 </div>
+                                    <% }); %>
+
+                            </div>
                         </li>
 
                         <div class="topbar-divider d-none d-sm-block"></div>
@@ -175,7 +190,7 @@
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Perfil
                                 </a>
-                                
+
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -191,29 +206,32 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    
+
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Olá, <%=usuarios[0].firstname%> ! 
+                        <h1 class="h3 mb-0 text-gray-800">Olá, <%=usuarios[0].firstname%> !
                         </h1>
                         <a onclick="window.print()" href="#"
                             class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Relatorio</a>
                     </div>
-<!-- Collapsable Card Example -->
-<div class="card shadow mb-4">
-    <!-- Card Header - Accordion -->
-    <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse"
-        role="button" aria-expanded="true" aria-controls="collapseCardExample">
-        <h6 class="m-0 font-weight-bold text-primary">Ação Necessária: Conclusão do Cadastro</h6>
-    </a>
-    <!-- Card Content - Collapse -->
-    <div class="collapse show" id="collapseCardExample">
-        <div class="card-body">
-            Para garantir a sua segurança, é necessário que você <a href="/profile"><strong>conclua o seu cadastro</strong></a>. Por favor, finalize o processo de registro para que possamos proteger suas informações e oferecer uma experiência mais segura e personalizada.
-        </div>
-    </div>
-</div>
+                    <!-- Collapsable Card Example -->
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Accordion -->
+                        <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse"
+                            role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                            <h6 class="m-0 font-weight-bold text-primary">Ação Necessária: Conclusão do Cadastro</h6>
+                        </a>
+                        <!-- Card Content - Collapse -->
+                        <div class="collapse show" id="collapseCardExample">
+                            <div class="card-body">
+                                Para garantir a sua segurança, é necessário que você <a href="/profile"><strong>conclua
+                                        o seu cadastro</strong></a>. Por favor, finalize o processo de registro para que
+                                possamos proteger suas informações e oferecer uma experiência mais segura e
+                                personalizada.
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- Content Row -->
                     <div class="row">
@@ -227,7 +245,7 @@
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Ganhos (Mensais)</div>
                                             <div id="ffc" class="ganhosmensais h5 mb-0 font-weight-bold text-gray-800">
-                                                MZN  <%=wallet[0].balance%>
+                                                MZN <%=wallet[0].balance%>
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -246,7 +264,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Ganhos (Anuais)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"> MZN 
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"> MZN
                                                 <%=wallet[0].balance%>
                                             </div>
                                         </div>
@@ -290,7 +308,7 @@
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                         
+
                                             <i class="fas fa-shopping-cart fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
@@ -390,7 +408,7 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            
+
                                             <th>Products</th>
                                             <th>Description</th>
                                             <th>Customer Email</th>
@@ -400,18 +418,18 @@
                                             <th>Updated At</th>
                                         </tr>
                                     </thead>
-                                  
+
                                     <tbody>
                                         <% orders.forEach(function(order) { %>
                                             <tr>
-                                               
+
                                                 <td>
                                                     <%= order.products %>
                                                 </td>
                                                 <td>
                                                     <%= order.description %>
                                                 </td>
-                                               
+
                                                 <td>
                                                     <%= order.customerEmail %>
                                                 </td>
@@ -446,11 +464,11 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Criar loja Simplificada</h6>
                                 </div>
                                 <div class="card-body">
-                                   <h2>Comming Soon...</h2>
+                                    <h2>Comming Soon...</h2>
                                 </div>
                             </div>
 
-                           
+
 
                         </div>
 
@@ -465,21 +483,25 @@
                                     <section>
                                         <p>Acesso e Segurança</p>
                                         <ul>
-                                            <li><strong>Autenticação Segura:</strong> Protejemos seus dados com métodos de autenticação robustos e controle de acesso granular.</li>
-                                            <li><strong>Backup e Recuperação:</strong> Garantias de que seus dados são regularmente salvos e podem ser recuperados em caso de necessidade.</li>
+                                            <li><strong>Autenticação Segura:</strong> Protejemos seus dados com métodos
+                                                de autenticação robustos e controle de acesso granular.</li>
+                                            <li><strong>Backup e Recuperação:</strong> Garantias de que seus dados são
+                                                regularmente salvos e podem ser recuperados em caso de necessidade.</li>
                                         </ul>
                                     </section>
                                     <section>
                                         <p>Suporte e Recursos</p>
                                         <ul>
-                                            <li><strong>Documentação e Tutoriais:</strong> Acesse guias e tutoriais detalhados para maximizar o uso do dashboard.</li>
-                                            <li><strong>Suporte ao Cliente:</strong> Entre em contato com nossa equipe de suporte para assistência personalizada.</li>
+                                            <li><strong>Documentação e Tutoriais:</strong> Acesse guias e tutoriais
+                                                detalhados para maximizar o uso do dashboard.</li>
+                                            <li><strong>Suporte ao Cliente:</strong> Entre em contato com nossa equipe
+                                                de suporte para assistência personalizada.</li>
                                         </ul>
                                     </section>
                                 </div>
                             </div>
 
-                          
+
 
                         </div>
                     </div>
@@ -488,8 +510,8 @@
                 </div>
 
                 <!-- /.container-fluid -->
-                 
-                        
+
+
 
 
             </div>
@@ -542,11 +564,11 @@
 
 
 
-   
-    
+
+
     <script>
 
-  </script>
+    </script>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -567,12 +589,12 @@
     <script src="js/demo/chart-bar-demo.js"></script>
 
     <script src="dashboad.js"></script>
-      <!-- Page level plugins -->
-      <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-      <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-      <!-- Page level custom scripts -->
-      <script src="js/demo/datatables-demo.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
 
 
 </body>
