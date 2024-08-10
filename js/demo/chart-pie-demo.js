@@ -11,9 +11,11 @@ function getDataFromElement() {
 // Defina os dados usando a função
 var data = getDataFromElement(); 
 
-
 // Pie Chart Example
 var ctx = document.getElementById("myPieChart");
+
+
+
 var myPieChart = new Chart(ctx, {
   type: 'doughnut',
   data: {
@@ -43,10 +45,3 @@ var myPieChart = new Chart(ctx, {
     cutoutPercentage: 80,
   },
 });
-
-
-function updateChartData(newData) {
-  myPieChart.data.datasets[0].data = newData;
-  myPieChart.update();
-}
-updateChartData(data);

@@ -22,6 +22,7 @@ const handleErrors = (err) => {
 
 exports.register = async (req, res) => {  
     const { firstName, lastName, email, password, repeatPassword } = req.body;
+    
 const username =firstName
     try {
         const response = await fetch(`${process.env.URL}/auth/register`, {

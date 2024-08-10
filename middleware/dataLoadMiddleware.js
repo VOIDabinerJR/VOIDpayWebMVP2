@@ -18,10 +18,12 @@ const loadUserData = async (req, res, next) => {
             });
  
             const data = await response.json();
-            console.log(data.user)
+            //console.log(data.user)
+            console.log(data.userStatistics.salesLast30Days)
 
             if (response.status === 200) { 
                 req.data =data.user
+                req.userStatistics =data.userStatistics
                 next()
                
             } else {

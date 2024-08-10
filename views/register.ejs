@@ -227,6 +227,7 @@
                 <input type="email" name="email" id="inputEmail" placeholder="Email">
                 <input type="password" name="password" id="inputPassword" placeholder="Password">
                 <input type="password" name="repeatPassword" id="repeatPassword" placeholder="Repita Password">
+                <div id="passwordStrength"></div>
                 <button type="submit" class="submit">
                     Cadastar
                 </button>
@@ -255,6 +256,40 @@
 
 
     <!-- scripts-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#inputPassword').on('input', function () {
+                var password = $(this).val();
+                var strength = checkPasswordStrength(password);
+                $('#passwordStrength').text(strength.message).css('color', strength.color);
+            });
+
+            function checkPasswordStrength(password) {
+                var strength = { message: '', color: '' };
+                var lengthCriteria = password.length >= 8;
+                var numberCriteria = /[0-9]/.test(password);
+                var uppercaseCriteria = /[A-Z]/.test(password);
+                var specialCharCriteria = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+                if (lengthCriteria && numberCriteria && uppercaseCriteria && specialCharCriteria) {
+                    strength.message = 'forte';
+                    strength.color = 'green';
+                } else if (lengthCriteria && (numberCriteria || uppercaseCriteria || specialCharCriteria)) {
+                    strength.message = 'funciona';
+                    strength.color = 'orange';
+                } else {
+                    strength.message = 'fraca';
+                    strength.color = 'red';
+                }
+
+                return strength;
+            }
+        });
+    </script>
+
+
 
     <script>
         function starts() {

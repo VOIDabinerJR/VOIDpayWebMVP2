@@ -16,25 +16,6 @@ const notification = {
     sender: 'joeh'
 
 }
-const message = [
-    {
-        notificationCount: 3,
-        notificationText: 'Hi',
-        data: '20-12-2004',
-        time: '20-12-2001',
-        text: 'Ola',
-        sender: 'Joeh'
-    },
-   {
-        notificationCount: 3,
-        notificationText: 'Hi',
-        data: '20-12-2004',
-        time: '20-12-2001',
-        text: 'Ola',
-        sender: 'Joeh'
-    },
-];
-
 
 //main
 router.get('/', (req, res) => {
@@ -126,8 +107,11 @@ router.post('/profile', pagesController.profile);
 
 router.get('/dashboard', requireAuth, loadUserData, (req, res) => {
     const data = req.data
+    const userStatistics = req.userStatistics
+    console.log(userStatistics.monthlySales)
+    console.log(data.notification)
   
-    res.render('index', { usuarios: data.usuarios, orders: data.orders, wallet: data.wallet, notification: notification, message: message })
+    res.render('index', { usuarios: data.usuarios, orders: data.orders, wallet: data.wallet, notification: notification, message: data.notification, userStatistics:userStatistics })
     // res.sendFile(path.join(__dirname, '../','/index.html'));
 
 
@@ -135,78 +119,89 @@ router.get('/dashboard', requireAuth, loadUserData, (req, res) => {
 
 router.get('/notfound', requireAuth, loadUserData, (req, res) => {
     const data = req.data
-    res.render('404', { usuarios: data.usuarios,notification: notification, message: message} );
+    const userStatistics = req.userStatistics
+    res.render('404', { usuarios: data.usuarios,notification: notification, message: data.notification} );
  
 });
 router.get('/configuracoes', requireAuth, loadUserData, (req, res) => {
     const data = req.data
-    res.render('generalConfigurations',{ usuarios: data.usuarios, orders: data.orders, wallet: data.wallet, notification: notification, message: message });
+    const userStatistics = req.userStatistics
+    res.render('generalConfigurations',{ usuarios: data.usuarios, orders: data.orders, wallet: data.wallet, notification: notification, message: data.notification });
 
 });
 router.get('/assinatura', requireAuth, loadUserData, (req, res) => {
     const data = req.data
-    res.render('assinatura',{ usuarios: data.usuarios, orders: data.orders, wallet: data.wallet, notification: notification, message: message });
+    const userStatistics = req.userStatistics
+    res.render('assinatura',{ usuarios: data.usuarios, orders: data.orders, wallet: data.wallet, notification: notification, message: data.notification });
 
 });
 router.get('/analises', requireAuth, loadUserData, (req, res) => {
     const data = req.data
-    res.render('analises',{ usuarios: data.usuarios, orders: data.orders, wallet: data.wallet, notification: notification, message: message });
+    const userStatistics = req.userStatistics
+    res.render('analises',{ usuarios: data.usuarios, orders: data.orders, wallet: data.wallet, notification: notification, message: data.notification, userStatistics: userStatistics  });
 
 });
 
 router.get('/analises', requireAuth, loadUserData, (req, res) => {
     const data = req.data
-    res.render('analises',{ usuarios: data.usuarios, orders: data.orders, wallet: data.wallet, notification: notification, message: message });
+    const userStatistics = req.userStatistics
+    res.render('analises',{ usuarios: data.usuarios, orders: data.orders, wallet: data.wallet, notification: notification, message: data.notification });
 
 });
 
 
 router.get('/integracaoSimples', requireAuth, loadUserData, (req, res) => {
-
-    res.render('integracaoSimples', { token: data.firstname , notification: notification, message: message })
+    const userStatistics = req.userStatistics
+    res.render('integracaoSimples', { token: data.firstname , notification: notification, message: data.notification })
    
 });
 
 router.get('/integracao', requireAuth, loadUserData, (req, res) => {
     const data = req.data
+    const userStatistics = req.userStatistics
     console.log(data)
-    res.render('integracao', { button: data.button, usuarios: data.usuarios, notification: notification, message: message  })
+    res.render('integracao', { button: data.button, usuarios: data.usuarios, notification: notification, message: data.notification  })
    
 });
 
 router.get('/app', requireAuth, loadUserData, (req, res) => {
     const data = req.data
+    const userStatistics = req.userStatistics
     console.log(data)
-    res.render('appCredencials', { app: data.app, usuarios: data.usuarios, button:data.button, notification: notification, message: message  })
+    res.render('appCredencials', { app: data.app, usuarios: data.usuarios, button:data.button, notification: notification, message: data.notification  })
 
 });
 router.get('/carteira', requireAuth, loadUserData, (req, res) => {
     const data = req.data
+    const userStatistics = req.userStatistics
     console.log(data)
     const wallet = {
         balance: '50',
 
     }
     console.log(wallet.balance)
-    res.render('wallet', { transactions:data.transactions, button: data.button, usuarios: data.usuarios, wallet: wallet, notification: notification, message: message  })
+    res.render('wallet', { transactions:data.transactions, button: data.button, usuarios: data.usuarios, wallet: wallet, notification: notification, message: data.notification  })
 
 });
 router.get('/reembolsos', requireAuth, loadUserData, (req, res) => {
     const data = req.data
+    const userStatistics = req.userStatistics
     console.log(data)
-    res.render('refunds',  {  orders: data.orders,transactions:data.transactions, button: data.button, usuarios: data.usuarios, wallet:data.wallet, notification: notification, message: message  })//, {button: data.button,usuarios: data.usuarios})
+    res.render('refunds',  {  orders: data.orders,transactions:data.transactions, button: data.button, usuarios: data.usuarios, wallet:data.wallet, notification: notification, message: data.notification  })//, {button: data.button,usuarios: data.usuarios})
  
 });
 router.get('/carteira', requireAuth, loadUserData, (req, res) => {
     const data = req.data
+    const userStatistics = req.userStatistics
     console.log(data)
-    res.render('wallet',{ notification: notification, message: message })//, {button: data.button,usuarios: data.usuarios})
+    res.render('wallet',{ notification: notification, message: data.notification })//, {button: data.button,usuarios: data.usuarios})
     // res.sendFile(path.join(__dirname, '../', 'integracao.html'));
 });
 
 router.get('/inicio',  requireAuth, loadUserData, (req, res) => {
     const data = req.data
-    res.render('inicio', { usuarios: data.usuarios, notification: notification, message: message  })//, {button: data.button,usuarios: data.usuarios})
+    const userStatistics = req.userStatistics
+    res.render('inicio', { usuarios: data.usuarios, notification: notification, message: data.notification  })//, {button: data.button,usuarios: data.usuarios})
     // res.sendFile(path.join(__dirname, '../', 'integracao.html'));
 });
  

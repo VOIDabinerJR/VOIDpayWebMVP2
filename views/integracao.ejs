@@ -387,29 +387,36 @@
                             </div>
                         </li>
 
-                        <!-- Nav Item - Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1">
+                         <!-- Nav Item - Alerts -->
+                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter"><%=notification.notificationCount%> +</span>
+                                <span class="badge badge-danger badge-counter">
+                                    <%=notification.notificationCount%> +
+                                </span>
                             </a>
                             <!-- Dropdown - Alerts -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
-                                    Alerts Center
+                                    Notificações
                                 </h6>
-                                <% message.forEach(message => { %>
+                                <% message.forEach(message=> { %>
                                     <a class="dropdown-item d-flex align-items-center" href="#">
                                         <div class="font-weight-bold">
-                                            <div class="text-truncate"><%= message.text %></div>
-                                            <div class="small text-gray-500"><%= message.sender %> · <%= message.time %></div>
+                                            <div class="text-truncate">
+                                                <%= message.message %>
+                                            </div>
+                                            <div class="small text-gray-500">
+                                                <%= message.sender %> · <%= message.createdAt %>
+                                            </div>
                                         </div>
                                     </a>
-                                <% }); %>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                                    <% }); %>
+                                        <a class="dropdown-item text-center small text-gray-500" href="#">Show All
+                                            Alerts</a>
                             </div>
                         </li>
 
@@ -419,26 +426,32 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-envelope fa-fw"></i>
                                 <!-- Counter - Messages -->
-                                <span class="badge badge-danger badge-counter"><%=notification.notificationCount%> </span>
+                                <span class="badge badge-danger badge-counter">
+                                    <%=notification.notificationCount%>
+                                </span>
                             </a>
                             <!-- Dropdown - Messages -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="messagesDropdown">
                                 <h6 class="dropdown-header">
-                                    Message Center
+                                    Mensagens
                                 </h6>
 
 
-                                <% message.forEach(message => { %>
+                                <% message.forEach(message=> { %>
                                     <a class="dropdown-item d-flex align-items-center" href="#">
                                         <div class="font-weight-bold">
-                                            <div class="text-truncate"><%= message.text %></div>
-                                            <div class="small text-gray-500"><%= message.sender %> · <%= message.time %></div>
+                                            <div class="text-truncate">
+                                                <%= message.message %>
+                                            </div>
+                                            <div class="small text-gray-500">
+                                                <%= message.sender %> · <%= message.createdAt %>
+                                            </div>
                                         </div>
                                     </a>
-                                <% }); %>
-                               
-                                 </div>
+                                    <% }); %>
+
+                            </div>
                         </li>
 
                         <div class="topbar-divider d-none d-sm-block"></div>

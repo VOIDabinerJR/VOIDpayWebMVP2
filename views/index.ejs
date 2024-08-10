@@ -125,10 +125,10 @@
                                     <a class="dropdown-item d-flex align-items-center" href="#">
                                         <div class="font-weight-bold">
                                             <div class="text-truncate">
-                                                <%= message.text %>
+                                                <%= message.message %>
                                             </div>
                                             <div class="small text-gray-500">
-                                                <%= message.sender %> · <%= message.time %>
+                                                <%= message.sender %> · <%= message.createdAt %>
                                             </div>
                                         </div>
                                     </a>
@@ -160,10 +160,10 @@
                                     <a class="dropdown-item d-flex align-items-center" href="#">
                                         <div class="font-weight-bold">
                                             <div class="text-truncate">
-                                                <%= message.text %>
+                                                <%= message.message %>
                                             </div>
                                             <div class="small text-gray-500">
-                                                <%= message.sender %> · <%= message.time %>
+                                                <%= message.sender %> · <%= message.createdAt %>
                                             </div>
                                         </div>
                                     </a>
@@ -245,7 +245,7 @@
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Ganhos (Mensais)</div>
                                             <div id="ffc" class="ganhosmensais h5 mb-0 font-weight-bold text-gray-800">
-                                                MZN <%=wallet[0].balance%>
+                                                MZN <%=userStatistics.salesLast30Days%>
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -265,7 +265,7 @@
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Ganhos (Anuais)</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"> MZN
-                                                <%=wallet[0].balance%>
+                                                <%=userStatistics.salesLastYear%>
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -285,7 +285,7 @@
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 Pagamentos Pendentes</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <%=wallet[0].balance%>
+                                                <%=userStatistics.pendingRate%> %
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -304,7 +304,7 @@
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 Checkouts</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <%=wallet[0].balance%>
+                                                <%=userStatistics.checkoutRate%> %
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -381,13 +381,16 @@
                                     </div>
                                     <div class="mt-4 text-center small">
                                         <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> Finalizados
+                                            <i class="fas fa-circle "></i> Finalizados
                                         </span>
                                         <span class="mr-2">
-                                            <i class="fas fa-circle text-success"></i> Cancelados
+                                            <i class="fas fa-circle "></i> Reembolsados
                                         </span>
                                         <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Não processesados
+                                            <i class="fas fa-circle "></i> Cancelados
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle "></i> Pendentes
                                         </span>
                                     </div>
                                 </div>
@@ -538,8 +541,8 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-    <div id="areaChart-data" data-values="[0, 0, 0,0,0,0,0,0,0,0,0,0]"></div>
-    <div id="pieChart-data" data-values="[0, 0, 100]"></div>
+    <div id="areaChart-data" data-values="[<%= userStatistics.monthlySales %>]"></div>
+    <div id="pieChart-data" data-values="[<%= userStatistics.checkoutRate %>, <%= userStatistics.pendingRate %>, <%= userStatistics.refundRate %>, <%= userStatistics.cancellationRate %>]"></div>
 
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

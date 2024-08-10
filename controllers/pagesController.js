@@ -8,12 +8,15 @@ const bcrypt = require("bcryptjs");
 exports.profile = async (req, res) => {  
     const { firstName, lastName, username, email, password, repeatPassword,dateOfBirth,address, postalCode, documentId, documentIdImg,phone,alternativeEmail,businessName, legalDocument,website, form }  = req.body;
     const token = req.cookies.jwt;
-     
+    console.log(req.file)
+    const file = req.file;
+   
+   
     try {
         const response = await fetch(`${process.env.URL}/pages/profile`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' }, 
-            body: JSON.stringify({ token, firstName, lastName, username, email, password, repeatPassword,dateOfBirth,address, postalCode, documentId, documentIdImg,phone,alternativeEmail,businessName, legalDocument,website, form } )
+            body: JSON.stringify({ token, firstName, lastName, username, email, password, repeatPassword,dateOfBirth,address, postalCode, documentId, documentIdImg,phone,alternativeEmail,businessName, legalDocument,website, form,file } )
         });
 
         const data = await response.json();

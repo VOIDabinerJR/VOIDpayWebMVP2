@@ -99,63 +99,74 @@
                                 </form>
                             </div>
                         </li>
+ <!-- Nav Item - Alerts -->
+ <li class="nav-item dropdown no-arrow mx-1">
+    <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-bell fa-fw"></i>
+        <!-- Counter - Alerts -->
+        <span class="badge badge-danger badge-counter">
+            <%=notification.notificationCount%> +
+        </span>
+    </a>
+    <!-- Dropdown - Alerts -->
+    <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+        aria-labelledby="alertsDropdown">
+        <h6 class="dropdown-header">
+            Notificações
+        </h6>
+        <% message.forEach(message=> { %>
+            <a class="dropdown-item d-flex align-items-center" href="#">
+                <div class="font-weight-bold">
+                    <div class="text-truncate">
+                        <%= message.message %>
+                    </div>
+                    <div class="small text-gray-500">
+                        <%= message.sender %> · <%= message.createdAt %>
+                    </div>
+                </div>
+            </a>
+            <% }); %>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Show All
+                    Alerts</a>
+    </div>
+</li>
 
-                        <!-- Nav Item - Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw"></i>
-                                <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter"><%=notification.notificationCount%> +</span>
-                            </a>
-                            <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="alertsDropdown">
-                                <h6 class="dropdown-header">
-                                    Alerts Center
-                                </h6>
-                                <% message.forEach(message => { %>
-                                    <a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="font-weight-bold">
-                                            <div class="text-truncate"><%= message.text %></div>
-                                            <div class="small text-gray-500"><%= message.sender %> · <%= message.time %></div>
-                                        </div>
-                                    </a>
-                                <% }); %>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                            </div>
-                        </li>
-
-                        <!-- Nav Item - Messages -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-envelope fa-fw"></i>
-                                <!-- Counter - Messages -->
-                                <span class="badge badge-danger badge-counter"><%=notification.notificationCount%> </span>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="messagesDropdown">
-                                <h6 class="dropdown-header">
-                                    Message Center
-                                </h6>
+<!-- Nav Item - Messages -->
+<li class="nav-item dropdown no-arrow mx-1">
+    <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-envelope fa-fw"></i>
+        <!-- Counter - Messages -->
+        <span class="badge badge-danger badge-counter">
+            <%=notification.notificationCount%>
+        </span>
+    </a>
+    <!-- Dropdown - Messages -->
+    <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+        aria-labelledby="messagesDropdown">
+        <h6 class="dropdown-header">
+            Mensagens
+        </h6>
 
 
-                                <% message.forEach(message => { %>
-                                    <a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="font-weight-bold">
-                                            <div class="text-truncate"><%= message.text %></div>
-                                            <div class="small text-gray-500"><%= message.sender %> · <%= message.time %></div>
-                                        </div>
-                                    </a>
-                                <% }); %>
-                               
-                                 </div>
-                        </li>
+        <% message.forEach(message=> { %>
+            <a class="dropdown-item d-flex align-items-center" href="#">
+                <div class="font-weight-bold">
+                    <div class="text-truncate">
+                        <%= message.message %>
+                    </div>
+                    <div class="small text-gray-500">
+                        <%= message.sender %> · <%= message.createdAt %>
+                    </div>
+                </div>
+            </a>
+            <% }); %>
 
-                        <div class="topbar-divider d-none d-sm-block"></div>
+    </div>
+</li>
 
+<div class="topbar-divider d-none d-sm-block"></div>
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
@@ -202,7 +213,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>Copyright &copy; VOIDpay 2024</span>
                     </div>
                 </div>
             </footer>
