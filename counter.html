@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de 365 Dias</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        #counter {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+        }
+        .column {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            margin: 0 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .column h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        .progress-bar-inner {
+            height: 20px;
+            background-color: #4caf50;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="counter"></div>
+
+    <div class="container">
+        <div class="column">
+            <h2>Ideias de Projectos</h2>
+            <ul id="projectIdeas"></ul>
+        </div>
+        <div class="column">
+            <h2>Projectos Iniciados</h2>
+            <ul id="startedProjects"></ul>
+        </div>
+        <div class="column">
+            <h2>Estágio</h2>
+            <p id="currentStage"></p>
+            <div class="progress-bar">
+                <div id="progressBarInner" class="progress-bar-inner"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateCounter() {
+            const startDate = new Date(); // Data de início (hoje)
+            const endDate = new Date(startDate.getFullYear() + 1, startDate.getMonth(), startDate.getDate()); // 365 dias depois
+
+            const today = new Date();
+            const timeDiff = endDate - today;
+            const daysLeft = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+            document.getElementById('counter').textContent = `${daysLeft} dias restantes`;
+        }
+
+        function loadProjects() {
+            const data = {
+                projectIdeas: [
+                    "",
+                    "",
+                    ""
+                ],
+                startedProjects: [
+                    "",
+                    "",
+                    ""
+                ],
+                currentStage: {
+                    description: "Progresso do projecto selecioando",
+                    progress: 5
+                }
+            };
+
+            const projectIdeasList = document.getElementById('projectIdeas');
+            data.projectIdeas.forEach(idea => {
+                const listItem = document.createElement('li');
+                listItem.textContent = idea;
+                projectIdeasList.appendChild(listItem);
+            });
+
+            const startedProjectsList = document.getElementById('startedProjects');
+            data.startedProjects.forEach(project => {
+                const listItem = document.createElement('li');
+                listItem.textContent = project;
+                startedProjectsList.appendChild(listItem);
+            });
+
+            const currentStage = document.getElementById('currentStage');
+            currentStage.textContent = data.currentStage.description;
+
+            const progressBarInner = document.getElementById('progressBarInner');
+            progressBarInner.style.width = `${data.currentStage.progress}%`;
+        }
+
+        updateCounter();
+        loadProjects();
+    </script>
+</body>
+</html>

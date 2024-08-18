@@ -13,9 +13,7 @@ const userRoutes = require('./routes/user');
 
 
 const app = express(); 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/Mainpage/index.html'));
-});
+
 
 // apos corrigir os directorios (public) branch 2
 //midleware
@@ -35,6 +33,10 @@ app.get('*', checkUser)
 app.use(authRoutes);
 app.use(pagesRoutes);
 app.use(userRoutes);
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/Mainpage/index.html'));
+});
 
 
 

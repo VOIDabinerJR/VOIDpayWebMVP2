@@ -10,7 +10,7 @@ router.post('/app', userController.createApp);
 
 router.post('/integracao/create', userController.createButton); 
 router.post('/integracao/activate', userController.activateButton); 
-router.post('/withdraw', userController.withdraw); //mudar nome desta rota
+router.post('/carteira', userController.withdraw); //mudar nome desta rota
 
 //router.post('/requestbutton', userController.requestButton);
 //router.post('/ativebutton', userController.ativeButton);

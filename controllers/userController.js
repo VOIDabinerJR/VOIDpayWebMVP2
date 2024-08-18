@@ -122,7 +122,9 @@ exports.activateButton = async (req, res) => {
 
 exports.withdraw = async (req, res) => {
   
-    const { tokeny } = req.body;
+    const token  =  req.cookies.jwt;
+    const {amount,customer_msisdn, paymentMethod} = req.body;
+    
     
     
      
@@ -131,15 +133,15 @@ exports.withdraw = async (req, res) => {
         const response = await fetch(`${process.env.URL}/pay/withdraw`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({  tokeny })
+            body: JSON.stringify({  token,amount,customer_msisdn ,paymentMethod})
         });
 
         const data = await response.json();
         console.log(data)
-
+ 
         if (response.status === 200) {
             
-            return res.status(200).redirect('/app');
+            return res.status(200).redirect('/carteira');
         } else { 
            
             return res.status(response.status).send(data);
@@ -158,7 +160,7 @@ exports.qeryTransactionStatus = async (req, res) => {
      
    
     try {
-        const response = await fetch(`${process.env.URL}/pay/withdraw`, {
+        const response = await fetch(`${process.env.URL}/pay /withdraw`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({  tokeny })
@@ -189,7 +191,7 @@ exports.refund = async (req, res) => {
      
    
     try {
-        const response = await fetch(`${process.env.URL}/pay/withdraw`, {
+        const response = await fetch(`${process.env.URL}/pay /withdraw`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({  tokeny })

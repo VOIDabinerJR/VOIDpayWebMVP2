@@ -47,6 +47,9 @@ router.get('/privacy', (req, res) => {
 router.get('/legal', (req, res) => {
     res.render('legal');
 });
+router.get('/refundpolitcs', (req, res) => {
+    res.render('refundpolitcs');
+});
 
 
 
@@ -133,6 +136,12 @@ router.get('/assinatura', requireAuth, loadUserData, (req, res) => {
     const data = req.data
     const userStatistics = req.userStatistics
     res.render('assinatura',{ usuarios: data.usuarios, orders: data.orders, wallet: data.wallet, notification: notification, message: data.notification });
+
+});
+router.get('/marketing', requireAuth, loadUserData, (req, res) => {
+    const data = req.data
+    const userStatistics = req.userStatistics
+    res.render('marketing',{ usuarios: data.usuarios, orders: data.orders, wallet: data.wallet, notification: notification, message: data.notification });
 
 });
 router.get('/analises', requireAuth, loadUserData, (req, res) => {

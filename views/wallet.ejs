@@ -327,25 +327,30 @@
                                     <div class="card-body">
                                         <div class="chart-pie pt-4 pb-2">
                                             <form action="" method="post" style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
-                                                <div class="header-options">
-            
+                                                <div>
+                                                    <label for="backend">Valor:</label>
+                                                    <input type="text" id="amount" name="amount">
+        
+                                                </div>
+                                                  <div class="header-options">
+                                                   
                                                     <div>
-                                                        <label for="frontend">Metodo de saque:</label>
-                                                        <select id="frontend">
+                                                        <label for="paymentMethod">Metodo de saque:</label>
+                                                        <select id="paymentMethod" name="paymentMethod">
                                                             <option value="M-pesa">M-pesa</option>
                                                             <option value="E-Mola">E-Mola</option>
-                                                            <option value="-Khesh">M-Khesh</option>
+                                                            <option value="M-Khesh">M-Khesh</option>
                                                             <option value="MillenimBim">MillenimBim</option>
                                                             <option value="BCI">BCI</option>
                                                             <option value="EcoBank">EcoBank</option>
                                                             <option value="StandardBank">StandardBank</option>
             
-            
+                                                          
                                                         </select>
                                                     </div>
                                                     <div>
                                                         <label for="backend">Numero de Conta:</label>
-                                                        <input type="text" id="AccountNumber">
+                                                        <input type="text" id="customer_msisdn" name="customer_msisdn">
             
                                                     </div>
             

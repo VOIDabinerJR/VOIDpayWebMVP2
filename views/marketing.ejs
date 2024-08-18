@@ -39,7 +39,7 @@
             margin-bottom: 20px;
         }
         .header a {
-            color:#010203;
+            color: #010203;
             text-decoration: none;
         }
         .title {
@@ -93,7 +93,7 @@
             margin: 5px 0;
         }
         .update-link {
-            color: #010203;
+            color:#010203;
             text-decoration: none;
         }
     </style>
@@ -281,46 +281,46 @@
 
                     <!-- Page Heading -->
                     <div class="container">
-                        <div class="header">
-                            <a href="#"> Configurações</a>
-                        </div>
-                        <div class="title">Assinatura</div>
+
+                        <div class="title">Marketing</div>
                         <div class="content">
                             <div class="sidebar">
-                                <h3>Minha assinatura</h3>
-                                <p>Acompanhe o status da sua assinatura, gerencie seu plano e informações de pagamento.</p>
+                            
+                             
                                 <h3>Dúvidas frequentes</h3>
                                 <ul>
                                     <li><a href="/suporte">Como receber reembolso?</a></li>
                                     <li><a href="/suporte">Quando uma venda que realizo gera uma comissão a pagar?</a></li>
-                                    <li><a href="/suporte">Quais são as regras de mudança de plano?</a></li>
+                                    <li><a href="/suporte">Enviado 30 minutos após o abandono?</a></li>
                                     <li><a href="/suporte">Quando realizei/realizarei um pagamento?</a></li>
                                 </ul>
                             </div>
-                            <div class="main-content">
-                                <div class="plan-card">
-                                    <h2>Meu plano</h2>
-                                    <h1>signature[0].plan</h1>
-                                    <p>2,99% por pedido pago (cobrado por semana)</p>
-                                    <p>Próximo pagamento: signature[0].nextbill</p>
-                                    <p>VOCÊ USA YAMPI DESDE <strong>usuarios[0].createdAt</strong></p>
-                                    <p>STATUS DA ASSINATURA <span class="status">Ativa</span></p>
+                            <div class="main-content" >
+                                <div class="plan-card" style="display: flex; flex-direction: column;">
+
+                                    <h2>E-mails Personalizados</h2>
+                                    <label for="">Enviado após Pagamento</label>
+                                    <input type="text">
+                                    <label for="">Enviado após Cancelamento</label>
+                                    <input type="text">
+                                    <label for="">Enviado após Reembolso</label>
+                                    <input type="text">
+                                    <label for="">Enviado após Abandono</label>
+ </div>
+                                <div class="billing-info"  style="display: flex; flex-direction: column;">
+                                    <h2>Cupons de desconto</h2>
+                                    <input type="text">
+                                    <label for="">Gerar Cupom</label>
+                                    <input type="text">
+                                    <label for="">Enviado após Abandono</label>
                                 </div>
-                                <div class="billing-info">
-                                    <h2>Dados de faturamento e cartão de crédito</h2>
-                                    <p><strong>usuarios[0].name</strong></p>
+                                <div class="payments"  style="display: flex; flex-direction: column;">
+                                    <h2>Cupons de desconto</h2>
+                                    <input type="text">
+                                    <label for="">Gerar Cupom</label>
+                                    <input type="text">
+                                    <label for="">Enviado após Abandono</label>
                                     
-                                    <p>userDetails[0].number</p>
-                                    <p>userDetails[0].number</p>
-                                    <p>userDetails[0].city</p>
-                                    <p>CEP:userDetails[0].postalCode</p>
-                                    <p>Cartão: Visa, final 3596 (Expira em 04/2026)</p>
-                                    <a class="update-link" href="#">Atualizar cartão</a>
-                                    <br>
-                                    <a class="update-link" href="#">Atualizar dados de faturamento</a>
-                                </div>
-                                <div class="payments">
-                                    <h2>Meus pagamentos</h2>
                                     <!-- Conteúdo dos pagamentos aqui -->
                                 </div>
                             </div>

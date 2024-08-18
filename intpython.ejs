@@ -1,0 +1,239 @@
+<div class="content">
+
+    <div class="text-section">
+        <h2>1. Integrar o front-end (Python)</h2>
+        <h2>1. Crie um Contêiner para o Botão de Pagamento</h2>
+        <p>Adicione um elemento <code>&lt;div&gt;</code> para abrigar o botão de pagamento
+            VOIDpay. Este contêiner é onde o botão será renderizado.</p>
+
+        <div class="example-code">
+            <code>
+&lt;div id="void-button-container" buttonToken="SEU_TOKEN_DO_BOTAO_AQUI"&gt;&lt;/div&gt;
+</code>
+        </div>
+
+        <p>Substitua <code>SEU_TOKEN_DO_BOTAO_AQUI</code> pelo token do botão que você
+            recebe do VOIDpay. Você pode obter este token no painel do VOIDpay.</p>
+
+        <h2>2. Use o Token do Botão Correto</h2>
+        <p>Para garantir que o botão de pagamento esteja vinculado à sua conta específica do
+            VOIDpay, siga estas etapas:</p>
+        <ol>
+            <li>
+                <strong>Obtenha o Token do Botão:</strong>
+                <ul>
+                    <li>Acesse o painel do VOIDpay.</li>
+                    <li>Navegue até a seção onde você pode gerar ou visualizar seus tokens
+                        de botão.</li>
+                    <li>Copie o token fornecido.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Insira o Token no Seu Código:</strong>
+                Substitua <code>SEU_TOKEN_DO_BOTAO_AQUI</code> pelo token que você obteve.
+            </li>
+        </ol>
+
+        <h2>3. Adicione o Script Necessário</h2>
+        <p>Adicione a tag de script que carrega o SDK do VOIDpay. Este script é essencial
+            para renderizar o botão de pagamento e lidar com as interações.</p>
+
+        <div class="example-code">
+            <code>
+&lt;script src="http://localhost:3000/sdk/js?clientId=SEU_CLIENT_ID_AQUI&amp;mode=nodejs"&gt;&lt;/script&gt;
+</code>
+        </div>
+
+        <p>Substitua <code>SEU_CLIENT_ID_AQUI</code> pelo seu ID de cliente real.</p>
+
+        <ol>
+            <li>
+                <strong>Obtenha Seu ID de Cliente:</strong>
+                <ul>
+                    <li>Acesse o painel do VOIDpay.</li>
+                    <li>Encontre a seção para credenciais da API</li>
+                    <li>Copie o ID de cliente fornecido.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Insira o ID de Cliente no Seu Código:</strong>
+                Substitua <code>SEU_CLIENT_ID_AQUI</code> pelo ID de cliente que você
+                copiou.
+            </li>
+        </ol>
+        <p>Atenção ao <code>mode=nodejs</code>que é essencial para o funcinamento.</p>
+
+        <h2>4. Adicione um Parágrafo para Mensagens de Erro</h2>
+        <p>Para ajudar na depuração, adicione um elemento <code>&lt;p&gt;</code> para exibir
+            mensagens de erro. Isso ajudará a identificar problemas durante os testes.</p>
+
+        <div class="example-code">
+            <code>
+&lt;p id="error-message"&gt;&lt;/p&gt;
+</code>
+        </div>
+
+        <h2>5. Estrutura de Item de Produto</h2>
+        <p>Para garantir que cada produto esteja corretamente formatado e apresentado, cada
+            item de produto deve estar dentro de uma <code>div</code> com a classe
+            <code>product-item</code>. Dentro desta <code>div</code>, cada informação do
+            produto deve ter uma classe apropriada para garantir a consistência e a
+            facilidade de estilização. As classes e suas prioridades são:
+        </p>
+        <ul>
+            <li><code>img-item</code>: Para a imagem do produto</li>
+            <li><code>name-item</code>: Para o nome do produto (prioridade alta)</li>
+            <li><code>quantity-item</code>: Para a quantidade do produto(prioridade alta)
+            </li>
+            <li><code>price-item</code>: Para o preço do produto (prioridade alta)</li>
+            <li><code>id-item</code>: Para o ID do produto</li>
+        </ul>
+
+
+    </div>
+    <div class="code-block">
+        <pre><code style="background-color: transparent; background: none; ">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-br"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" 
+content="width=device-width"&gt;
+&lt;title&gt;Exemplo de Botão&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class="product-item"&gt;
+&lt;div&gt;
+&lt;img class="image-item" style="width:45px;" 
+src="..."  alt="Imagem do Produto"&gt;
+&lt;/div&gt;
+&lt;div class="name-item"&gt;Produto 5&lt;/div&gt;
+&lt;div class="quantity-item"&gt;2&lt;/div&gt;
+&lt;div class="price-item"&gt;2200&lt;/div&gt;
+&lt;div class="id-item"&gt;005&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="void-button-container"
+buttonToken="SEU_TOKEN_DO_BOTAO_AQUI"&gt;&lt;/div&gt;
+&lt;p id="error-message"&gt;&lt;/p&gt;
+&lt;!-- Substitua  seu client-id. --&gt;
+&lt;script 
+src="http://localhost:3000/sdk/js?clientId=SEU-CLIENT-ID"&gt;
+&lt;/script&gt;
+
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt; </code></pre>
+    </div>
+
+</div>
+<br><br>
+
+<div class="content">
+    <div class="text-section">
+        <h2>1. Integrar o Back-end (Python)</h2>
+        <h2>1. Crie e Configure a Rota para Processar a Resposta do Pagamento</h2>
+        <p>Para integrar o backend com o VOIDpay, você precisa criar uma rota em seu servidor que receberá a resposta do pagamento. Esta rota irá processar a resposta e tratar o status do pagamento com base no campo <code>isApproved</code> do JSON retornado.</p>
+        
+        <h3>Como Funciona a Rota</h3>
+        <p>A rota receberá uma solicitação POST com dados do pagamento. O servidor processará esses dados e enviará uma solicitação para a API do VOIDpay. O campo <code>isApproved</code> no JSON de resposta indicará se o pagamento foi aprovado ou não.</p>
+
+        <h3>Exemplo de Código</h3>
+        <p>Abaixo está um exemplo de como configurar a rota em Node.js usando Express e <code>node-fetch</code> para fazer uma solicitação à API do VOIDpay:</p>
+        <h2>2. Obtendo o Client Secret</h2>
+        <p>O <code>clientSecret</code> é uma chave secreta que autentica sua aplicação com o VOIDpay. Para obtê-la:</p>
+        <ol>
+            <li>Acesse o painel do VOIDpay.</li>
+            <li>Navegue até a seção de credenciais da API ou configurações.</li>
+            <li>Copie o <code>clientSecret</code> fornecido.</li>
+        </ol>
+        <h2>3. Exemplo de Request Data</h2>
+        <p>O <code>request_data</code> que você enviará para a API do VOIDpay pode incluir um token, e deve ser formatado como no exemplo abaixo:</p>
+        
+        <div class="example-code">
+            <pre><code>
+{
+    "token": "token",
+    "clientSecret ":""
+}
+            </code></pre>
+        </div>
+
+        <h2>4. Exemplo de JSON de Response Data</h2>
+        <p>O <code>response_data</code> JSON retornado pela API do VOIDpay após uma solicitação pode ser semelhante ao seguinte:</p>
+        
+        <div class="example-code">
+            <pre><code>
+{
+    "paymentId": "1234567890",
+    "amount": 100.00,
+    "currency": "USD",
+    "isApproved": true,
+    "transactionId": "abcdef123456"
+    {
+        "costumerEmail":"Abiner@voidpay.com",
+        "costumerName":"abiner",
+        "costumerNumber":"+258848599243"
+    }, 
+    "error":""
+}
+            </code></pre>
+        </div>
+        <div class="example-code">
+            <pre><code>
+{
+    "paymentId": "1234567890",
+    "amount": 100.00,
+    "currency": "USD",
+    "isApproved": false,
+    "transactionId": "abcdef123456"
+    {
+        "costumerEmail":"Abiner@voidpay.com",
+        "costumerName":"abiner",
+        "costumerNumber":"+258848599243"
+    },
+    "error":""
+}
+            </code></pre>
+        </div>
+
+        
+ 
+    </div>
+
+    <div class="code-block">
+        <pre><code style="background-color: transparent; background: none;">
+from flask import Flask, request, jsonify
+import requests
+
+app = Flask(__name__)
+port = 3000
+
+@app.route('/send-data', methods=['POST'])
+def send_data():
+request_data = request.get_json()
+
+try:
+response = requests.post(
+    'http://localhost:3000',
+    headers={'Content-Type': 'application/json'},
+    json=request_data
+)
+
+response_data = response.json()
+print('Response from fetch:', response_data)
+
+
+except requests.exceptions.RequestException as error:
+print('Error making fetch request:', error)
+return jsonify({'error': 'An error occurred'}), 500
+
+if __name__ == '__main__':
+app.run(port=port)</code></pre>
+</div>
+</div>
+
+
+
