@@ -1,11 +1,11 @@
 const jwt = require("jsonwebtoken");
 //require('dotenv').config({ path: 'C:\\Users\\DELL\\Desktop\\server\\.env' });
-const JWT_SECRET='oi'
+
 const requireAuth = (req, res, next) => {
     console.log('a')
-    const token = req.cookies.jwt;
+    const token = req.cookies.kn4;
     if (token) {
-        jwt.verify(token, JWT_SECRET, (err, decodedToken) => {
+        jwt.verify(token, process.env.JWT_SECRET, (err, decodedToken) => {
             if (err) {
                 console.log(err.message);
                 res.redirect('/login');
@@ -19,7 +19,7 @@ const requireAuth = (req, res, next) => {
     }
 };
 const checkUser = async (req, res, next) => {
-    const token = req.cookies.jwt;
+    const token = req.cookies.kn4;
 
     if (token) {
         try {

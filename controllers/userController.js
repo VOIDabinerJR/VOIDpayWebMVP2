@@ -21,7 +21,7 @@ const handleErrors = (err) => {
 
 
 exports.createApp = async (req, res) => {
-    const token = req.cookies.jwt;
+    const token = req.cookies.kn4;
     const { name, type } = req.body;
     console.log("aaa")
 
@@ -38,7 +38,7 @@ exports.createApp = async (req, res) => {
         if (response.status === 200) {
             const maxAge = 3 * 24 * 60 * 60 * 1000; // Exemplo de tempo de expiração do cookie
 
-            // Define o token JWT como um cookie no navegador do usuário
+
             res.cookie('void1', data.app.clientid, { httpOnly: true, maxAge });
 
             // Redireciona para a página de dashboard após login bem-sucedido
@@ -56,7 +56,7 @@ exports.createApp = async (req, res) => {
 
 exports.createButton = async (req, res) => {
     const clientId = req.cookies.void1;
-    const token = req.cookies.jwt;
+    const token = req.cookies.kn4;
    
     console.log(token)
     
@@ -93,7 +93,7 @@ exports.activateButton = async (req, res) => {
     const { tokeny } = req.body;
     
     
-     
+       
    
     try {
         const response = await fetch(`${process.env.URL}/button/activateButton`, {
@@ -122,7 +122,7 @@ exports.activateButton = async (req, res) => {
 
 exports.withdraw = async (req, res) => {
   
-    const token  =  req.cookies.jwt;
+    const token  =  req.cookies.kn4;
     const {amount,customer_msisdn, paymentMethod} = req.body;
     
     

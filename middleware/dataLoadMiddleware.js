@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 
 const loadUserData = async (req, res, next) => {
 
-    const token = req.cookies.jwt;
+    const token = req.cookies.kn4;
   
     if (!req.data || (typeof req.data === 'object' && Object.keys(req.data).length === 0)) {
       
@@ -18,9 +18,9 @@ const loadUserData = async (req, res, next) => {
             });
  
             const data = await response.json();
-            //console.log(data.user)
+           console.log(data.user) 
             console.log(data.userStatistics.salesLast30Days)
-
+ 
             if (response.status === 200) { 
                 req.data =data.user
                 req.userStatistics =data.userStatistics

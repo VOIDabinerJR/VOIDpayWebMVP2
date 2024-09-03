@@ -10,6 +10,9 @@
     <meta name="author" content="">
 
     <title>Editar Perfil</title>
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.css">
+
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -20,7 +23,7 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/VOIDabinerJR/VOIDpayWebMVP2/main/img/logo.ico"
-    type="image/x-icon">
+        type="image/x-icon">
 
 </head>
 
@@ -183,7 +186,7 @@
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Perfil
                                 </a>
-                                
+
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -224,20 +227,22 @@
 
                                         <label class="m-0 font-weight-bold text-primary">Username</label>
                                         <input type="text" name="username" id="username"
-                                            class="form-control bg-light border-0 small" placeholder="<%= usuarios[0].username %>"
-                                            aria-label="Search" aria-describedby="basic-addon2">
+                                            class="form-control bg-light border-0 small"
+                                            placeholder="<%= usuarios[0].username %>" aria-label="Search"
+                                            aria-describedby="basic-addon2">
 
 
                                         <label class="m-0 font-weight-bold text-primary">Nome</label>
                                         <input name="firstName" id="firstName" type="text"
                                             class="form-control bg-light border-0 small"
-                                            placeholder="<%= usuarios[0].firstname %>"  aria-label="Search"
-                                            aria-describedby="basic-addon2">
+                                            placeholder="<%= usuarios[0].firstname %>" aria-label="Search"
+                                            aria-describedby="basic-addon2" disabled>
 
                                         <label class="m-0 font-weight-bold text-primary">Sobrenome</label>
                                         <input name="lastName" id="lastName" type="text"
-                                            class="form-control bg-light border-0 small" placeholder="<%= usuarios[0].lastname %>"
-                                            aria-label="Search" aria-describedby="basic-addon2">
+                                            class="form-control bg-light border-0 small"
+                                            placeholder="<%= usuarios[0].lastname %>" aria-label="Search"
+                                            aria-describedby="basic-addon2" disabled>
 
 
                                         <label class="m-0 font-weight-bold text-primary">Password</label>
@@ -248,14 +253,15 @@
 
                                         <label class="m-0 font-weight-bold text-primary">Email</label>
                                         <input name="email" id="email" type="text"
-                                            class="form-control bg-light border-0 small" placeholder="<%= usuarios[0].email %>"
-                                            aria-label="Search" aria-describedby="basic-addon2">
+                                            class="form-control bg-light border-0 small"
+                                            placeholder="<%= usuarios[0].email %>" aria-label="Search"
+                                            aria-describedby="basic-addon2" disabled>
 
                                         <label class="m-0 font-weight-bold text-primary">Data de Nascimento</label>
                                         <input name="dateOfBirth" id="dateOfBirth" type="text"
-                                            class="form-control bg-light border-0 small"
-                                            placeholder="<%= userDetails.dateOfBirth %>"  data-mask="0000-00-00"  aria-label="Search"
-                                            aria-describedby="basic-addon2">
+                                            class="dateOfBirth form-control bg-light border-0 small"
+                                            placeholder="<%= userDetails.dateOfBirth %>">
+
 
                                         <label class="m-0 font-weight-bold text-primary">Endereço</label>
                                         <input name="address" id="address" type="text"
@@ -272,10 +278,10 @@
                                             class="form-control bg-light border-0 small"
                                             placeholder="<%= userDetails.documentId %>" aria-label="Search"
                                             aria-describedby="basic-addon2">
-                                       
-                                            <input name="documentIdImg" id="documentIdImg" type="file" accept="image/*" >
-                                            
-                          <br>
+
+                                        <input name="documentIdImg" id="documentIdImg" type="file" accept="image/*">
+
+                                        <br>
 
                                         <label class="m-0 font-weight-bold text-primary">Celular</label>
                                         <input name="phone" id="phone" type="text"
@@ -288,25 +294,24 @@
                                             class="form-control bg-light border-0 small"
                                             placeholder="<%= userDetails.alteranativeEmail %>" aria-label="Search"
                                             aria-describedby="basic-addon2">
-                                            <input style=" display: none;" name="form" id="form" type="text"
-                                            class="form-control hidden bg-light border-0 small"
-                                            value="user" aria-label="Search"
-                                            aria-describedby="basic-addon2">
+                                        <input style=" display: none;" name="form" id="form" type="text"
+                                            class="form-control hidden bg-light border-0 small" value="user"
+                                            aria-label="Search" aria-describedby="basic-addon2">
 
 
-                                            <a href="/dashboard" class="btn btn-light btn-icon-split">
-                                                <span class="icon text-gray-600">
-                                                   
-                                                </span>
-                                                <span class="text">Cancelar</span>
-                                            </a>
-                                       
-                                            <button type="submit" class="btn btn-primary btn-icon-split">
-                                                <span class="icon text-white-50">
-                                                   
-                                                </span>
-                                                <span class="text">Salvar</span>
-                                            </button>
+                                        <a href="/dashboard" class="btn btn-light btn-icon-split">
+                                            <span class="icon text-gray-600">
+
+                                            </span>
+                                            <span class="text">Cancelar</span>
+                                        </a>
+
+                                        <button type="submit" class="btn btn-primary btn-icon-split">
+                                            <span class="icon text-white-50">
+
+                                            </span>
+                                            <span class="text">Salvar</span>
+                                        </button>
 
 
                                     </form>
@@ -317,7 +322,7 @@
                                 </div>
                             </div>
 
-                            
+
 
                         </div>
 
@@ -344,11 +349,11 @@
                                             class="form-control bg-light border-0 small"
                                             placeholder="<%= businessDetails.legalDocument %>" aria-label="Search"
                                             aria-describedby="basic-addon2">
-                                    
-                                            <input style=" border-radius: 10px;" type="file" name="photo" accept="image/*" >
-                                           
-                                     
-<br>
+
+                                        <input style=" border-radius: 10px;" type="file" name="photo" accept="image/*">
+
+
+                                        <br>
                                         <label class="m-0 font-weight-bold text-primary">Email Comercial</label>
                                         <input name="email" id="email" type="text"
                                             class="form-control bg-light border-0 small"
@@ -368,23 +373,22 @@
                                             aria-describedby="basic-addon2">
 
 
-                                            <input style=" display: none;" name="form" id="form" type="text"
-                                            class="form-control hidden bg-light border-0 small"
-                                            value="business" aria-label="Search"
-                                            aria-describedby="basic-addon2">
+                                        <input style=" display: none;" name="form" id="form" type="text"
+                                            class="form-control hidden bg-light border-0 small" value="business"
+                                            aria-label="Search" aria-describedby="basic-addon2">
 
-                                            <a href="/dashboard" class="btn btn-light btn-icon-split">
-                                                <span class="icon text-gray-600">
-                                                   
-                                                </span>
-                                                <span class="text">Cancelar</span>
-                                            </a>
-                                            <button type="submit" class="btn btn-primary btn-icon-split">
-                                                <span class="icon text-white-50">
-                                                  
-                                                </span>
-                                                <span class="text">Salvar</span>
-                                            </button>
+                                        <a href="/dashboard" class="btn btn-light btn-icon-split">
+                                            <span class="icon text-gray-600">
+
+                                            </span>
+                                            <span class="text">Cancelar</span>
+                                        </a>
+                                        <button type="submit" class="btn btn-primary btn-icon-split">
+                                            <span class="icon text-white-50">
+
+                                            </span>
+                                            <span class="text">Salvar</span>
+                                        </button>
 
                                     </form>
 
@@ -457,16 +461,16 @@
 
 
 
-    <script>flatpickr("#dateOfBirth", {
-        dateFormat: "m/y",
-        altFormat: "F Y",
-        altInput: true,
-        maxDate: "today"
-    });</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.js"></script>
+    <script>
+        flatpickr("#dateOfBirth", {
+           
+
+        });
+    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.js"></script>
 
 </body>
 

@@ -25,18 +25,18 @@ router.get('/', (req, res) => {
 
 //auth
 router.get('/login', (req, res) => {
-    res.render('login')
+    res.render('login', {error:''})
 });
 router.get('/register', (req, res) => {
-    res.render('register')
+    res.render('register', {error:''})
 });
 
 router.get('/recoveraccount', (req, res) => {
     //res.sendFile(path.join(__dirname,'../forgot-password.html'));
-    res.render('forgot-password')
+    res.render('forgot-password', {email:'', inputt:'block', message:'Digite seu e-mail abaixo'})
 });
 router.get('/resetpassword', (req, res) => {
-    res.render('reset-password');
+    res.render('reset-password', {error:''});
 });
 
 
@@ -101,7 +101,7 @@ router.get('/profile', requireAuth, loadUserData, (req, res) => {
 
 
 
-    res.render('profile', { usuarios: data.usuarios, userDetails: data.userDetails[0], businessDetails:data.businessDetails[0],notification: notification, message: message })
+    res.render('profile', { usuarios: data.usuarios, userDetails: data.userDetails[0], businessDetails:data.businessDetails[0],notification: notification, message: data.notification })
 
 });
 router.post('/profile', pagesController.profile);
@@ -113,6 +113,7 @@ router.get('/dashboard', requireAuth, loadUserData, (req, res) => {
     const userStatistics = req.userStatistics
     console.log(userStatistics.monthlySales)
     console.log(data.notification)
+    console.log(data)
   
     res.render('index', { usuarios: data.usuarios, orders: data.orders, wallet: data.wallet, notification: notification, message: data.notification, userStatistics:userStatistics })
     // res.sendFile(path.join(__dirname, '../','/index.html'));

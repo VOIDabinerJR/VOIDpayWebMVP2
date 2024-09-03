@@ -222,17 +222,19 @@
                     <h1 class="h4 text-gray-900 mb-4"><strong>Criar conta grátis</strong></h1>
 
                 </div>
-                <input type="text" name="firstName" id="FirstName" placeholder="Nome">
-                <input type="text" name="lastName" id="LastName" placeholder="Sobrenome">
-                <input type="email" name="email" id="inputEmail" placeholder="Email">
-                <input type="password" name="password" id="inputPassword" placeholder="Password">
-                <input type="password" name="repeatPassword" id="repeatPassword" placeholder="Repita Password">
+                <input type="text" name="firstName" id="FirstName" placeholder="Nome" required>
+                <input type="text" name="lastName" id="LastName" placeholder="Sobrenome" required>
+                <input type="email" name="email" id="inputEmail" placeholder="Email" required>
+                <input type="password" name="password" id="inputPassword" placeholder="Password" required>
+                <input type="password" name="repeatPassword" id="repeatPassword" placeholder="Repita Password" required>
                 <div id="passwordStrength"></div>
+                <div style="color: red;"><%=error%></div>
                 <button type="submit" class="submit">
                     Cadastar
                 </button>
                 <p class="small">Ao criar uma conta, você concorda com os <a class="small " href="/legal">termos de
                         uso</a> e <a class="small" href="/privacy">Política de Privacidade</a> da VOIDpay.</p>
+            
 
             </form>
 

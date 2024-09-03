@@ -1,11 +1,11 @@
 {
-    "title": "SB Admin 2",
-    "name": "startbootstrap-sb-admin-2",
+    "title": "VOIDpay Web",
+    "name": "voidpay-web",
     "version": "4.1.4",
     "scripts": {
         "start": "nodemon app.js"
     },
-    "description": "An open source Bootstrap 4 admin theme.",
+    "description": "voidpay web",
     "keywords": [
         "css",
         "sass",
@@ -16,19 +16,19 @@
         "admin",
         "app"
     ],
-    "homepage": "https://startbootstrap.com/theme/sb-admin-2",
+    "homepage": "https:www.voidpay.online",
     "bugs": {
-        "url": "https://github.com/StartBootstrap/startbootstrap-sb-admin-2/issues",
-        "email": "feedback@startbootstrap.com"
+        "url": "https:www.voidpay.online",
+        "email": "developers@voidpay.online"
     },
     "license": "MIT",
-    "author": "Start Bootstrap",
+    "author": "VOIDpay developers",
     "contributors": [
-        "David Miller (https://davidmiller.io/)"
+        "Abiner Maleiane Jr ()"
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/StartBootstrap/startbootstrap-sb-admin-2.git"
+        "url": "--"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "6.6.0",

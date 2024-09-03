@@ -8,7 +8,7 @@ const fetch = require('node-fetch');
 require('dotenv').config();
 const User = require('../models/User');
 
-
+ 
 
 
 //handle erros 
@@ -35,16 +35,20 @@ const username =firstName
         console.log(data);
 
         if (response.status === 201) { 
-            const maxAge = 3 * 24 * 60 * 60 * 1000; // Exemplo de tempo de expiração do cookie
+            const maxAge = 3 * 24 * 60 * 60 * 1000; 
 
-            // Define o cookie JWT no cliente
-            res.cookie('jwt', data.token, { httpOnly: true, maxAge });
-
+            
+            res.cookie('jgg', data.token, { httpOnly: true, maxAge });
+            res.cookie('d', data.token, { httpOnly: true, maxAge });
+            res.cookie('kn4', data.token, { httpOnly: true, maxAge });
+            res.cookie('e432', data.token, { httpOnly: true, maxAge });
+            res.cookie('412t', data.token, { httpOnly: true, maxAge });
+            res.cookie('vcxd', data.token, { httpOnly: true, maxAge });
             // Redireciona para o dashboard
             return res.redirect('/dashboard');
         } else {
             // Trata qualquer erro retornando o status e mensagem recebidos do servidor
-            return res.status(response.status).send(data);
+            return   res.render('register', {error:data.error})
         }
     } catch (error) {
         console.error('Erro durante o registro:', error);
@@ -66,16 +70,21 @@ exports.login = async (req, res) => {
         console.log(data)
 
         if (response.status === 200) {
-            const maxAge = 3 * 24 * 60 * 60 * 1000; // Exemplo de tempo de expiração do cookie
+            const maxAge = 3 * 24 * 60 * 60 * 1000;
 
-            // Define o token JWT como um cookie no navegador do usuário
-            res.cookie('jwt', data.token, { httpOnly: true, maxAge });
+         
+            res.cookie('jgg', data.token, { httpOnly: true, maxAge });
+            res.cookie('d', data.token, { httpOnly: true, maxAge });
+            res.cookie('kn4', data.token, { httpOnly: true, maxAge });
+            res.cookie('e432', data.token, { httpOnly: true, maxAge });
+            res.cookie('412t', data.token, { httpOnly: true, maxAge });
+            res.cookie('vcxd', data.token, { httpOnly: true, maxAge });
 
-            // Redireciona para a página de dashboard após login bem-sucedido
+           
             return res.redirect('/dashboard');
         } else { 
-            // Em caso de falha no login, retorna o status e mensagem de erro recebidos do servidor
-            return res.status(response.status).send(data);
+          
+            return   res.render('login', {error:data.err})
         }
     } catch (error) {
         console.error('Erro durante o login:', error);
@@ -86,6 +95,7 @@ exports.login = async (req, res) => {
 
 exports.recoveraccount = async (req, res) => {
     const { email } = req.body;
+   
    
     console.log('aa')
 
@@ -105,10 +115,10 @@ exports.recoveraccount = async (req, res) => {
         if (response.status === 200) {
            
           
-            return res.render('forgot-password',{email :email, message:' Enviamos um link de recuperação para o e-mail.' })
+            return res.render('forgot-password',{inputt:'none',email :email, message:' Enviamos um link de recuperação para o e-mail.' })
         } else { 
-          
-            return res.render('forgot-password',{email :'Email não cadastrado'})
+            return res.render('forgot-password',{inputt:'none',email :email, message:'Email não cadastrado.' })
+           
         }
     } catch (error) {
         console.error('Erro durante o login:', error);
@@ -135,13 +145,18 @@ exports.resetpassword = async (req, res) => {
         if (response.status === 200) {
             const maxAge = 3 * 24 * 60 * 60 * 1000; // Exemplo de tempo de expiração do cookie
 
-            // Define o token JWT como um cookie no navegador do usuário
-            res.cookie('jwt', data.token, { httpOnly: true, maxAge });
+          
+            res.cookie('jgg', data.token, { httpOnly: true, maxAge });
+            res.cookie('d', data.token, { httpOnly: true, maxAge });
+            res.cookie('kn4', data.token, { httpOnly: true, maxAge });
+            res.cookie('e432', data.token, { httpOnly: true, maxAge });
+            res.cookie('412t', data.token, { httpOnly: true, maxAge });
+            res.cookie('vcxd', data.token, { httpOnly: true, maxAge });
 
-            return res.render('forgot-password',{email :"Sucesso" ,message:"Senha Alterada com sucesso"})
+            return res.render('forgot-password',{inputt:'none',email :"Sucesso" ,message:"Senha Alterada com sucesso"})
         } else { 
             // Em caso de falha no login, retorna o status e mensagem de erro recebidos do servidor
-            return res.status(response.status).send(data);
+            return   res.render('reset-password', {error:data.error})
         }
     } catch (error) {
         console.error('Erro durante o login:', error);
@@ -152,6 +167,6 @@ exports.resetpassword = async (req, res) => {
 
 module.exports.logout_get = (req, res) => {
     console.log("Aaa")
-    res.cookie('jwt', '', { maxAge: 1 });
+    res.cookie('kn4', '', { maxAge: 1 });
     return res.redirect('/login');
 };

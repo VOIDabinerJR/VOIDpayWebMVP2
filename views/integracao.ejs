@@ -422,6 +422,7 @@
                                 <select id="frontend">
                                     <option value="integracaoHtml">HTML</option>
                                     <option>XML</option>
+                                    <option value="integracaoJava">Sistema JAVA(Desktop)</option>
 
                                 </select>
                             </div>
@@ -516,6 +517,17 @@
                                     .then(response => response.text())
                                     .then(data => {
                                         document.getElementById('integracaoPython').innerHTML = data;
+                                    });
+                            </script>
+                        </div>
+
+                        <div class="section" id="integracaoJava" style="display: none;">
+                            <script>
+
+                                fetch('intjava.ejs')
+                                    .then(response => response.text())
+                                    .then(data => {
+                                        document.getElementById('integracaoJava').innerHTML = data;
                                     });
                             </script>
                         </div>
