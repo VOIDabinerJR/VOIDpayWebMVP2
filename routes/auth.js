@@ -17,7 +17,7 @@ router.post('/resetpassword',authController.resetpassword);
  
 
 
-process.env.URL
+
 
  
 module.exports = router;

@@ -10,8 +10,9 @@ exports.profile = async (req, res) => {
     const token = req.cookies.kn4;
     console.log(req.file)
     const file = req.file;
+    
    
-   
+    
     try {
         const response = await fetch(`${process.env.URL}/pages/profile`, {
             method: 'POST',

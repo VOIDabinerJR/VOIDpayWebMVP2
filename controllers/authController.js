@@ -48,7 +48,7 @@ const username =firstName
             return res.redirect('/dashboard');
         } else {
             // Trata qualquer erro retornando o status e mensagem recebidos do servidor
-            return   res.render('register', {error:data.error})
+            return   res.render('register', {error:data.err})
         }
     } catch (error) {
         console.error('Erro durante o registro:', error);
