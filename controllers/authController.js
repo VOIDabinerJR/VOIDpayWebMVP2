@@ -37,7 +37,7 @@ const username =firstName
         if (response.status === 201) { 
             const maxAge = 3 * 24 * 60 * 60 * 1000; 
 
-            
+               
             res.cookie('jgg', data.token, { httpOnly: true, maxAge });
             res.cookie('d', data.token, { httpOnly: true, maxAge });
             res.cookie('kn4', data.token, { httpOnly: true, maxAge });
