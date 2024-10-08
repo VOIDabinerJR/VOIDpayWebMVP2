@@ -88,7 +88,7 @@
                                 aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
+                                        <input type="text" class="form-control bg-white border-1 small"
                                             placeholder="Search for..." aria-label="Search"
                                             aria-describedby="basic-addon2">
                                         <div class="input-group-append">
@@ -227,55 +227,56 @@
 
                                         <label class="m-0 font-weight-bold text-primary">Username</label>
                                         <input type="text" name="username" id="username"
-                                            class="form-control bg-light border-0 small"
+                                        class="form-control bg-white border-1 small"
                                             placeholder="<%= usuarios[0].username %>" aria-label="Search"
                                             aria-describedby="basic-addon2">
 
 
                                         <label class="m-0 font-weight-bold text-primary">Nome</label>
                                         <input name="firstName" id="firstName" type="text"
-                                            class="form-control bg-light border-0 small"
+                                        class="form-control bg-white border-1 small"
                                             placeholder="<%= usuarios[0].firstname %>" aria-label="Search"
                                             aria-describedby="basic-addon2" disabled>
 
                                         <label class="m-0 font-weight-bold text-primary">Sobrenome</label>
                                         <input name="lastName" id="lastName" type="text"
-                                            class="form-control bg-light border-0 small"
+                                        class="form-control bg-white border-1 small"
                                             placeholder="<%= usuarios[0].lastname %>" aria-label="Search"
                                             aria-describedby="basic-addon2" disabled>
 
 
                                         <label class="m-0 font-weight-bold text-primary">Password</label>
                                         <input name="password" id="password" type="text"
-                                            class="form-control bg-light border-0 small" placeholder="********"
+                                        class="form-control bg-white border-1 small" placeholder="********"
                                             aria-label="Search" aria-describedby="basic-addon2">
 
 
                                         <label class="m-0 font-weight-bold text-primary">Email</label>
                                         <input name="email" id="email" type="text"
-                                            class="form-control bg-light border-0 small"
+                                        class="form-control bg-white border-1 small"
                                             placeholder="<%= usuarios[0].email %>" aria-label="Search"
                                             aria-describedby="basic-addon2" disabled>
 
                                         <label class="m-0 font-weight-bold text-primary">Data de Nascimento</label>
                                         <input name="dateOfBirth" id="dateOfBirth" type="text"
-                                            class="dateOfBirth form-control bg-light border-0 small"
+                                        class="form-control bg-white border-1 small"
+                                            class="dateOfBirth"
                                             placeholder="<%= userDetails.dateOfBirth %>">
 
 
                                         <label class="m-0 font-weight-bold text-primary">Endereço</label>
                                         <input name="address" id="address" type="text"
-                                            class="form-control bg-light border-0 small"
+                                        class="form-control bg-white border-1 small"
                                             placeholder="<%= userDetails.address %>" aria-label="Search"
                                             aria-describedby="basic-addon2">
                                         <label class="m-0 font-weight-bold text-primary">Codigo Postal</label>
                                         <input name="postalCode" id="postalCode" type="text"
-                                            class="form-control bg-light border-0 small"
+                                        class="form-control bg-white border-1 small"
                                             placeholder="<%= userDetails.postalCode %>" aria-label="Search"
                                             aria-describedby="basic-addon2">
                                         <label class="m-0 font-weight-bold text-primary">Documento</label>
                                         <input name="documentId" id="documentId" type="text"
-                                            class="form-control bg-light border-0 small"
+                                        class="form-control bg-white border-1 small"
                                             placeholder="<%= userDetails.documentId %>" aria-label="Search"
                                             aria-describedby="basic-addon2">
 
@@ -285,17 +286,17 @@
 
                                         <label class="m-0 font-weight-bold text-primary">Celular</label>
                                         <input name="phone" id="phone" type="text"
-                                            class="form-control bg-light border-0 small"
+                                           class="form-control bg-white border-1 small"
                                             placeholder="<%= userDetails.phone %>" aria-label="Search"
                                             aria-describedby="basic-addon2">
 
                                         <label class="m-0 font-weight-bold text-primary">Email Alternativo</label>
                                         <input name="alternativeEmail" id="alternativeEmail" type="text"
-                                            class="form-control bg-light border-0 small"
+                                        class="form-control bg-white border-1 small"
                                             placeholder="<%= userDetails.alteranativeEmail %>" aria-label="Search"
                                             aria-describedby="basic-addon2">
                                         <input style=" display: none;" name="form" id="form" type="text"
-                                            class="form-control hidden bg-light border-0 small" value="user"
+                                        class="form-control bg-white border-1 small" value="user"
                                             aria-label="Search" aria-describedby="basic-addon2">
 
 
@@ -340,13 +341,13 @@
 
                                         <label class="m-0 font-weight-bold text-primary">Nome do Negocio</label>
                                         <input name="businessName" id="businessName" type="text"
-                                            class="form-control bg-light border-0 small"
+                                        class="form-control bg-white border-1 small"
                                             placeholder="<%= businessDetails.businessName %>" aria-label="Search"
                                             aria-describedby="basic-addon2">
 
                                         <label class="m-0 font-weight-bold text-primary">Documento Legal</label>
                                         <input name="legalDocument" id="legalDocument" type="text"
-                                            class="form-control bg-light border-0 small"
+                                        class="form-control bg-white border-1 small"
                                             placeholder="<%= businessDetails.legalDocument %>" aria-label="Search"
                                             aria-describedby="basic-addon2">
 
@@ -356,25 +357,25 @@
                                         <br>
                                         <label class="m-0 font-weight-bold text-primary">Email Comercial</label>
                                         <input name="email" id="email" type="text"
-                                            class="form-control bg-light border-0 small"
+                                        class="form-control bg-white border-1 small"
                                             placeholder="<%=businessDetails.email%>" aria-label="Search"
                                             aria-describedby="basic-addon2">
 
                                         <label class="m-0 font-weight-bold text-primary">Endereço</label>
                                         <input name="address" id="address" type="text"
-                                            class="form-control bg-light border-0 small"
+                                        class="form-control bg-white border-1 small"
                                             placeholder="<%=businessDetails.address%>" aria-label="Search"
                                             aria-describedby="basic-addon2">
 
                                         <label class="m-0 font-weight-bold text-primary">Website</label>
                                         <input name="website" id="website" type="text"
-                                            class="form-control bg-light border-0 small"
+                                        class="form-control bg-white border-1 small"
                                             placeholder="<%=businessDetails.website%>" aria-label="Search"
                                             aria-describedby="basic-addon2">
 
 
                                         <input style=" display: none;" name="form" id="form" type="text"
-                                            class="form-control hidden bg-light border-0 small" value="business"
+                                        class="form-control bg-white border-1 small" value="business"
                                             aria-label="Search" aria-describedby="basic-addon2">
 
                                         <a href="/dashboard" class="btn btn-light btn-icon-split">

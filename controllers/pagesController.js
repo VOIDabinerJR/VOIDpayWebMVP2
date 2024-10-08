@@ -20,6 +20,7 @@ exports.profile = async (req, res) => {
         });
 
         const data = await response.json();
+        console.log('infffffffffffffffffffffffffffff');
         console.log(data);
 
         if (response.status === 201) {

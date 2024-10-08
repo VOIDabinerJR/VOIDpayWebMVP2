@@ -17,7 +17,7 @@ const handleErrors = (err) => {
     let error = { email: '', password: '' }
 
 };
-
+ 
 
 
 exports.createApp = async (req, res) => {
@@ -213,3 +213,36 @@ exports.refund = async (req, res) => {
     }
 };
 
+exports.shopifyCredentials = async (req, res) => {
+    const token = req.cookies.kn4;
+    const { accessTokenShopify, apiKeyShopify,secretKeyShopify,urlShopify,buttonToken } = req.body;
+    console.log("aaa")
+  
+
+    try {
+        const response = await fetch(`${process.env.URL}/user/shopifyCredentials`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ accessTokenShopify, apiKeyShopify,urlShopify,secretKeyShopify,buttonToken, token })
+        });
+
+        const data = await response.json();
+        console.log(data)
+
+        if (response.status === 200) {
+            const maxAge = 3 * 24 * 60 * 60 * 1000; // Exemplo de tempo de expiração do cookie
+
+
+           // res.cookie('void1', data.app.clientid, { httpOnly: true, maxAge });
+
+            // Redireciona para a página de dashboard após login bem-sucedido
+            return res.redirect('/shopifyapp');
+        } else { 
+            // Em caso de falha no login, retorna o status e mensagem de erro recebidos do servidor
+            return res.status(response.status).send(data);
+        }
+    } catch (error) {
+        console.error('Erro durante criar app:', error);
+        return res.status(500).send('Erro interno do servidor');
+    }
+};

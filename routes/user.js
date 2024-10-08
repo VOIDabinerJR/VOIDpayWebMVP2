@@ -7,6 +7,7 @@ const router = express.Router();
 
 
 router.post('/app', userController.createApp);  
+router.post('/shopifyapp', userController.shopifyCredentials);  
 
 router.post('/integracao/create', userController.createButton); 
 router.post('/integracao/activate', userController.activateButton); 

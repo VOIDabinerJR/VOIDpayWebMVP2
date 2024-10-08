@@ -12,10 +12,10 @@
         "html",
         "responsive",
         "theme",
-        "template",
+        "template", 
         "admin",
         "app"
-    ],
+    ], 
     "homepage": "https:www.voidpay.online",
     "bugs": {
         "url": "https:www.voidpay.online",

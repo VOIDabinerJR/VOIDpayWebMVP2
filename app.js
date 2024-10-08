@@ -11,7 +11,7 @@ const authRoutes = require('./routes/auth');
 const pagesRoutes = require('./routes/pages');
 const userRoutes = require('./routes/user');
 
-
+ 
 const app = express(); 
 
 
@@ -22,13 +22,13 @@ app.set('view engine', 'ejs');
 const publicDirectory = path.join(__dirname)
 app.use(express.static(publicDirectory))
 app.use(coockieParser());
-
+ 
 dotenv.config({path: './.env'});
  
 app.use(bodyParser.urlencoded({extended:false}));
-app.use(bodyParser.json());
+app.use(bodyParser.json()); 
 
-
+ 
 app.get('*', checkUser)
 app.use(authRoutes);
 app.use(pagesRoutes);

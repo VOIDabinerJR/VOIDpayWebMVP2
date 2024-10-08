@@ -15,7 +15,8 @@ const notification = {
     text: 'ola',
     sender: 'joeh'
 
-}
+} 
+
 
 //main
 router.get('/', (req, res) => {
@@ -59,23 +60,7 @@ router.get('/refundpolitcs', (req, res) => {
 router.get('/profile', requireAuth, loadUserData, (req, res) => {
     const data = req.data
 
-    const userDetails = {
-        "dateOfBirth": "1990-01-01",
-        "address": "123 Main St, Apt 4B",
-        "postalCode": "12345",
-        "documentId": "A12345678",
-        "phone": "123-456-7890",
-        "alternativeEmail": "example@alternative.com"
-    }
-
-
-    const businessDetails = {
-        "businessName": "Minha Empresa",
-        "legalDocument": "B12345678",
-        "email": "business@example.com",
-        "address": "456 Business St, Suite 12",
-        "website": "https://www.minhaempresa.com"
-    }
+  
 
     if (data.businessDetails[0] == undefined ) {
        
@@ -175,6 +160,38 @@ router.get('/integracao', requireAuth, loadUserData, (req, res) => {
 });
 
 router.get('/app', requireAuth, loadUserData, (req, res) => {
+    const data = req.data
+    const userStatistics = req.userStatistics
+    console.log(data)
+    res.render('appCredencials', { app: data.app, usuarios: data.usuarios, button:data.button, notification: notification, message: data.notification  })
+
+});
+router.get('/shopifyapp', requireAuth, loadUserData, (req, res) => {
+    const data = req.data
+    const userStatistics = req.userStatistics
+
+    if (!data.shopifyCredentials[0] || data.shopifyCredentials[0] == undefined) {
+        data.shopifyCredentials[0] = {
+            "accessTokenShopify": "",
+            "apiKeyShopify": "",
+            "secretKeyShopify": "",
+            "buttonToken": "",
+           
+        };
+       
+    }
+    console.log(data)
+    res.render('shopifyCredencials', { app: data.app, usuarios: data.usuarios, button:data.button, notification: notification, message: data.notification, shopifyCredentials:data.shopifyCredentials  })
+
+});
+router.get('/woocommerceapp', requireAuth, loadUserData, (req, res) => {
+    const data = req.data
+    const userStatistics = req.userStatistics
+    console.log(data)
+    res.render('appCredencials', { app: data.app, usuarios: data.usuarios, button:data.button, notification: notification, message: data.notification  })
+
+});
+router.get('/wixapp', requireAuth, loadUserData, (req, res) => {
     const data = req.data
     const userStatistics = req.userStatistics
     console.log(data)
