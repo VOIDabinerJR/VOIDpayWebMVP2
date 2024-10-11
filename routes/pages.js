@@ -154,7 +154,7 @@ router.get('/integracaoSimples', requireAuth, loadUserData, (req, res) => {
 router.get('/integracao', requireAuth, loadUserData, (req, res) => {
     const data = req.data
     const userStatistics = req.userStatistics
-    console.log(data)
+    console.log(data) 
     res.render('integracao', { button: data.button, usuarios: data.usuarios, notification: notification, message: data.notification  })
    
 });
@@ -183,6 +183,15 @@ router.get('/shopifyapp', requireAuth, loadUserData, (req, res) => {
     console.log(data)
     res.render('shopifyCredencials', { app: data.app, usuarios: data.usuarios, button:data.button, notification: notification, message: data.notification, shopifyCredentials:data.shopifyCredentials  })
 
+});
+
+router.get('/shopifyint', requireAuth, loadUserData, (req, res) => {
+    const data = req.data
+    const userStatistics = req.userStatistics
+
+    console.log(data) 
+    res.render('intShopify', { button: data.button, usuarios: data.usuarios, notification: notification, message: data.notification  })
+  
 });
 router.get('/woocommerceapp', requireAuth, loadUserData, (req, res) => {
     const data = req.data

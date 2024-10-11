@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>VOIDpay | Integração Simples</title>
+
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/VOIDabinerJR/VOIDpayWebMVP2/main/img/logo.ico"
+        type="image/x-icon">
+    <style>
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .header {
+            background-color: #121c2d;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            color: white;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .header a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .header .sandbox-mode {
+            color: #7a3dff;
+            font-size: 14px;
+        }
+
+
+
+        .text {
+            color: #000;
+        }
+
+
+
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: #fff;
+            color: black;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        .header {
+            background-color: #121c2d;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            color: white;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .header a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .header .sandbox-mode {
+            color: #7a3dff;
+            font-size: 14px;
+        }
+
+        .header-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header-options select,
+        .header-options .credentials {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .header-options .credentials {
+            background-color: #f5f5f5;
+            cursor: pointer;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #0070ba;
+            text-decoration: none;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        .button-container a {
+            padding: 10px 20px;
+            border: 1px solid #121c2d;
+            border-radius: 5px;
+            text-align: center;
+            color: #121c2d;
+            text-decoration: none;
+        }
+
+        .button-container a:hover {
+            background-color: #121c2d;
+            color: #fff;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .text-section {
+            flex: 1;
+        }
+
+        .code-block {
+
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-left: 20px;
+            max-width: 50%;
+        }
+
+        .code-block pre {
+
+
+            margin: 0;
+            color: white;
+        }
+
+        .preview {
+            background: #000;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin: 20px 0;
+
+
+        }
+
+        .previewg {
+
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin: 20px 0;
+            max-width: 45%;
+            margin-left: 55%;
+
+
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        .example-code {
+            background-color: #f4f4f4;
+            border-left: 3px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+
+        .note {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+
+            <script>
+                fetch('navbar.ejs')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('accordionSidebar').innerHTML = data;
+                    });
+            </script>
+
+        </ul>
+
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span class="badge badge-danger badge-counter">
+                                    <%=notification.notificationCount%> +
+                                </span>
+                            </a>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    Notificações
+                                </h6>
+                                <% message.forEach(message=> { %>
+                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                        <div class="font-weight-bold">
+                                            <div class="text-truncate">
+                                                <%= message.message %>
+                                            </div>
+                                            <div class="small text-gray-500">
+                                                <%= message.sender %> · <%= message.createdAt %>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <% }); %>
+                                        <a class="dropdown-item text-center small text-gray-500" href="#">Show All
+                                            Alerts</a>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - Messages -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-envelope fa-fw"></i>
+                                <!-- Counter - Messages -->
+                                <span class="badge badge-danger badge-counter">
+                                    <%=notification.notificationCount%>
+                                </span>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="messagesDropdown">
+                                <h6 class="dropdown-header">
+                                    Mensagens
+                                </h6>
+
+
+                                <% message.forEach(message=> { %>
+                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                        <div class="font-weight-bold">
+                                            <div class="text-truncate">
+                                                <%= message.message %>
+                                            </div>
+                                            <div class="small text-gray-500">
+                                                <%= message.sender %> · <%= message.createdAt %>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <% }); %>
+
+                            </div>
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                                    <%=usuarios[0].firstname %>
+                                </span>
+                                <img class="img-profile rounded-circle" src="../img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="/profile">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Perfil
+                                </a>
+
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Sair
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Integração Shopify + VOIDpay <img src="" alt=""> + <img src=""
+                                alt=""> </h1>
+
+                    </div>
+
+                    <div class="container">
+                        <div class="header">
+                            Credenciais da API
+                            <div>Para efeitos de TESTE recomedamos que crie uma APP DE TESTE. </div>
+                            para estar no modo sandbox.
+                            <div>Antes de começar certificar-se de ler a <a href="/refundpolitcs">politicas de
+                                    Pagamentos </a>com enfase ao pontos [3]</div>
+                        </div>
+
+
+
+
+                        <h1>Integrar o Checkout VOIDpay</h1>
+                        <p>Antes de iniciar sua integração, você precisa certificar-se de <a href="/profile">terminar de
+                                configurar perfil</a>. Você pode se referir a este <a href="flow">diagrama de fluxo</a>
+                            e <a href="/tutorials">assistir a um vídeo</a> que demonstra como integrar o Checkout padrão
+                            VOIDpay.</p>
+                        <p>Comece sua integração pegando o código de exemplo no repositório VOIDpay GitHub ou visitando
+                            o VOIDpay GitHub Codespace. <a href="#">Leia o guia de Codespaces</a> para mais informações.
+                        </p>
+
+                        <div class="button-container">
+                            <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Baixar sample</a>
+                            <a href="#"><i class="fa fa-play" aria-hidden="true"></i> Ver Tutorial </a>
+                            <a href="#"> <i class="fa fa-envelope" aria-hidden="true"></i> Pedir Ajuda</a>
+                        </div>
+
+
+
+                        <script>
+                            document.getElementById('backend').addEventListener('change', function () {
+                                // Ocultar todas as seções
+                                var sections = document.querySelectorAll('.section');
+                                sections.forEach(function (section) {
+                                    section.style.display = 'none';
+                                });
+
+                                // Mostrar a seção correspondente ao valor selecionado
+                                var selectedValue = this.value;
+                                document.getElementById(selectedValue).style.display = 'block';
+                            });
+                            document.getElementById('frontend').addEventListener('change', function () {
+                                // Ocultar todas as seções
+                                var sections = document.querySelectorAll('.section');
+                                sections.forEach(function (section) {
+                                    section.style.display = 'none';
+                                });
+
+                                // Mostrar a seção correspondente ao valor selecionado
+                                var selectedValue = this.value;
+                                document.getElementById(selectedValue).style.display = 'block';
+                            });
+
+                            // Exibir a primeira seção por padrão
+                            document.getElementById('integracaoHtml').style.display = 'block';
+                        </script>
+
+
+                        <br><br><br>
+                        <p>Esta documentação descreve como integrar um botão de pagamento na sua página web usando o SDK
+                            fornecido. O botão permitirá que os usuários realizem pagamentos de maneira segura e
+                            eficiente.</p>
+                        <div class="section" id="integracaoHtml">
+
+                            <div class="content">
+
+                                <div class="text-section">
+
+
+                                    <p><strong>1. Use o Token do Botão Correto:</strong></p>
+                                    <p>Substitua <code>SEU_TOKEN_DO_BOTAO_AQUI</code> pelo token fornecido no painel do
+                                        VOIDpay.</p>
+                                    <ol>
+                                        <li>
+                                            <strong>Obtenha o Token do Botão:</strong>
+                                            <ul>
+                                                <li>Acesse o painel do VOIDpay.</li>
+                                                <li>Navegue até a seção onde você pode gerar ou visualizar seus tokens
+                                                    de botão.</li>
+                                                <li>Copie o token fornecido.</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <strong>Insira o Token no Seu Código:</strong>
+                                            Substitua <code>SEU_TOKEN_DO_BOTAO_AQUI</code> pelo token que você obteve.
+                                        </li>
+                                    </ol>
+
+                                    <p><strong>Obtenha o ID de Cliente:</strong></p>
+                                    <p>Substitua <code>SEU_CLIENT_ID_AQUI</code> pelo seu ID de cliente real.</p>
+
+                                    <ol>
+                                        <li>
+                                            <strong>Obtenha Seu ID de Cliente:</strong>
+                                            <ul>
+                                                <li>Acesse o painel do VOIDpay.</li>
+                                                <li>Encontre a seção para credenciais da API</li>
+                                                <li>Copie o ID de cliente fornecido.</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <strong>Insira o ID de Cliente no Seu Código:</strong>
+                                            Substitua <code>SEU_CLIENT_ID_AQUI</code> pelo ID de cliente que você
+                                            copiou.
+                                        </li>
+                                    </ol>
+
+                                    <p><strong>2. Clicar em Adicionar e Copiar Codigo:</strong></p>
+                                    <p>Depois de preencher os dois campos com credenciais clicar em adicionar e em
+                                        seguida em copiar codigo.</p>
+
+                                    <p><strong>2. Acessar o Painel da Shopify:</strong></p>
+                                    <p>Entre no painel de administração da sua loja Shopify com suas credenciais.</p>
+
+                                    <p><strong>3. Personalizar o Tema:</strong></p>
+                                    <ul>
+                                        <li>Vá até <strong>Loja Virtual</strong> &gt; <strong>Temas</strong> &gt;
+                                            <strong>Personalizar</strong>.
+                                        </li>
+                                    </ul>
+
+                                    <p><strong>4. Selecionar a Página de Produto:</strong></p>
+                                    <ul>
+                                        <li>No editor, selecione <strong>Produto</strong> &gt; <strong>Produto
+                                                Padrão</strong>.</li>
+                                    </ul>
+
+                                    <p><strong>5. Criar um Liquid Acima do Botão "Adicionar ao Carrinho":</strong></p>
+                                    <ul>
+                                        <li>No menu lateral, encontre a seção do botão "Adicionar ao Carrinho".</li>
+                                        <li>Clique em <strong>Adicionar Bloco</strong> ou <strong>Adicionar
+                                                HTML/Liquid</strong>.</li>
+                                        <li>Cole o código do botão Void Pay que você copiou no primeiro passo.</li>
+                                    </ul>
+
+                                    <p><strong>6. Desativar o Botão de Pagamento da Shopify:</strong></p>
+                                    <ul>
+                                        <li>Desative os métodos de pagamento da Shopify, como Shopify Payments ou
+                                            PayPal, para usar Void Pay.</li>
+                                    </ul>
+
+                                    <p><strong>7. Salvar e Publicar:</strong></p>
+                                    <p>Clique em <strong>Salvar</strong> para aplicar as mudanças.</p>
+
+                                    <p><strong>8. Validação do Pagamento:</strong></p>
+                                    <p>Leia as políticas de pagamento. O proprietário do botão tem até 4 horas para
+                                        validar o pedido, caso contrário, o valor será reembolsado.</p>
+
+
+                                </div>
+                                <div class="code-block">
+                                    <div class="inputs-section" style="margin-bottom: 20px;">
+                                        <label class="m-0 font-weight-bold" style="color: #fff;">Cole o Client
+                                            ID:</label>
+                                        <input type="text" id="clientID" placeholder="Insira o Client ID aqui"
+                                            class="form-control bg-white border-1 small" aria-label="Search"
+                                            aria-describedby="basic-addon2"
+                                            style="padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 300px; margin-bottom: 10px;">
+
+                                        <br>
+
+                                        <label class="m-0 font-weight-bold" style="color: #fff;">Cole o Button
+                                            Token:</label>
+                                        <input type="text" id="buttonToken" placeholder="Insira o Button Token aqui"
+                                            class="form-control bg-white border-1 small" aria-label="Search"
+                                            aria-describedby="basic-addon2"
+                                            style="padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 300px; margin-bottom: 10px;">
+
+                                        <br><br>
+
+                                        <button id="adicionar-codigo" onclick="adicionarValores()"
+                                            class="btn btn-light btn-icon-split"
+                                            style=" color: white; ">
+                                            <span class="text">Adicionar</span>
+                                        </button>
+                                        <br><br>
+
+                                        <button id="copiar-codigo" onclick="copiarCodigo()" type="submit"
+                                            class="btn btn-light btn-icon-split"
+                                            style=" color: white;">
+                                            <span class="text"><i class="fa fa-regular fa-copy" aria-hidden="true"></i>
+                                                Copiar Código</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="code-block" style="margin-top: 20px;">
+                                        <pre id="codigo" style="display: none;">
+                                            <code style="background-color: transparent; background: none;">
+                                            &lt;div&gt;
+                                            &lt;button id=&quot;void-pay-button&quot; clientId=&quot;SEU_CLIENT_ID_AQUI&quot; buttonToken=&quot;SEU_BUTTONTOKEN_AQUI&quot; style=&quot;
+                                            display: flex;
+                                            background-color: #0a0a0a;
+                                            color: white;
+                                            font-size: 18px;
+                                            padding: 10px 20px;
+                                            border: none;
+                                            border-radius: 5px;
+                                            cursor: pointer;
+                                            text-align: center;
+                                            text-decoration: none;
+                                            transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s;
+                                            position: relative;
+                                            &quot;&gt;
+                                            &lt;img src=&quot;https://raw.githubusercontent.com/VOIDabinerJR/sdk/main/void.jpg&quot; alt=&quot;Ícone do Void Pay&quot;
+                                                style=&quot;height: 15px; margin-right: 5px;&quot;&gt;
+                                            pay
+                                            &lt;/button&gt;
+                                
+                                            &lt;script&gt;
+                                            var ridValue = __st.rid;
+                                            var ridArray = [];
+                                            ridArray.push(ridValue);
+                                
+                                            const button = document.getElementById(&#39;void-pay-button&#39;);
+                                            const clientId = button.getAttribute(&#39;clientId&#39;);
+                                            const buttonToken = button.getAttribute(&#39;buttonToken&#39;);
+                                            button.addEventListener(&#39;click&#39;, async function (event) {
+                                                event.preventDefault();
+                                
+                                                const data = {
+                                                    rid: ridArray,
+                                                    buttonToken: buttonToken,
+                                                    clientId: clientId
+                                                };
+                                                console.log(data);
+                                                try {
+                                                    const response = await fetch(&#39;http://localhost:3000/order/createOrderSh&#39;, {
+                                                        method: &#39;POST&#39;,
+                                                        headers: {
+                                                            &#39;Content-Type&#39;: &#39;application/json&#39;
+                                                        },
+                                                        body: JSON.stringify(data)
+                                                    });
+                                                    if (response.status) {
+                                                        const result = await response.json();
+                                                        window.location.href = `http://localhost:3000/pay/pay?orderid=${result.orderId}&amp;buttontoken=${result.buttonToken}&amp;channel=shopify`;
+                                                    } else {
+                                                        const result = await response.json();
+                                                        if (result.error) {
+                                                            errorMsg.textContent = `Erro: ${result.error[0].message}`;
+                                                        }
+                                                    }
+                                                } catch (error) {
+                                                    console.error(&#39;There was a problem with the fetch operation:&#39;, error);
+                                                }
+                                            });
+                                            &lt;/script&gt;
+                                            &lt;/div&gt;
+                                            </code>
+                                        </pre>
+                                    </div>
+
+                                    <script>
+                                        function adicionarValores() {
+                                            const clientID = document.getElementById("clientID").value;
+                                            const buttonToken = document.getElementById("buttonToken").value;
+
+                                            let codigo = document.getElementById("codigo").innerHTML;
+
+                                            // Substitui os valores de clientID e buttonToken no código
+                                            codigo = codigo.replace(/SEU_CLIENT_ID_AQUI/g, clientID);
+                                            codigo = codigo.replace(/SEU_BUTTONTOKEN_AQUI/g, buttonToken);
+
+                                            document.getElementById("codigo").innerHTML = codigo;
+
+                                            // Salva no localStorage para persistir temporariamente
+                                            localStorage.setItem("clientID", clientID);
+                                            localStorage.setItem("buttonToken", buttonToken);
+
+                                            alert("Valores adicionados com sucesso!");
+                                        }
+
+                                        function copiarCodigo() {
+                                            const codigo = document.getElementById("codigo").innerText;
+                                            navigator.clipboard.writeText(codigo).then(function () {
+                                                alert("Código copiado com sucesso!");
+                                            }, function () {
+                                                alert("Erro ao copiar o código.");
+                                            });
+                                        }
+
+                                        // Carrega os valores armazenados anteriormente, se houver
+                                        window.onload = function () {
+                                            if (localStorage.getItem("clientID") && localStorage.getItem("buttonToken")) {
+                                                document.getElementById("clientID").value = localStorage.getItem("clientID");
+                                                document.getElementById("buttonToken").value = localStorage.getItem("buttonToken");
+                                            }
+                                        }
+                                    </script>
+                                </div>
+
+
+                                <script>
+                                    function copiarCodigo() {
+                                        const codigo = document.getElementById("codigo").innerText;
+                                        navigator.clipboard.writeText(codigo).then(function () {
+                                            alert("Código copiado com sucesso!");
+                                        }, function () {
+                                            alert("Erro ao copiar o código.");
+                                        });
+                                    }
+                                </script>
+
+                            </div>
+
+
+                            <div class="previewg" style="background: #121c2d;">
+                                <div class="preview">
+                                    Preview
+                                </div>
+                                <div class="preview" style="background: #ffffff;">
+                                    <div class="product-item">
+                                        <div>
+                                            <img class="image-item" style="width:45px;"
+                                                src="https://images.tcdn.com.br/img/img_prod/275189/camisa_preta_100_poliester_para_sublimacao_g_2697_1_20200722153318.jpg"
+                                                alt="Imagem do Produto 5">
+                                        </div>
+                                        <div class="text"><strong>Produto:</strong></div>
+                                        <div class="name-item text">Camisa</div>
+                                        <div class="text"><strong>Quantidade:</strong></div>
+                                        <div class="quantity-item text">2</div>
+                                        <div class="text"><strong>Preço:</strong></div>
+                                        <div class=" text">
+                                            <p class="price-item">900</p>
+                                        </div>
+                                        <p id="error-message"></p>
+                                        <div class="text"><strong>Id:</strong></div>
+                                        <div class="id-item text">5</div>
+                                    </div>
+
+                                    <div id="void-button-container"
+                                        buttonToken="VOID-04fce89f-0952-4736-8c35-c93c0e503809">
+                                    </div>
+                                    <div id="buttonid" name="VOID-04fce89f-0952-4736-8c35-c93c0e503809"></div>
+                                    <script
+                                        src="http://localhost:3000/sdk/js?clientId=49db28ad-8ce0-4370-aefd-3f8636b6081b&acept=false"></script>
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- End of Main Content -->
+
+
+                    <!-- Footer -->
+                    <footer class="sticky-footer bg-white">
+                        <div class="container my-auto">
+                            <div class="copyright text-center my-auto">
+                                <span>Copyright &copy;VOIDpay 2024</span>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- End of Footer -->
+
+                </div>
+                <!-- End of Content Wrapper -->
+
+            </div>
+            <!-- End of Page Wrapper -->
+
+            <!-- Scroll to Top Button-->
+            <a class="scroll-to-top rounded" href="#page-top">
+                <i class="fas fa-angle-up"></i>
+            </a>
+
+            <!-- Logout Modal-->
+            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Select "Logout" below if you are ready to end your current session.
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                            <a class="btn btn-primary" href="/logout">Logout</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <!-- Dataloader-->
+            <script src="dataloader.js"></script>
+            <script src="dataloader2.js"></script>
+
+            <!-- Bootstrap core JavaScript-->
+            <script src="vendor/jquery/jquery.min.js"></script>
+            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+            <!-- Core plugin JavaScript-->
+            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+            <!-- Custom scripts for all pages-->
+            <script src="js/sb-admin-2.min.js"></script>
+
+            <!-- Page level plugins -->
+            <script src="vendor/chart.js/Chart.min.js"></script>
+
+            <!-- Page level custom scripts -->
+            <script src="js/demo/chart-area-demo.js"></script>
+            <script src="js/demo/chart-pie-demo.js"></script>
+
+            <script src="dashboad.js"></script>
+            <!-- Bootstrap core JavaScript-->
+            <script src="vendor/jquery/jquery.min.js"></script>
+            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+            <!-- Core plugin JavaScript-->
+            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+            <!-- Custom scripts for all pages-->
+            <script src="js/sb-admin-2.min.js"></script>
+
+            <!-- Page level plugins -->
+            <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+            <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+            <!-- Page level custom scripts -->
+            <script src="js/demo/datatables-demo.js"></script>
+
+
+
+            <script>
+                function toggleSubMenu(event, submenuId) {
+                    event.preventDefault(); // Impede o link de seguir para href="#"
+
+                    var submenu = document.getElementById(submenuId);
+                    if (submenu.style.display === "block") {
+                        submenu.style.display = "none";
+                    } else {
+                        submenu.style.display = "block";
+                    }
+                }
+            </script>
+</body>
+
+</html>
