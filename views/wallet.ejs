@@ -386,6 +386,8 @@
                                             <th>Type</th>
                                             <th>Origin Account</th>
                                             <th>Destination Account</th>
+                                            <th>Transaction Reference</th>
+                                           
                                             <th>App ID</th>
                                             <th>Date</th>
 
@@ -404,8 +406,12 @@
                                                 <td>
                                                     <%= transaction.originAccount %>
                                                 </td>
+                                               
                                                 <td>
                                                     <%= transaction.destinationAccount %>
+                                                </td>
+                                                <td>
+                                                    <%= transaction.transactionReference %>
                                                 </td>
                                                 <td>
                                                     <%= transaction.appId %>

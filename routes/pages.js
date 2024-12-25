@@ -215,7 +215,7 @@ router.get('/carteira', requireAuth, loadUserData, (req, res) => {
         balance: '50',
 
     }
-    console.log(wallet.balance)
+    console.log(data.transactions)
     res.render('wallet', { transactions:data.transactions, button: data.button, usuarios: data.usuarios, wallet: wallet, notification: notification, message: data.notification  })
 
 });
