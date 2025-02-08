@@ -243,4 +243,30 @@ router.get('/inicio',  requireAuth, loadUserData, (req, res) => {
  
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//MOCAMBIQUE PARALELO INICIO
+router.get('/mocambiqueparalelo', (req, res) => {
+    res.sendFile(path.join(__dirname, '../', 'public/revistamocambiqueparalelo/mp1.pdf'));
+});
+//MOCAMBIQUE PARALELO fIM
+
 module.exports = router;
