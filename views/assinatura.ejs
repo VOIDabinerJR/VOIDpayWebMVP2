@@ -300,21 +300,21 @@
                             <div class="main-content">
                                 <div class="plan-card">
                                     <h2>Meu plano</h2>
-                                    <h1>signature[0].plan</h1>
-                                    <p>2,99% por pedido pago (cobrado por semana)</p>
-                                    <p>Próximo pagamento: signature[0].nextbill</p>
-                                    <p>VOCÊ USA YAMPI DESDE <strong>usuarios[0].createdAt</strong></p>
-                                    <p>STATUS DA ASSINATURA <span class="status">Ativa</span></p>
+                                    <h1><%=subscription[0].plan%></h1>
+                                    <p><%=subscription[0].percentage %>%  por pedido pago (cobrado por semana)</p>
+                                    <p>Próximo pagamento: <%=subscription[0].nextPayment%></p>
+                                    <p>VOCÊ USA VOIDpay DESDE <strong><%=usuarios[0].creationDate%></strong></p>
+                                    <p>STATUS DA ASSINATURA <span class="status"><%=subscription[0].status%></span></p>
                                 </div>
                                 <div class="billing-info">
                                     <h2>Dados de faturamento e cartão de crédito</h2>
-                                    <p><strong>usuarios[0].name</strong></p>
+                                    <p><strong><%=usuarios[0].firstname%></strong></p>
                                     
-                                    <p>userDetails[0].number</p>
-                                    <p>userDetails[0].number</p>
-                                    <p>userDetails[0].city</p>
-                                    <p>CEP:userDetails[0].postalCode</p>
-                                    <p>Cartão: Visa, final 3596 (Expira em 04/2026)</p>
+                                    <p><%=userDetails[0].phone%></p>
+                                    <p><%=userDetails[0].alternativeEmail%></p>
+                                    <p><%=userDetails[0].address%></p>
+                                    <p>CEP:<%=userDetails[0].postalCode%></p>
+                                    <p>Cartão não foi associado</p>
                                     <a class="update-link" href="#">Atualizar cartão</a>
                                     <br>
                                     <a class="update-link" href="#">Atualizar dados de faturamento</a>

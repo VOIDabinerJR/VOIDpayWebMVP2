@@ -121,7 +121,8 @@ exports.activateButton = async (req, res) => {
 
 
 exports.withdraw = async (req, res) => {
-  
+  console.log("a")
+  console.log(req.body)
     const token  =  req.cookies.kn4;
     const {amount,customer_msisdn, paymentMethod} = req.body;
     
@@ -143,9 +144,9 @@ exports.withdraw = async (req, res) => {
             
             return res.status(200).redirect('/carteira');
         } else { 
-           
-            return res.status(response.status).send(data);
-        }
+            
+             return res.status(response.status).send(data);
+        } 
     } catch (error) {
         console.error('Erro durante requisicao:', error);
         return res.status(500).send('Erro interno do servidor');

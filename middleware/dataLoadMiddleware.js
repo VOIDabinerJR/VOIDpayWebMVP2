@@ -7,7 +7,7 @@ const loadUserData = async (req, res, next) => {
     const token = req.cookies.kn4;
   
     if (!req.data || (typeof req.data === 'object' && Object.keys(req.data).length === 0)) {
-      
+       
 
 
         try {

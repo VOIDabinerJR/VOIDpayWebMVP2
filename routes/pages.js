@@ -113,7 +113,7 @@ router.get('/notfound', requireAuth, loadUserData, (req, res) => {
  
 });
 router.get('/configuracoes', requireAuth, loadUserData, (req, res) => {
-    const data = req.data
+    const data = req.data 
     const userStatistics = req.userStatistics
     res.render('generalConfigurations',{ usuarios: data.usuarios, orders: data.orders, wallet: data.wallet, notification: notification, message: data.notification });
 
@@ -121,7 +121,7 @@ router.get('/configuracoes', requireAuth, loadUserData, (req, res) => {
 router.get('/assinatura', requireAuth, loadUserData, (req, res) => {
     const data = req.data
     const userStatistics = req.userStatistics
-    res.render('assinatura',{ usuarios: data.usuarios, orders: data.orders, wallet: data.wallet, notification: notification, message: data.notification });
+    res.render('assinatura',{ usuarios: data.usuarios, orders: data.orders, wallet: data.wallet, notification: notification, message: data.notification, subscription: data.subscription,  userDetails: data.userDetails });
 
 });
 router.get('/marketing', requireAuth, loadUserData, (req, res) => {

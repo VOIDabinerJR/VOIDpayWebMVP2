@@ -232,7 +232,7 @@
                             class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Relatorio</a>
                     </div>
-                    
+
 
                     <!-- Content Row -->
                     <div class="row">
@@ -311,63 +311,69 @@
                         </div>
                     </div>
 
-                        <!-- Content Row -->
-                        <div class="row">
-                            <!-- Pie Chart -->
-                            <div class="col-xl-4 col-lg-5" style="display: flex; justify-content: center; align-items: center;">
-                                <div class="card shadow mb-4">
-                                    <!-- Card Header - Dropdown -->
-                                    <div
-                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">  <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                            Sacar Dinherio</div></h6>
-                                      
-                                    </div>
-                                    <!-- Card Body -->
-                                    <div class="card-body">
-                                        <div class="chart-pie pt-4 pb-2">
-                                            <form action="" method="post" style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
-                                                <div>
-                                                    <label for="backend">Valor:</label>
-                                                    <input type="text" id="amount" name="amount">
-        
-                                                </div>
-                                                  <div class="header-options">
-                                                   
-                                                    <div>
-                                                        <label for="paymentMethod">Metodo de saque:</label>
-                                                        <select id="paymentMethod" name="paymentMethod">
-                                                            <option value="M-pesa">M-pesa</option>
-                                                            <option value="E-Mola">E-Mola</option>
-                                                            <option value="M-Khesh">M-Khesh</option>
-                                                            <option value="MillenimBim">MillenimBim</option>
-                                                            <option value="BCI">BCI</option>
-                                                            <option value="EcoBank">EcoBank</option>
-                                                            <option value="StandardBank">StandardBank</option>
-            
-                                                          
-                                                        </select>
-                                                    </div>
-                                                    <div>
-                                                        <label for="backend">Numero de Conta:</label>
-                                                        <input type="text" id="customer_msisdn" name="customer_msisdn">
-            
-                                                    </div>
-            
-                                                </div>
-                                                
-                                                <button type="submit" class="btn btn-primary btn-icon-split" style="width: 60%;">
-                                                    <span class="text">Sacar</span>
-                                                </button>
-                                            </form>
-            
-                                        </div>
-                                       
-                                    </div>
+                    <!-- Content Row -->
+                    <div class="row">
+                        <!-- Pie Chart -->
+                        <div class="col-xl-4 col-lg-5"
+                            style="display: flex; justify-content: center; align-items: center;">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                            Sacar Dinherio</div>
+                                    </h6>
+
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+
+
+                                    <form action="" method="post"
+                                        style="background-color: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 100%; max-width: 400px;">
+
+
+                                        <label for="amount"
+                                            style="display: block; margin-bottom: 5px; color: #444;">Valor:</label>
+                                        <input type="number" id="amount" name="amount" placeholder="Ex: 100.00"
+                                            style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #ccc;">
+
+                                        <label for="paymentMethod"
+                                            style="display: block; margin-bottom: 5px; color: #444;">Método de
+                                            Saque:</label>
+                                        <select id="paymentMethod" name="paymentMethod"
+                                            style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #ccc;">
+                                            <option value="M-pesa">M-pesa</option>
+                                            <option value="E-Mola">E-Mola</option>
+                                            <option value="M-Khesh">M-Khesh</option>
+                                            <option value="MillenimBim">MillenimBim</option>
+                                            <option value="BCI">BCI</option>
+                                            <option value="EcoBank">EcoBank</option>
+                                            <option value="StandardBank">StandardBank</option>
+
+                                        </select>
+
+                                        <label for="customer_msisdn"
+                                            style="display: block; margin-bottom: 5px; color: #444;">Número da
+                                            Conta:</label>
+                                        <input type="text" id="customer_msisdn" name="customer_msisdn"
+                                            placeholder="Digite o número da conta"
+                                            style="width: 100%; padding: 10px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ccc;">
+
+                                        <button type="submit"
+                                            style="width: 100%; background-color: green; color: white; padding: 12px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">
+                                            Sacar
+                                        </button>
+                                    </form>
+
+
+
                                 </div>
                             </div>
-
                         </div>
+
+                    </div>
                     <!-- Content Row -->
 
 
@@ -387,7 +393,7 @@
                                             <th>Origin Account</th>
                                             <th>Destination Account</th>
                                             <th>Transaction Reference</th>
-                                           
+
                                             <th>App ID</th>
                                             <th>Date</th>
 
@@ -406,7 +412,7 @@
                                                 <td>
                                                     <%= transaction.originAccount %>
                                                 </td>
-                                               
+
                                                 <td>
                                                     <%= transaction.destinationAccount %>
                                                 </td>
