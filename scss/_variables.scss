@@ -8,7 +8,7 @@
 // Color Variables
 
 $theme-colors:(
-    "primary":#121c2d,
+    "primary":#000000,
     "secondary": rgb(197,26,160),
     "danger":#fc2e23
 );
@@ -17,7 +17,7 @@ $theme-colors:(
 
 $white: #fff !default;
 $gray-100: #f8f9fc !default;
-$gray-200: #eaecf4 !default;
+$gray-200: #eaecf4 !default;    
 $gray-300: #dddfeb !default;
 $gray-400: #d1d3e2 !default;
 $gray-500: #b7b9cc !default;

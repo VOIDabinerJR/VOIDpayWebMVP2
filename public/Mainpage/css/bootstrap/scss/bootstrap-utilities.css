@@ -11,7 +11,7 @@
 }
 
 .link-primary {
-  color: #121c2d;
+  color: #000000;
 }
 .link-primary:hover, .link-primary:focus {
   color: #0e1624;
@@ -414,7 +414,7 @@
 }
 
 .border-primary {
-  border-color: #121c2d !important;
+  border-color: #000000 !important;
 }
 
 .border-secondary {
@@ -1243,7 +1243,7 @@
 
 /* rtl:end:remove */
 .text-primary {
-  color: #121c2d !important;
+  color: #000000 !important;
 }
 
 .text-secondary {
@@ -1299,7 +1299,7 @@
 }
 
 .bg-primary {
-  background-color: #121c2d !important;
+  background-color: #000000 !important;
 }
 
 .bg-secondary {

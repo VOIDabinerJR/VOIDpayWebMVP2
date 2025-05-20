@@ -608,7 +608,7 @@ h6,
 }
 
 .nav-button {
-    color: #121c2d;
+    color: #000000;
     background-color: #fff;
    border: none;
     border-radius: 30px;
@@ -621,7 +621,7 @@ h6,
 
 .nav-button:hover {
     background-color: #e9ecef;
-    color: #121c2d;
+    color: #000000;
 }
 
 .custom-image-container {
