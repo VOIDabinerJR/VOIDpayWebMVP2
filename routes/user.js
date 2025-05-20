@@ -2,7 +2,7 @@ const express = require('express');
 
 const userController = require('../controllers/userController');
 
-
+require('dotenv').config();
 const router = express.Router();
   
   

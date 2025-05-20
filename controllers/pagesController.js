@@ -3,7 +3,7 @@ const { error } = require("jquery");
 const mysql = require("mysql2");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-
+require('dotenv').config();
 
 exports.profile = async (req, res) => {  
     const { firstName, lastName, username, email, password, repeatPassword,dateOfBirth,address, postalCode, documentId, documentIdImg,phone,alternativeEmail,businessName, legalDocument,website, form }  = req.body;

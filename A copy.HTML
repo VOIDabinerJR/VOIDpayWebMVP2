@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>VOI PAY - Começar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+       .welcome-section, .integration-options {
+  padding: 2rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+}
+
+.steps-grid, .integration-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.step-card, .integration-card {
+  background: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+}
+
+.btn.primary {
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <section class="welcome-section">
+  <h2>🚀 Vamos Começar, Abiner!</h2>
+  <p class="intro-text">
+    Para tirar dúvidas, <a href="#">assista ao nosso tutorial</a> ou <a href="#">fale com a gente</a>.
+  </p>
+
+  <div class="progress-bar-container">
+    <label for="progress">Seu Progresso</label>
+    <progress id="progress" value="20" max="100"></progress>
+    <span>20%</span>
+  </div>
+
+  <div class="steps-grid">
+    <div class="step-card">
+      <h3>👤 Cadastro</h3>
+      <p>Finalize seu cadastro para começar a usar a plataforma.</p>
+      <button class="btn primary">Concluir</button>
+    </div>
+
+    <div class="step-card">
+      <h3>📱 Criar Aplicativo</h3>
+      <p>Crie um app para gerenciar seus botões de pagamento.</p>
+      <button class="btn primary">Criar App</button>
+    </div>
+
+    <div class="step-card">
+      <h3>🔘 Criar Botão</h3>
+      <p>Configure seu primeiro botão de pagamento.</p>
+      <button class="btn primary">Criar Botão</button>
+    </div>
+  </div>
+</section>
+
+<section class="integration-options">
+  <h3>🔗 Integrações Rápidas</h3>
+  <div class="integration-grid">
+    <div class="integration-card">
+      <h4>HTML + CSS + JS</h4>
+      <p>Ideal para landing pages e sistemas próprios.</p>
+      <a href="#">Integrar Agora</a>
+    </div>
+    <div class="integration-card">
+      <h4>Node.js</h4>
+      <p>Para integrações com backend moderno.</p>
+      <a href="#">Integrar Agora</a>
+    </div>
+    <div class="integration-card">
+      <h4>PHP</h4>
+      <p>Compatível com plataformas como Laravel e CodeIgniter.</p>
+      <a href="#">Integrar Agora</a>
+    </div>
+    <div class="integration-card">
+      <h4>WooCommerce, WP, Wix</h4>
+      <p>Integração com plataformas populares.</p>
+      <a href="#">Integrar Agora</a>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

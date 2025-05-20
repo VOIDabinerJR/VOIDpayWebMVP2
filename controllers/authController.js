@@ -8,7 +8,6 @@ const fetch = require('node-fetch');
 require('dotenv').config();
 const User = require('../models/User');
 
- 
 
 
 //handle erros 

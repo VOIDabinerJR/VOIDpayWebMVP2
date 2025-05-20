@@ -6,7 +6,7 @@ const router = express.Router();
 const { requireAuth } = require('../middleware/authMiddleware');
 const { loadUserData } = require('../middleware/dataLoadMiddleware');
 
-
+require('dotenv').config();
 const notification = {
     notificationCount: 3,
     notificationText: 'hi',

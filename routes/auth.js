@@ -1,7 +1,7 @@
 const express = require('express');
 
 const authController = require('../controllers/authController');
-
+require('dotenv').config();
 
 const router = express.Router();
  
@@ -21,3 +21,4 @@ router.post('/resetpassword',authController.resetpassword);
 
  
 module.exports = router;
+ 

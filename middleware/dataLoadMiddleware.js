@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
 const fetch = require('node-fetch');
+require('dotenv').config();
 
 
 const loadUserData = async (req, res, next) => {

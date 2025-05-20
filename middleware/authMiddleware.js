@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-//require('dotenv').config({ path: 'C:\\Users\\DELL\\Desktop\\server\\.env' });
+require('dotenv').config();
 
 const requireAuth = (req, res, next) => {
     console.log('a')
